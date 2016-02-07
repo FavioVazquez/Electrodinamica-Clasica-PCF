@@ -1,0 +1,13 @@
+#Ignore output files
+
+*.log
+#*.pdf
+*.aux
+*.backup
+*.out
+*.bcf
+*.dvi
+*.xml
+*.bbl
+*.blg
+*.txt
