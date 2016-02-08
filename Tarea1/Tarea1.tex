@@ -141,6 +141,114 @@ entre los puntos en la exponencial.
 
 \underline{Solución:} \vspace{.3cm}
 
+Partiendo de la ecuación 
+
+\begin{equation}
+ D(\alpha;x,y,z) = (2\pi)^{-3/2}\alpha^{-3}
+ \exp\left[-\frac{1}{2a}(x^2 + y^2 + z^2 \right],
+\end{equation}
+
+y haciendo el cambio de variable $x \rightarrow x-x'$, $y \rightarrow y-y'$, 
+$z \rightarrow z-z'$ obtenemos 
+
+\begin{equation*}
+ D(\alpha;x-x',y-y',z-z') = (2\pi)^{-3/2}\alpha^{-3}
+ \exp\left\{-\frac{1}{2a}[(x-x')^2 + (y-y)^2 + (z-z')^2] \right\}.
+\end{equation*}
+
+Notamos que mientras $\alpha \rightarrow 0 \Rightarrow D \rightarrow 0$, a 
+menos que  $x \rightarrow x-x'$, $y \rightarrow y-y'$, $z \rightarrow z-z' 
+\rightarrow 0$ también. Y recordando que $x-x' \rightarrow 0 \Rightarrow dx$, etc., 
+tenemos 
+
+\begin{equation}
+ D(\alpha;x-x',y-y',z-z') = (2\pi)^{-3/2}\alpha^{-3}
+ \exp\left[-\frac{1}{2a}(dx^2 + dy^2 + dz^2) \right].
+\end{equation}
+
+Recordamos también que el elemento de longitud se escribe como, 
+
+\begin{equation}
+ ds^2 = dx^2 + dy^2 + dz^2,
+\end{equation}
+
+entonces 
+
+\begin{equation}
+ D(\alpha;x-x',y-y',z-z') = (2\pi)^{-3/2}\alpha^{-3}
+ \exp\left[-\frac{1}{2a}(ds^2) \right].
+ \label{eq:15}
+\end{equation}
+
+Y utilizando el sistema de coordenadas que hay que considerar según el problema, 
+podemos reescribir $ds^2$ como 
+
+\begin{equation}
+ ds^2 = \left(\frac{du}{U}\right) + \left(\frac{dv}{V}\right) + 
+ \left(\frac{dw}{W}\right),
+\end{equation}
+
+donde recalcamos que no estamos diciendo que $dx = du/U$, etc., sino que estamos 
+usando el hecho de que $ds^2$ es el mismo en todos los sistemas ortogonales, 
+por lo tanto podemos reescribir \eqref{eq:15} como 
+
+\begin{equation}
+ D(\alpha;u,v,w) = (2\pi)^{-3/2}\alpha^{-3}
+ \exp\left[-\frac{1}{2\alpha^2}\left(\frac{du^2}{U^2} + 
+ \frac{dv^2}{V^2} + \frac{dw^2}{W^2}\right) \right].
+\end{equation}
+
+Ahora expandimos de vuelta los diferenciales en diferencias, 
+
+\begin{equation*}
+ D(\alpha;u-u',v-v',w-w') = (2\pi)^{-3/2}\alpha^{-3}
+ \exp\left\{-\frac{1}{2\alpha^2}\left[\frac{(u - u')^2}{U^2} + 
+ \frac{(v-v')^2}{V^2} + \frac{(w-w')^2}{W^2}\right] \right\},
+\end{equation*}
+
+que podemos escribir como (utilizando el hecho que $\exp(a+b) = \exp(a)\exp(b)$),
+
+\begin{equation*}
+ D = (2\pi)^{-3/2}\alpha^{-3}
+ \exp\left[-\frac{1}{2\alpha^2}\frac{(u - u')^2}{U^2}\right]
+ \exp\left[-\frac{1}{2\alpha^2}\frac{(v-v')^2}{V^2}\right]
+ \exp\left[-\frac{1}{2\alpha^2}\frac{(w-w')^2}{W^2}\right],
+\end{equation*}
+
+y esta ecuación puede expresarse de una forma más conveniente como 
+
+\begin{equation}
+ D = \frac{\exp\left[-\frac{1}{2\alpha^2}\frac{(u - u')^2}{U^2}\right]}{\sqrt{2\pi}\alpha}
+ \frac{\exp\left[-\frac{1}{2\alpha^2}\frac{(v-v')^2}{V^2}\right]}{\sqrt{2\pi}\alpha}
+ \frac{\exp\left[-\frac{1}{2\alpha^2}\frac{(w-w')^2}{W^2}\right]}{\sqrt{2\pi}\alpha}.
+\label{eq:110}
+\end{equation}
+
+La cual es una ecuación que comienza a parecerse a la definición de la delta. Ahora 
+si reemplazamos en cada término del lado derecho de \eqref{eq:110} las $\alpha$'s 
+por $\alpha_u/U$, $\alpha_v/V$ y $\alpha_w/W$ respectivamente\footnote{Podemos 
+hacer esto si $\alpha_u,\alpha_v,\alpha_w \rightarrow 0$ mientras que 
+$\alpha \rightarrow 0$.} y obtenemos 
+
+\begin{equation}
+ D(\alpha;u-u',v-v',w-w') = \frac{\exp\left[-\frac{(u - u')^2}{2\alpha_u}\right]}{\sqrt{2\pi}\alpha}
+ \frac{\exp\left[\frac{(v-v')^2}{2\alpha_v}\right]}{\sqrt{2\pi}\alpha}
+ \frac{\exp\left[\frac{(w-w')^2}{2\alpha_w}\right]}{\sqrt{2\pi}\alpha}\cdot UVW.
+ \label{eq:112}
+\end{equation}
+
+Ahora tomando el límita mientras $\alpha_u,\alpha_v,\alpha_w \rightarrow 0$, 
+vemos que cada término del lado derecho de \eqref{eq:112} se convierte en un 
+delta de Dirac unidimensional y el lado izquierdo entonces en la expresión 
+general de la delta de Dirac tridimensional, por lo tanto \eqref{eq:112} se 
+transforma en 
+
+\begin{equation*}
+ \boxed{\underset{\alpha_u,\alpha_v,\alpha_w \rightarrow 0}{\text{lím}} 
+ D(\alpha;u-u',v-v',w-w') = \delta(\mathbf{x} - \mathbf{x}') = 
+ \delta(u - u')\delta(v - v')\delta(w - w')\cdot UVW.}
+\end{equation*}
+
 \section{Problema 2. Problema 1.3 de Classical Electrodynamics (3ra ed) de 
 Jackson \cite{jackson}.}
 
