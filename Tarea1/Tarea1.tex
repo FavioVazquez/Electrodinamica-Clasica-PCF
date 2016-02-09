@@ -254,7 +254,7 @@ Jackson \cite{jackson}.}
 
 Usando las funciones delta de Dirac en las coordenadas apropiadas, exprese las 
 siguientes distribuciones de carga como las densidades de carga tridimensionales 
-$\rho(\mathbf{b}).$
+$\rho(\mathbf{x}).$
 
 \begin{enumerate}[label=\textbf{(\alph*)}]
  \item En coordenadas esféricas, una carga $Q$ uniformemente distribuida sobre 
@@ -269,6 +269,177 @@ $\rho(\mathbf{b}).$
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+El método que utilizaremos para solucionar cada caso será usar el hecho de que 
+la densidad de carga en cada caso, será proporcional a una delta de Dirac. Luego 
+utilizaremos la propiedad de que dos objetos proporcionales se pueden escribir 
+como el uno igual al otro por un parámetro arbitrario, luego integraremos sobre 
+el objeto completo, igualaremos a la carga total y resolveremos para el parámetro 
+arbitrario.
+
+\vspace{.3cm}
+
+Recordamos que 
+
+\begin{equation}
+ Q = \int \rho(\mathbf{x})d^3x.
+\end{equation}
+
+\textbf{(a)} Para una carga $Q$ distribuida uniformemente sobre una concha esférica, 
+sabemos que la distribución de carga se puede escribir como 
+
+\begin{equation}
+ \rho(\mathbf{x}) = \rho(r,\theta,\phi) \propto \delta(r-R),
+\end{equation}
+
+\begin{equation}
+ \rho(\mathbf{x}) =  \rho(r,\theta,\phi) = \xi(R)\delta(r-R),
+\end{equation}
+
+donde $\xi(R)$ es el parámetro arbitrario a determinar. Entonces, recordando que 
+en coordenadas esféricas $d^3x = r^2\sen{\theta}dr d\theta d\phi$, 
+
+\begin{equation*}
+ Q = \int_0^{2\pi} \int_0^\pi \int_0^\infty 
+  \rho(r,\theta,\phi) r^2\sen{\theta}dr d\theta d\phi = 
+  \int_0^{2\pi} \int_0^\pi \int_0^\infty \xi(R)\delta(r-R)
+  r^2\sen{\theta}dr d\theta d\phi,
+\end{equation*}
+
+\begin{equation}
+ Q = 4\pi\xi(R) \int_0^\infty \delta(r-R) r^2dr = 4\pi R^2 \xi(R),
+\end{equation}
+
+\begin{equation}
+\therefore \xi(R) = \frac{Q}{4\pi R^2}.
+\end{equation}
+
+Entonces, 
+
+\begin{equation}
+ \boxed{\rho(\mathbf{x}) =  \rho(r,\theta,\phi) = \frac{Q}{4\pi R^2}\delta(r-R)}.
+\end{equation}
+
+\vspace{.3cm}
+
+Que era lo esperado, la densidad de carga es la carga total dividida por el área de
+la esfera por la delta.
+
+\vspace{.3cm}
+
+\textbf{(b)} Para la superficie cilíndrica, 
+
+\begin{equation}
+ \rho(\mathbf{x}) =  \rho(r,\theta,z) \propto \delta(r - b),
+\end{equation}
+
+\begin{equation}
+ \rho(\mathbf{x}) =  \rho(r,\theta,z) = \xi(b) \delta(r - b),
+\end{equation}
+
+donde $\xi(b)$ es el parámetro arbitrario a determinar. Entonces, recordando que 
+en coordenadas cilíndricas $d^3x = rdr d\theta$, 
+
+\begin{equation*}
+ \lambda = \int_0^{2\pi} \int_0^\infty 
+  \rho(r,\theta,\phi) rdr d\theta = 
+  \int_0^{2\pi} \int_0^\infty \xi(b)\delta(r-b)
+  r drd\theta,
+\end{equation*}
+
+\begin{equation}
+ \lambda = \xi(b)2\pi \int_0^\infty \delta(r-b)rdr = \xi(b)2\pi,
+\end{equation}
+
+\begin{equation}
+ \therefore \xi(b) = \frac{\lambda}{2\pi b}.
+\end{equation}
+
+Entonces, 
+
+\begin{equation}
+ \boxed{\rho(\mathbf{x}) =  \rho(r,\theta,z) = \frac{\lambda}{2\pi b}\delta(r - b)}.
+\end{equation}
+
+Que era lo esperado, la densidad de carga es la carga total dividida por la circunferencia 
+del cilindro por la delta.
+
+\textbf{(c)} Para el disco plano, debemos usar la función de paso $H$ en la dirección 
+radial, 
+
+\begin{equation}
+ \rho(\mathbf{x}) =  \rho(r,\theta,z) \propto \delta(z)H(R-r),
+\end{equation}
+
+\begin{equation}
+ \rho(\mathbf{x}) =  \rho(r,\theta,z) = \xi(R) \delta(z)H(R-r),
+\end{equation}
+
+donde $\xi(R)$ es el parámetro arbitrario a determinar. Entonces, recordando que 
+en coordenadas cilíndricas $d^3x = rdr d\theta$, 
+
+\begin{equation*}
+ Q = \int_{-\infty}^{\infty}\int_0^{2\pi} \int_0^\infty 
+  \rho(r,\theta,\phi) rdr d\theta dez = 
+  \int_{-\infty}^{\infty} \int_0^{2\pi} \int_0^\infty \xi(R) \delta(z)H(R-r)
+  r drd\theta dz,
+\end{equation*}
+
+\begin{equation}
+ Q = \xi(R) \cancelto{1}{\int_{-\infty}^{\infty} \delta(z)dz} 
+ \cancelto{2\pi}{\int_0^{2\pi} d\theta}
+ \int_0^\infty H(R-r) r dr = \xi(R) 2\pi \int_0^R rdr,
+\end{equation}
+
+\begin{equation}
+ \therefore \xi(b) = \frac{Q}{\pi R^2}.
+\end{equation}
+
+Entonces, 
+
+\begin{equation}
+ \boxed{\rho(\mathbf{x}) =  \rho(r,\theta,z) = \frac{Q}{\pi R^2}\delta(z)H(R-r)}.
+\end{equation}
+
+Que también era lo esperado, la densidad de varga es la delta por la densidad de 
+carga superficial, que en este caso es la carga total dividida por el área del 
+disco.
+
+\vspace{.3cm}
+
+\textbf{(c)} Para el disco plano en coordenadas esféricas, es lo mismo que el caso 
+anterior, pero en este caso confinado al plano $z$, que es lo mismo que decir que 
+$\theta = \pi/2$. Entonces, 
+
+\begin{equation}
+ \rho(\mathbf{x}) =  \rho(r,\theta,\phi) \propto 
+ \frac{\delta(\theta - \pi/2)}{r}H(R-r),
+\end{equation}
+
+\begin{equation}
+ \rho(\mathbf{x}) =  \rho(r,\theta,\phi)  = 
+ \xi(R)\frac{\delta(\theta - \pi/2)}{r}H(R-r),
+\end{equation}
+
+donde $\xi(R)$ es el parámetro arbitrario a determinar. Entonces, recordando que 
+en coordenadas esféricas $d^3x = r^2\sen{\theta}dr d\theta d\phi$,
+
+\begin{align*}
+ Q &= \int_0^{2\pi} \int_0^\pi \int_0^\infty 
+  \rho(r,\theta,\phi) r^2\sen{\theta}dr d\theta d\phi \\
+  &=   \xi(R)\int_0^{2\pi}d\phi \int_0^\pi \delta(\theta - \pi/2)\sen{\theta}d\theta 
+  \int_0^\infty H(R-r)rdr,
+\end{align*}
+
+\begin{equation}
+ \therefore \xi(R) = \frac{Q}{\pi R^2}.
+\end{equation}
+
+Entonces,
+
+\begin{equation}
+ \boxed{\rho(r,\theta,\phi) = \frac{Q}{\pi R}\frac{\delta(\theta - \pi/2)}{r}H(R-r)}.
+\end{equation}
 
 \section{Problema 3. Problema 1.4 de Classical Electrodynamics (3ra ed) de 
 Jackson \cite{jackson}.}
