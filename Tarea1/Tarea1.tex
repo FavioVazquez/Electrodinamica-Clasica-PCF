@@ -633,6 +633,110 @@ ley de Gauss, calcule la capacitancia de
 
 \underline{Solución:} \vspace{.3cm}
 
+La técnica que utilizaremos para calcular la capacitancia en todos los casos será, 
+asumir cargas $\pm Q$ en los conductores, luego utilizando la ley de Gauss encontratemos 
+$E$ en función de $Q$, 
+
+\begin{equation}
+ \oint \mathbf{E} \cdot d\mathbf{a} = \frac{1}{\epsilon_0}\int_V \rho(x)d^3x = 
+ \frac{Q}{\epsilon_0},
+\end{equation}
+
+luego, se calcula la diferencia de potenciales $V$ entre los dos conductores con 
+
+\begin{equation}
+ \int_A^B \mathbf{E} \cdot d\mathbf{l} = - (\Phi_B - \Phi_A),
+\end{equation}
+
+y por último se calcula la capacitancia con 
+
+\begin{equation}
+ C = \left|\frac{Q}{V}\right|,
+\end{equation}.
+
+\textbf{(a)} Para resolver el primer inciso, colocamos una carga $-Q$ en una lámina 
+en $z=0$ y una carga $+Q$ en la otra lámina en $z=d$, entonces una diferencia de 
+voltaje constante se establece entre las mismas. Recordando que utilizando el método 
+de Gauss obtenemos que para las láminas (como son muy grandes, y separadas por una 
+distancia pequeña podemos aproximarlas como infinitas), ya sumada la contribución de 
+cada una será 
+
+\begin{equation}
+ E = \frac{\sigma}{\epsilon_0} = \frac{Q}{A\epsilon_0},
+\end{equation}
+
+y por otra parte, la diferencia de potencial entre las láminas (por construcción) 
+será simplemente $V = Ed$, es decir que 
+
+\begin{equation}
+ V = \frac{Qd}{A\epsilon_0},
+\end{equation}
+
+por lo tanto la capacitancia será 
+
+\begin{equation}
+ \boxed{C = \frac{Q}{V} = \frac{\epsilon_0 A}{d}}.
+\end{equation}
+
+\textbf{(b)} En el segundo inciso colocamos una carga $+Q$ en la esfera de 
+radio $a$ y otra de $-Q$ en la esfera de radio $b$. Si recordamos, usando el método 
+de Gauss y dibujando una esfera de integración de radio $r$ tal que $a < r < b$, 
+por simetría obtenemos que el campo eléctrico sólo no es cero entre las dos 
+esferas, y tiene una magnitud de 
+
+\begin{equation}
+ E = \frac{Q}{4\pi\epsilon_0}\frac{1}{r^2},
+\end{equation}
+
+luego tenemos que 
+
+\begin{equation}
+ V = - \int_a^b E dr = \frac{Q}{4\pi\epsilon_0}\left(\frac{1}{a} - \frac{1}{b}\right),
+\end{equation}
+
+y por lo tanto 
+
+\begin{equation}
+ \boxed{C = \frac{Q}{V} = 4\pi\epsilon_0\left(\frac{1}{a} - \frac{1}{b}\right)}.
+\end{equation}
+
+\textbf{(c)} En el tercer inciso colocamos una carga $+Q$ en el cilindro de radio 
+$a$ y una carga $-Q$ en el cilindro de radio $b$. De nuevo, utilizando el método 
+gaussiano, dibujamos una superficie de integración cilíndrica de radio $r$ tal que 
+$a < r < b$, usamos la simetría, y obtenemos que 
+
+\begin{equation}
+ E = \frac{Q}{2\pi\epsilon_0 L}\frac{1}{r},
+\end{equation}
+
+donde $L$ es la longitud del cilindro de radio $r$. Luego tenemos que 
+
+\begin{equation}
+ V = - \int_a^b E dr = \frac{Q}{2\pi\epsilon_0 L}\ln{\frac{a}{b}},
+\end{equation}
+
+y por lo tanto 
+
+\begin{equation}
+ \boxed{C = \frac{Q}{V} = 2\pi\epsilon_0 L \left(\ln{\frac{a}{b}} \right)^{-1}}.
+\end{equation}
+
+\textbf{(d)} En este inciso, debemos resolver para $2b$ la ecuación para la capacitancia 
+del inciso anterior y luego sustituir los valores dados. Con el valor que 
+nos dan que $2a = 1$ mm, y valores especificados para la capacitancia por unidad 
+de distancia $(C/L)$, resolviendo para $2b$ tenemos 
+
+\begin{equation}
+ 2b = 2a\exp\left(\frac{2\pi\epsilon_0}{C/L}\right),
+\end{equation}
+
+para $C/L = 3 \times 10^{-11}$ F/m tenemos que el diámetro interno, $(2b)$, del 
+cable debe ser de $\boxed{6.4 \text{ mm}}$, mientras que para $C/L = 3 \times 10^{-12}$ F/m tenemos 
+que el diámetro interno, $(2b)$, del cable debe ser tan grande como 
+de $\boxed{113 \text{ km}}$. Con lo que vemos que para propósitos prácticos, la capacitancia 
+por unidad de longitud de un cable coaxial no puede ser mucho más pequeña que 
+unos pocos $10^{-11}$ F/m.
+
 \begin{thebibliography}{10}
 \bibitem{jackson}
 J. Jackson, \emph{Classical Electrodynamics}, 3ra edición. John Wiley and Sons, Inc. 
