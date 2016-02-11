@@ -11,3 +11,6 @@
 *.bbl
 *.blg
 *.txt
+
+# Notebooks checkpoints
+Tarea1/.ipynb_checkpoints

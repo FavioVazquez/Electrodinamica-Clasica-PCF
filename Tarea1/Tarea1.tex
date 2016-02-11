@@ -455,6 +455,168 @@ para las primeras dos esfera, y para la tercera com $n= -2,+2$.
 
 \underline{Solución:} \vspace{.3cm}
 
+\textbf{(a)} En el primer caso tenemos una esfera conductora. Primero recordamos que 
+dentro de la esfera el campo eléctrico es cero. Para obtener el campo eléctrico 
+fuera de la esfera, procedemos como siempre a dibujar una esfera concéntrica de 
+integración con un radio $r$, como es muy simple el problema solo nos planteamos 
+el procedimiento mentalmente. Recordando la forma integral de la ley de Gauss,
+
+\begin{equation}
+ \oint_S \mathbf{E} \cdot d\mathbf{A} = \frac{Q}{\epsilon_0},
+\end{equation}
+
+y debido a la simetría entre la esfera conductora y la esfera, el campo eléctrico es 
+constante sobre la superficie de integración y entonces podemos escribir:
+
+\begin{equation}
+  E \oint_S  d\mathbf{A} = \frac{Q}{\epsilon_0}.
+\end{equation}
+
+Debemos evaluar la integral de superficie sobre el área total de integración 
+de la esfera de radio $r$, por lo tanto 
+
+\begin{equation}
+ E4\pi r^2 = \frac{Q}{\epsilon_0},
+\end{equation}
+
+y resolviendo para el campo eléctrico, 
+
+\begin{equation}
+ E = \frac{Q}{4\pi \epsilon_0 r^2}.
+\end{equation}
+
+Resumiendo, para una esfera cargada de radio $a$ y carga total $Q$,
+
+\begin{equation}
+\boxed{
+  E =\begin{cases}
+	      \quad 0, \quad  \quad r < a \\
+	      \frac{Q}{4\pi \epsilon_0 r^2}, \quad r > a
+	       \end{cases}}.
+\end{equation}
+
+\textbf{(b)} En el segundo caso tenemos una esfera con una densidad de carga 
+uniforme adentro de su volumen. Afuera de la esfera, la superficie de integración usada en la ley 
+de Gauss contiene la misma cantidad de carga que para la esfera conductora 
+del inciso anterior, y por lo tanto,
+
+\begin{equation}
+ E = \frac{Q}{4\pi \epsilon_0 r^2}.
+\end{equation}
+
+Adentro de la esfera, sabemos que la carga debe ser proporcional al volumen de la 
+esfera de integración de radio $r$, $4/3\pi r^3$. Por lo tanto, 
+
+\begin{equation}
+ \rho = \frac{Q}{4/3\pi a^3},
+\end{equation}
+
+y entonces la carga total contenida adentro de la esfera de integración será
+
+\begin{equation}
+ q = \left(\frac{Q}{4/3\pi a^3}\right)\left(\frac{4}{3}\pi r^3\right) = 
+ Q\frac{r^3}{a^3}, 
+\end{equation}
+
+y utilizando la ley de Gauss, 
+
+\begin{equation}
+ E \oint_S d\mathbf{A} = \frac{q}{\epsilon_0},
+\end{equation}
+
+\begin{equation}
+ E 4\pi r^2 = Q\frac{r^3}{a^3\epsilon_0},
+\end{equation}
+
+\begin{equation}
+ \therefore E = \frac{Qr}{4\pi \epsilon_0 a^3}.
+\end{equation}
+
+Resumiendo, para esfera con una densidad de carga 
+uniforme adentro de su volumen de radio $a$ y carga total $Q$,
+
+\begin{equation}
+\boxed{
+  E =\begin{cases}
+	      \frac{Qr}{4\pi \epsilon_0 a^3} , \quad  \quad r < a \\
+	      \frac{Q}{4\pi \epsilon_0 r^2} , \quad \quad r > a
+	       \end{cases}}.
+\end{equation}
+
+\textbf{(c)} La tercera esfera tiene una carga de simetría esférica que varía 
+radialmente como $r^n$. Afuera de la esfera tendremos el mismo resultado que 
+para los dos casos anteriores, entonces 
+
+\begin{equation}
+ E = \frac{Q}{4\pi \epsilon_0 r^2}.
+\end{equation}
+
+Adentro de la esfera debemos primero encontrar la forma de la densidad de carga. Sabemos 
+que tiene la forma 
+
+\begin{equation}
+ \rho \propto r^n,
+\end{equation}
+
+y entonces 
+
+\begin{equation}
+ \rho = \xi r^n,
+\end{equation}
+
+donde la constante $\xi$ se determina integrando sobre la superficie de la 
+esfera e igualando a la carga total. Entonces, 
+
+\begin{align*}
+ Q &= \int_0^{2\pi} \int_0^\pi \int_0^a (\xi r^n) r^2 \sen{\theta}drd\theta d\phi \\
+   &= \xi \int_0^{2\pi} \int_0^\pi [r^{n+3}]_0^a \sen{\theta}d\theta d\phi \\
+   &= \xi a^{n+3} \int_0^{2\pi} [-\cos{\theta}]_0^\pi d\phi \\
+   &= \xi 2a^{n+3} \int_0^{2\pi} d\phi \\
+   &= \xi 4\pi a^{n+3},
+\end{align*}
+
+\begin{equation}
+ \therefore \xi = \frac{Q}{4\pi a^{n+3}},
+\end{equation}
+
+entonces 
+
+\begin{equation}
+ E4\pi r^2 = \frac{Q}{\epsilon_0}\frac{\cancel{\xi4\pi} 
+ r^{n+3}}{\cancel{\xi4\pi} a^{n+3}},
+\end{equation}
+
+por lo tanto
+
+\begin{equation}
+ E = \frac{Qr^{n+1}}{4\pi\epsilon_0a^{n+3}}.
+\end{equation}
+
+Resumiendo, para esfera con una carga de simetría esférica que varía 
+radialmente como $r^n$, de radio $a$ y carga total $Q$,
+
+\begin{equation}
+\boxed{
+  E =\begin{cases}
+	      \frac{Qr^{n+1}}{4\pi\epsilon_0a^{n+3}}, \quad  \quad r < a \\
+	      \frac{Q}{4\pi \epsilon_0 r^2}, \quad \qquad  r > a
+	       \end{cases}}.
+\end{equation}
+
+Debajo se muestra el comportamiento de los campos eléctrico obtenidos como 
+una función del radio para las primeras dos esfera, y para la tercera 
+con $n= -2,+2$. 
+
+\begin{figure}[H]
+ \center 
+\includegraphics[scale=0.44]{problema3fig1}
+ \caption{Comportamiento de los campos eléctrico obtenidos como 
+una función del radio para las primeras dos esfera, y para la tercera 
+con $n= -2,+2$. Recordamos que en todos los casos para $r>a$ el comportamiento 
+es el mismo.}
+ \label{fig:problema3fig1}
+\end{figure}
+
 \section{Problema 4. Problema 1.5 de Classical Electrodynamics (3ra ed) de 
 Jackson \cite{jackson}.}
 
