@@ -29,5 +29,14 @@ En tal caso de alguna pregunta no relacionada directamente con el repositorio pu
 
 -------
 
-# Tareas compiladas en línea con 
+## Tareas compiladas en línea con [ShareLaTeX](https://www.sharelatex.com/)
 
+### Tarea 1 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazquez/MecanicaClasica-PCF/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/FavioVazquez/Electrodinamica-Clasica-PCF/builds/54392068c73dff187337617c2c7c38e73b0dddbb/raw/output.pdf)
+
+---------
+
+## **Acceso a los PDFs de las tareas en GitHub**
+
+Se pueden también ver las tareas directamente en GitHub. Se renderizarán en línea y las podrán ver directamente en el mismo repositorio. Aún así recomiendo verlas en los links de arriba que fueron compilados por ShareLatex ya que por algún motivo tienen más calidad que las que renderiza GitHub.
+
+### [Tarea 1](https://github.com/FavioVazquez/Electrodinamica-Clasica-PCF/blob/master/Tarea1/Tarea1.pdf)
