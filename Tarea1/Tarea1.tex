@@ -635,6 +635,141 @@ discreta) que dará este potencial e interpreta tu resultado físicamente.
 
 \underline{Solución:} \vspace{.3cm}
 
+El potencial con el que debemos trabajar es, 
+
+\begin{equation}
+ \Phi = \frac{q}{4\pi\epsilon_0}\frac{\euler^{-\alpha r}}{r}\left(1 + 
+\frac{\alpha r}{2}\right).
+\label{eq:potencialhidrogeno}
+\end{equation}
+
+Claramente para resolver este problema debemos utilizar la ecuación de Poisson, ya 
+que esta relaciona la densidad de carga con el potencial escalar eléctrico que 
+crea. En este caso la utilizaremos para encontrar la densidad de carga. Debemos entonces 
+utilizar la ecuación, 
+
+\begin{equation}
+ \nabla^2 \Phi = - \frac{\rho}{\epsilon_0},
+\end{equation}
+
+hacer la diferenciación (en coordenadas esféricas) y resolver para $\rho$. En coordenadas 
+esféricas, escribimos esta ecuación como 
+
+\begin{equation}
+ \frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial \Phi}{\partial r}\right) +
+ \frac{1}{r^2\sen{\theta}}\frac{\partial}{\partial \theta}
+ \left(\sen{\theta}\frac{\partial \Phi}{\partial \theta} \right) + 
+ \frac{1}{r^2\sen^2{\theta}}\frac{\partial \Phi}{\partial \phi} = 
+ - \frac{\rho}{\epsilon_0}.
+ \label{eq:nablaesferica}
+\end{equation}
+
+Debido a que $\Phi$ solo depende de $r$, vemos que el potencial tiene una simetría 
+esférica, y por lo tanto se harán cero todas las parciales de \eqref{eq:nablaesferica} 
+menos la componente radial. Es decir, 
+
+\begin{equation}
+ \frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial \Phi}{\partial r}\right) = 
+ - \frac{\rho}{\epsilon_0}.
+\end{equation}
+
+Evaluando esta ecuación sustituyendo \eqref{eq:potencialhidrogeno}, resulta en 
+
+\begin{align*}
+  \frac{1}{r^2}\frac{\partial}{\partial r}
+ \left\{r^2\frac{\partial}{\partial r}\left[\frac{q}{4\pi\epsilon_0}
+ \frac{\euler^{-\alpha r}}{r}\left(1 + \frac{1}{2}\alpha r\right)\right] \right\} &= 
+ - \frac{\rho}{\epsilon_0} \\
+ %
+ \frac{q}{4\pi\epsilon_0}\frac{1}{r^2}\frac{\partial}{\partial r}
+ \left[r^2\frac{\partial}{\partial r}\left(\frac{\euler^{-\alpha r}}{r}\right) 
+ + r^2\frac{\partial}{\partial r}\left(\frac{\alpha}{2}\euler^{-\alpha r}\right)
+ \right] &= - \frac{\rho}{\epsilon_0} \\
+ %
+  \frac{q}{4\pi\epsilon_0}\frac{1}{r^2}\frac{\partial}{\partial r}
+  \left[r^2\left(\frac{1}{r}\frac{\partial}{\partial r}\euler^{-\alpha r}
+  + \euler^{-\alpha r}\frac{\partial}{\partial r}\frac{1}{r}\right)
+  - \frac{\alpha^2}{2}r^2\euler^{-\alpha r}\right] &= - \frac{\rho}{\epsilon_0} \\
+ %
+  \frac{q}{4\pi\epsilon_0}\frac{1}{r^2}\frac{\partial}{\partial r}
+  \left(-\alpha r \euler^{-\alpha r} + r^2\euler^{-\alpha r} 
+  \frac{\partial}{\partial r}\frac{1}{r} - \frac{\alpha^2}{2}r^2\euler^{-\alpha r}
+  \right) &= - \frac{\rho}{\epsilon_0} \\
+ %
+  \frac{q}{4\pi\epsilon_0}\left(-\frac{\alpha}{r^2}\euler^{-\alpha r} 
+  \frac{\alpha^3}{2}\euler^{-\alpha r}\right) + \frac{q}{4\pi\epsilon_0}
+  \frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\euler^{-\alpha r} 
+  \frac{\partial}{\partial r}\frac{1}{r}\right) &= - \frac{\rho}{\epsilon_0}, 
+\end{align*}
+
+y resolviendo para $\rho$ tenemos que 
+
+\begin{equation}
+ \rho = - \frac{q\alpha^3}{8\pi}\euler^{-\alpha r} - 
+ \euler^{-\alpha r}\frac{q}{4\pi}\frac{1}{r^2}\frac{\partial}{\partial r}
+ \left(r^2\frac{\partial}{\partial r}\frac{1}{r} \right).
+ \label{eq:rhohidrogeno1}
+\end{equation}
+
+Ahora debemos tomar en consideración algo que afecta tanto como al potencial dado,
+como a la expresión que obtuvimos para $\rho$, y es que $1/r$ se hace infinito en 
+el origen. Entonces debemos estudiar el comportamiento de $\rho$ pata $r \approx 
+0$ y para $r > 0$. 
+
+\vspace{.3cm}
+
+Comencemos por el comportamiento para $r > 0$. Para $r > 0$, al evaluar las derivadas 
+en el lado derecho de \eqref{eq:rhohidrogeno1} el término de la derecha se hace 
+cero y nos queda 
+
+\begin{equation}
+ \rho = - \frac{q\alpha^3}{8\pi}\euler^{-\alpha r}. 
+ \label{eq:rhohidrogeno2}
+\end{equation}
+
+Ahora si $r \approx 0$ tenemos que $\euler^{-\alpha r} \approx 1$ y entonces 
+nos queda 
+
+\begin{equation}
+\rho = - \frac{q\alpha^3}{8\pi}- 
+ \frac{q}{4\pi}\frac{1}{r^2}\frac{\partial}{\partial r}
+ \left(r^2\frac{\partial}{\partial r}\frac{1}{r} \right),
+\end{equation}
+
+y usando la relación 
+
+\begin{equation}
+ \nabla^2\left(\frac{1}{r} \right) = - 4\pi \delta(r),
+\end{equation}
+
+que en este caso se lee como 
+
+\begin{equation}
+ \frac{1}{r^2}\frac{\partial}{\partial r}\left[r^2\frac{\partial}{\partial r}
+ \left(\frac{1}{r} \right)\right] = - 4\pi \delta(r),
+\end{equation}
+
+y por lo tanto para $r \approx 0$, 
+
+\begin{equation}
+ \rho = - \frac{q\alpha^3}{8\pi} + q\delta(r).
+ \label{eq:rhohidrogeno3}
+\end{equation}
+
+Ahora debido a que la delta es cero en todas partes menos en el origen, y debido 
+a que el primer término de ecuación \eqref{eq:rhohidrogeno3} es igual al término 
+de \eqref{eq:rhohidrogeno2} cuando $r=0$, podemos combinar ambos casos en 
+
+\begin{equation}
+ \boxed{\rho = - \frac{q\alpha^3}{8\pi}\euler^{-\alpha r} + q\delta(r)}.
+\end{equation}
+
+Y esta ecuación es válida para toda $r$. La parte discreta de esta ecuación
+representa físicamente a un  protón estacionario con carga $q$, y al rededor de 
+este protón orbita un electrón  de carga $-q$. La parte continua de la densidad 
+de carga se puede interpretar como una distribución estadística de la
+localización del electrón.
+
 \section{Problema 5. Problema 1.6 de Classical Electrodynamics (3ra ed) de 
 Jackson \cite{jackson}.}
 
@@ -659,6 +794,110 @@ ley de Gauss, calcule la capacitancia de
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+La técnica que utilizaremos para calcular la capacitancia en todos los casos será, 
+asumir cargas $\pm Q$ en los conductores, luego utilizando la ley de Gauss encontratemos 
+$E$ en función de $Q$, 
+
+\begin{equation}
+ \oint \mathbf{E} \cdot d\mathbf{a} = \frac{1}{\epsilon_0}\int_V \rho(x)d^3x = 
+ \frac{Q}{\epsilon_0},
+\end{equation}
+
+luego, se calcula la diferencia de potenciales $V$ entre los dos conductores con 
+
+\begin{equation}
+ \int_A^B \mathbf{E} \cdot d\mathbf{l} = - (\Phi_B - \Phi_A),
+\end{equation}
+
+y por último se calcula la capacitancia con 
+
+\begin{equation}
+ C = \left|\frac{Q}{V}\right|,
+\end{equation}.
+
+\textbf{(a)} Para resolver el primer inciso, colocamos una carga $-Q$ en una lámina 
+en $z=0$ y una carga $+Q$ en la otra lámina en $z=d$, entonces una diferencia de 
+voltaje constante se establece entre las mismas. Recordando que utilizando el método 
+de Gauss obtenemos que para las láminas (como son muy grandes, y separadas por una 
+distancia pequeña podemos aproximarlas como infinitas), ya sumada la contribución de 
+cada una será 
+
+\begin{equation}
+ E = \frac{\sigma}{\epsilon_0} = \frac{Q}{A\epsilon_0},
+\end{equation}
+
+y por otra parte, la diferencia de potencial entre las láminas (por construcción) 
+será simplemente $V = Ed$, es decir que 
+
+\begin{equation}
+ V = \frac{Qd}{A\epsilon_0},
+\end{equation}
+
+por lo tanto la capacitancia será 
+
+\begin{equation}
+ \boxed{C = \frac{Q}{V} = \frac{\epsilon_0 A}{d}}.
+\end{equation}
+
+\textbf{(b)} En el segundo inciso colocamos una carga $+Q$ en la esfera de 
+radio $a$ y otra de $-Q$ en la esfera de radio $b$. Si recordamos, usando el método 
+de Gauss y dibujando una esfera de integración de radio $r$ tal que $a < r < b$, 
+por simetría obtenemos que el campo eléctrico sólo no es cero entre las dos 
+esferas, y tiene una magnitud de 
+
+\begin{equation}
+ E = \frac{Q}{4\pi\epsilon_0}\frac{1}{r^2},
+\end{equation}
+
+luego tenemos que 
+
+\begin{equation}
+ V = - \int_a^b E dr = \frac{Q}{4\pi\epsilon_0}\left(\frac{1}{a} - \frac{1}{b}\right),
+\end{equation}
+
+y por lo tanto 
+
+\begin{equation}
+ \boxed{C = \frac{Q}{V} = 4\pi\epsilon_0\left(\frac{1}{a} - \frac{1}{b}\right)}.
+\end{equation}
+
+\textbf{(c)} En el tercer inciso colocamos una carga $+Q$ en el cilindro de radio 
+$a$ y una carga $-Q$ en el cilindro de radio $b$. De nuevo, utilizando el método 
+gaussiano, dibujamos una superficie de integración cilíndrica de radio $r$ tal que 
+$a < r < b$, usamos la simetría, y obtenemos que 
+
+\begin{equation}
+ E = \frac{Q}{2\pi\epsilon_0 L}\frac{1}{r},
+\end{equation}
+
+donde $L$ es la longitud del cilindro de radio $r$. Luego tenemos que 
+
+\begin{equation}
+ V = - \int_a^b E dr = \frac{Q}{2\pi\epsilon_0 L}\ln{\frac{a}{b}},
+\end{equation}
+
+y por lo tanto 
+
+\begin{equation}
+ \boxed{C = \frac{Q}{V} = 2\pi\epsilon_0 L \left(\ln{\frac{a}{b}} \right)^{-1}}.
+\end{equation}
+
+\textbf{(d)} En este inciso, debemos resolver para $2b$ la ecuación para la capacitancia 
+del inciso anterior y luego sustituir los valores dados. Con el valor que 
+nos dan que $2a = 1$ mm, y valores especificados para la capacitancia por unidad 
+de distancia $(C/L)$, resolviendo para $2b$ tenemos 
+
+\begin{equation}
+ 2b = 2a\exp\left(\frac{2\pi\epsilon_0}{C/L}\right),
+\end{equation}
+
+para $C/L = 3 \times 10^{-11}$ F/m tenemos que el diámetro interno, $(2b)$, del 
+cable debe ser de $\boxed{6.4 \text{ mm}}$, mientras que para $C/L = 3 \times 10^{-12}$ F/m tenemos 
+que el diámetro interno, $(2b)$, del cable debe ser tan grande como 
+de $\boxed{113 \text{ km}}$. Con lo que vemos que para propósitos prácticos, la capacitancia 
+por unidad de longitud de un cable coaxial no puede ser mucho más pequeña que 
+unos pocos $10^{-11}$ F/m.
 
 \begin{thebibliography}{10}
 \bibitem{jackson}
