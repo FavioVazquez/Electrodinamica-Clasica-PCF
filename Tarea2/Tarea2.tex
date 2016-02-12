@@ -1,0 +1,246 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[affil-it]{authblk}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{tikz}
+\usepackage[labelfont=bf]{caption}
+\usepackage{subcaption} %Multiple images
+\usepackage{multicol} % Multiple columns
+\usepackage{float}
+\usepackage{cleveref}
+ \usepackage{relsize} % bigger math symbols
+\usepackage[margin=1.4in]{geometry}
+\usepackage[titletoc,toc,title]{appendix}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\usepackage{mdframed} %frame theorems
+\usetikzlibrary{calc}
+\numberwithin{equation}{section}
+
+% Enviroment for theorems
+\newmdtheoremenv[frametitle=Teorema]{theo}{Theorem}
+
+% Circled words
+\newcommand{\circled}[2][]{%
+  \tikz[baseline=(char.base)]{%
+    \node[shape = circle, draw, inner sep = 1pt]
+    (char) {\phantom{\ifblank{#1}{#2}{#1}}};%
+    \node at (char.center) {\makebox[0pt][c]{#2}};}}
+\robustify{\circled}
+
+%Appendices in spanish
+\renewcommand{\appendixname}{Ap\'endices}
+\renewcommand{\appendixtocname}{Ap\'endices}
+\renewcommand{\appendixpagename}{Ap\'endices}
+
+%Zero delimiter
+\newcommand{\zerodel}{.\kern-\nulldelimiterspace}
+
+%Columns separation
+\setlength{\columnsep}{1cm}
+
+%Indentation
+\setlength{\parindent}{0ex}
+
+%Multiple References
+
+\crefrangelabelformat{equation}{(#3#1#4--#5\crefstripprefix{#1}{#2}#6)}
+
+\usepackage{xparse}
+
+%Boxes
+
+\newcommand*{\boxcolor}{blue}
+\makeatletter
+\renewcommand{\boxed}[1]{\textcolor{\boxcolor}{%
+\tikz[baseline={([yshift=-1ex]current bounding box.center)}] \node [rectangle, minimum width=1ex,rounded corners,draw] {\normalcolor\m@th$\displaystyle#1$};}}
+ \makeatother
+
+%Constantes
+\newcommand{\euler}{\mathrm{e}}
+\newcommand{\im}{i}
+
+%Lemas, teoremas, definiciones y pruebas
+\newcommand{\definicion}{\textbf{Definición: }}
+\newcommand{\lema}{\textbf{Lema: }}
+\newcommand{\teorema}{\textbf{Teorema: }}
+\newcommand{\prueba}{\textbf{Prueba: }}
+\newcommand{\proposicion}{\textbf{Proposición: }}
+\newcommand{\corolario}{\textbf{Corolario: }}
+
+% Definición de las secciones y su numeración
+
+\makeatletter
+\def\@seccntformat#1{%
+  \expandafter\ifx\csname c@#1\endcsname\c@section\else
+  \csname the#1\endcsname\quad
+  \fi}
+\makeatother
+
+%opening
+\title{Electrodinámica Clásica. Tarea \# 2}
+\author{Favio Vázquez\thanks{Correo: favio.vazquezp@gmail.com}}\affil{Instituto de Ciencias Nucleares. Universidad Nacional Autónoma de México.}
+\date{}
+\begin{document}
+
+\makeatletter
+\def\@maketitle{%
+  \newpage
+  \null
+  \vskip 2em%
+  \begin{center}%
+  \let \footnote \thanks
+    {\Large\bfseries \@title \par}%
+    \vskip 1.5em%
+    {\normalsize
+      \lineskip .5em%
+      \begin{tabular}[t]{c}%
+        \@author
+      \end{tabular}\par}%
+    \vskip 1em%
+    {\normalsize \@date}%
+  \end{center}%
+  \par
+  \vskip 1.5em}
+\makeatother
+
+\maketitle
+
+\section{Problema 1. Problema 2.1 de Classical Electrodynamics (tanto en la 2da 
+como en la 3ra edición) de Jackson \cite{jackson2,jackson3}.}
+
+Una carga puntual $q$ es llevada a una posición a una distancia $d$ desde un 
+plano conductor infinito que está a un potencial cero. Usando el método de imágenes, 
+encuentre: 
+
+\begin{enumerate}[label=\textbf{(\alph*)}]
+ \item la densidad de carga superficial inducida en el plano, y grafíquela;
+ \item la fuerza entre el plano y la carga usando la ley de Coulomb para la fuerza 
+ entre la carga y su imagen;
+ \item la fuerza total actuando en el plano integrando $\sigma^2/2\epsilon_0$ 
+ sobre todo el plano;
+ \item el trabajo necesario para remover la carga $q$ de su posición al infinito;
+ \item la energía potencial entre la carga $q$ y su imagen [compare la respuesta 
+ con la de la parte (d) y discuta].
+ \item Encuentre la respuesta a la parte (d) en eV para un electrón originalmente 
+ a un angstrom de la superficie.
+\end{enumerate}
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\section{Problema 2. Problema 2.2 de Classical Electrodynamics (tanto en la 2da 
+como en la 3ra edición) de Jackson \cite{jackson2,jackson3}.}
+
+Usando el método de imágenes, discuta el problema de una carga puntual $q$ 
+\emph{adentro} de una esfera hueca, conectada a tierra, conductora de radio interno
+$a$. Encuentre 
+
+\begin{enumerate}[label=\textbf{(\alph*)}]
+ \item el potencial adentro de la esfera;
+ \item la densidad de carga superficial inducida;
+ \item la magnitud y dirección de la fuerza actuando sobre $q$.
+ \item ¿Hay algún cambio en la solución si la esfera es mantenida a un potencial 
+ fijo $V$? ¿y si la esfera tiene una carga total $Q$ en sus superficies internas y 
+ externas?
+\end{enumerate}
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\section{Problema 3. Problema 2.3 de Classical Electrodynamics (2da edición) de Jackson 
+\cite{jackson2} y 2.7 (3ra edición) de Jackson \cite{jackson3}.}
+
+Considera un problema de potencial en el medio espacio definido por $z \geq 0$, con 
+condiciones de frontera de Dirichlet sobre el plano $z = 0$ (y en infinito).
+
+\begin{enumerate}[label=\textbf{(\alph*)}]
+ \item Escribe la función de Green apropiada $G(\mathbf{x},\mathbf{x}')$.
+ \item Si el potencial $z = 0$ es especificado por $\Phi = V$ adentro de un círculo 
+ de radio $a$ centrado en el origen, y $\Phi = 0$ afuera del círculo, encuentre 
+ una expresión integral para el potencial en el punto $P$ especificado en términos 
+ de coordenadas cilíndricas $(\rho,\phi,z)$.
+ \item Muestre que, a lo largo del eje del círculo $(\rho = 0)$, el potencial está 
+ dado por 
+ $$
+ \Phi = V\left(1 - \frac{z}{\sqrt{a^2+z^2}}\right)
+ $$
+ \item Muestre que para distancias grandes $(\rho^2 + z^2 \gg a^2)$ el potencial 
+ puede ser expandido en una serie de potencias en $(\rho^2 + z^2)^{-1}$, y que 
+ los términos más importantes son 
+ $$
+ \Phi = \frac{Va^2}{2}\frac{z}{(\rho^2 + z^2)^{3/2}}\left[1 - 
+ \frac{3a^2}{4(\rho^2 + z^2)} + \frac{5(3\rho^2a^2+a^4)}{8\rho^2 + z^2)^2} 
+ + \dots \right]
+ $$
+\end{enumerate}
+
+Verifica que los resultados de las partes (c) y (d) son consistentes el uno 
+con el otro en su rango común de validez.
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\section{Problema 4. Problema 2.5 de Classical Electrodynamics (2da edición) de Jackson 
+\cite{jackson2} y 2.9 (3ra edición) de Jackson \cite{jackson3}.}
+
+Una concha conductora, aislada y esférica de radio $a$ está en un campo eléctrico 
+uniforme $E_0$. Si la esfera es cortada en dos hemisferios por un plano perpendicular 
+al campo, encuentre la fuerza requerida para prevenir que los hemisferios se 
+separen 
+
+\begin{enumerate}[label=\textbf{(\alph*)}]
+ \item si la concha no tiene carga;
+ \item si la carga total en la concha es $Q$.
+\end{enumerate}
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\section{Problema 5. Problema 2.6 de Classical Electrodynamics (2da edición) de Jackson 
+\cite{jackson2} y 2.10 (3ra edición) de Jackson \cite{jackson3}.}
+
+Un capacitor de placas paralelas grande está hecho de dos láminas conductoras 
+planas con una separación $D$, una de ellas tiene tiene un bulto semiesférico 
+de radio $a$ en su superficie interna $(D \gg a)$. El conductor con el bulto 
+es puesto a un potencial cero, y el otro conductor es a un potencial tal que, 
+lejos del bulto, el campo eléctrico entre las placas es $E_0$.
+
+\begin{enumerate}[label=\textbf{(\alph*)}]
+ \item Calcule la densidad de carga superficial en un punto arbitrario del 
+ plano y sobre el bulto, y esboce su comportamiento como una función de la distancia 
+ (o ángulo).
+ \item Muestre que la carga total en el bulto tiene la magnitud $3\pi\epsilon_0E_0a^2$.
+ \item Si, en cambio de tener la otra lámina a un potencial diferente, una carga 
+ puntual $q$ es colocada directamente arriba del bulto semiesférico a una distancia 
+ $d$ de su centro, muestre que la carga inducida sobre el bulto es 
+ $$
+ q' = -q\left[1 - \frac{d^2 - a^2}{d\sqrt{d^2 + a^2}} \right]
+ $$
+\end{enumerate}
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\begin{thebibliography}{10}
+\bibitem{jackson2}
+J. Jackson, \emph{Classical Electrodynamics}, 2da edición. John Wiley and Sons, Inc. 
+1975.
+\bibitem{jackson3}
+J. Jackson, \emph{Classical Electrodynamics}, 3ra edición. John Wiley and Sons, Inc. 
+1999.
+\end{thebibliography}
+
+\end{document}
