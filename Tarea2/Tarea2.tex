@@ -137,6 +137,167 @@ encuentre:
 
 \underline{Solución:} \vspace{.3cm}
 
+De la simetría del problema, debe ser claro que el potencial $\Phi$ debe ser equivalente 
+al producido por una carga $q$, junto con una carga imagen $q' = -q$ a una distancia 
+$d$ del lado opuesto del plano. Entonces el potencial debido a dos cargas puntuales 
+una en $d$ de carga $q$ y una en $-d$ de carga $-q$ puede escribirse como:
+
+\begin{equation}
+ \Phi = \frac{q}{4\pi\epsilon_0}\left[\frac{1}{\sqrt{x^2+y^2+(z-d)^2}} 
+ - \frac{1}{\sqrt{x^2+y^2+(z+d)^2}} \right].
+\end{equation}
+
+\textbf{(a)} La densidad de carga superficial puede encontrarse con la 
+relación\footnote{Ecuación (2.5) de Jackson \cite{jackson3}.} 
+
+\begin{equation}
+ \left\zerodel \sigma = -\epsilon_0\frac{\partial\Phi}{\partial n}\right|_{S},
+\end{equation}
+
+\begin{equation}
+ \left\zerodel \sigma = -\epsilon_0\frac{\partial\Phi}{\partial z}\right|_{z=0},
+\end{equation}
+
+\begin{equation}
+  \left\zerodel \sigma = -\epsilon_0\frac{q}{4\pi\epsilon_0}\left[\frac{-(z-d)}{[x^2+y^2+(z-d)^2]^{3/2}} 
+  + \frac{(z+d)}{[x^2+y^2+(z+d)^2]^{3/2}}\right]\right|_{z=0},
+\end{equation}
+
+Y evaluando en $z=0$ obtenemos 
+
+\begin{equation}
+ \boxed{\sigma = - \frac{1}{2\pi}\frac{qd}{(x^2+y^2+d^2)^{3/2}}}.
+\end{equation}
+
+\textbf{(b)} Calculemos usando la ley de Coulomb la fuerza entre la  carga y 
+su imagen. Es fácil ver al usar la ecuación $Q = \int \sigma dA$ 
+que la carga total inducida es $-q$ \cite{griffiths}, por lo tanto podemos decir que la carga $q$ 
+es atraída hacia al plano, con carga inducida $-q$. Debido a que el potencial
+en la vecindad de $q$ es la misma que en el problema análogo con el método de 
+imágenes (el problema que nos planteamos de una carga $+q$ y una $-q$ sin el plano 
+conductor), la fuerza será simplemente 
+
+\begin{equation}
+ \boxed{\mathbf{F} = - \frac{1}{16\pi\epsilon_0}\frac{q^2}{d^2}\hat{z}}.
+\end{equation}
+
+\textbf{(c)} La fuerza en el plano conductor debe ser igual y opuesta a la fuerza 
+que calculamos en el inciso anterior. El texto nos solicita que hagamos este cálculo 
+de forma independiente del anterior inciso, integrando $\sigma^2/2\epsilon_0$ sobre 
+todo el plano. 
+
+\vspace{.3cm}
+
+La fuerza incremental por unidad de área se define como la presión electrostática, 
+
+\begin{equation}
+ \frac{d\mathbf{F}}{dA} = \sigma\mathbf{E},
+\end{equation}
+
+donde $\sigma$, que es la cantidad de proporcionalidad, es la densidad de carga 
+inducida en el plano que calculamos en el inciso (a). Ahora, el campo eléctrico 
+también está relacionado con $\sigma$ de acuerdo a 
+
+\begin{equation}
+ \mathbf{E} = \frac{\sigma}{2\epsilon_0}\hat{n},
+\end{equation}
+
+y usando estas ecuaciones encontramos la relación conocida para la presión electrostática 
+en la superficie de un conductor, 
+
+\begin{equation}
+  \frac{d\mathbf{F}}{dA} = \frac{\sigma^2}{2\epsilon_0}\hat{n}.
+\end{equation}
+
+La fuerza total es simplemente la presión electrostática por un infinitesimal de 
+área, 
+
+\begin{equation}
+ d\mathbf{F} = \frac{\sigma^2}{2\epsilon_0}\hat{n}dA,
+\end{equation}
+
+y sustituyendo la $\sigma$ que encontramos en (a), obtenemos 
+
+\begin{align*}
+ \mathbf{F} &= \frac{q^2d^2}{8\pi^2\epsilon_0}\int 
+ \frac{rdrd\theta}{(x^2+y^2+d^2)^{3/2}} \hat{z}, \\
+%
+  &= \frac{q^2d^2}{8\pi^2\epsilon_0}\int 
+ \frac{du\theta}{u^{3/2}}\hat{z}, \\
+ %
+ &= - \frac{q^2d^2}{16\pi\epsilon_0}\left\zerodel\frac{1}{u^2}\right|_{d^2}^\infty\hat{z}, \\
+ %
+ &= \frac{q^2d^2}{16\pi\epsilon_0d^4}\hat{z},
+\end{align*}
+
+\begin{equation}
+ \boxed{\therefore \mathbf{F} = \frac{1}{16\pi\epsilon_0}\frac{q^2}{d^2}\hat{z}}.
+\end{equation}
+
+La cual es exactamente igual y opuesta a la fuerza que encontramos en el inciso 
+anterior, como fue anticipado.
+
+\vspace{.3cm}
+
+\textbf{(d)} Para calcular el trabajo necesario para remover la carga $q$ de su 
+posición al infinito, usamos la ecuación 
+
+\begin{equation}
+ W = \int_d^\infty \mathbf{F}(l)\cdot d\mathbf{l} = \frac{q^2}{16\pi\epsilon_0}
+ \int_d^\infty \frac{dz}{z^2} = \left\zerodel 
+ - \frac{q^2}{16\pi\epsilon_0} \frac{1}{z}\right|_d^\infty,
+\end{equation}
+
+\begin{equation}
+ \boxed{\therefore W = \frac{q^2}{16\pi\epsilon_0d}}.
+\end{equation}
+
+\textbf{(e)} La energía potencial entre la carga y su imagen se calcula 
+con la ecuación 
+
+\begin{equation}
+ U = \frac{q_1q_2}{4\pi\epsilon_0|r_1 - r_2|} = \frac{(q)(-q)}{4\pi\epsilon_0(2d)},
+\end{equation}
+
+\begin{equation}
+ \boxed{\therefore U = - \frac{q^2}{8\pi\epsilon_0d}}.
+\end{equation}
+
+Vemos entonces que la energía cinética es exactamente el doble de energía requerida 
+para remover la carga de su posición al infinito, que fue lo que calculamos en el 
+inciso anterior. Esto es debido a que en el sistema original, solo existe el 
+campo eléctrico debido a la partícula $q$, mientras en el problema que planteamos 
+por el método de imágenes también está la energía de la partícula imagen; es decir, 
+el problema real solo llena medio espacio $z>0$, mientras el problema con imágenes 
+el campo llena todo el espacio y es simétrico sobre el origen $z=0$. Esto no dice que, 
+genéricamente, los cálculos de energía electrostática no son directamente transferibles 
+entre problemas reales a problemas resueltos con el método de imágenes.
+
+\vspace{.3cm}
+
+\textbf{(f)} Ahora calculemos, como es solicitado, la energía potencial utilizando 
+la expresión del inciso (d) en eV para un electrón a un ansgtrom de la superficie.
+
+\begin{equation}
+ W = \frac{q^2}{16\pi\epsilon_0d} = \frac{(\text{e}^-)^2}{16\pi(5.526\times 10^7 \text{ e/Vm})
+ (10^{-10}\text{ m})},
+\end{equation}
+
+\begin{equation}
+ \boxed{W = 3.6 \text{ eV}}.
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
 \section{Problema 2. Problema 2.2 de Classical Electrodynamics (tanto en la 2da 
 como en la 3ra edición) de Jackson \cite{jackson2,jackson3}.}
 
@@ -241,6 +402,9 @@ J. Jackson, \emph{Classical Electrodynamics}, 2da edición. John Wiley and Sons,
 \bibitem{jackson3}
 J. Jackson, \emph{Classical Electrodynamics}, 3ra edición. John Wiley and Sons, Inc. 
 1999.
+\bibitem{griffiths}
+D. Griffits, \emph{Introduction to Electrodynamics}, 4ta edición, Pearson Education, 
+2013.
 \end{thebibliography}
 
 \end{document}
