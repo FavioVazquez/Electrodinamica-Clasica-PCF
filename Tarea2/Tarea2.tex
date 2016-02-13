@@ -307,6 +307,81 @@ $a$. Encuentre
 
 \underline{Solución:} \vspace{.3cm}
 
+Este problema es similar al discutido en la sección 2.2 de Jackson \cite{jackson3}, 
+solo que en ese caso la carga estaba afuera de la esfera, pero los argumentos que 
+utilizaremos para resolver este problema son muy similares a los que se presentan 
+en esa sección. 
+
+\vspace{.3cm}
+
+\textbf{(a)} Si colocamos la carga en el punto $r$, entonces, por 
+simetría axial, la carga imagen debe estar localizada a lo largo de la dirección 
+de $r$ a una distancia $r' > a$. Por lo tanto, el potencial a un punto $\mathbf{x}$ será 
+
+\begin{equation}
+ \Phi(\mathbf{x}) = \frac{1}{4\pi\epsilon_0}\left(\frac{q}{|\mathbf{x}-\mathbf{r}|} + 
+ \frac{q'}{|\mathbf{x}-\mathbf{r}'|} \right).
+\end{equation}
+
+Como lo explica el libro, debido a que la esfera está puesta a tierra, debe cumplirse 
+que $\Phi(|\mathbf{x}| = a) = 0$. Y tenemos también como en el ejemplo del libro 
+que 
+
+\begin{equation}
+ \frac{q}{a} = - \frac{q'}{r'} \qquad \text{y} \qquad \frac{r}{a} = \frac{a}{r'},
+\end{equation}
+
+entonces el potencial será (utilizando la ley del coseno)
+
+\begin{equation}
+ \boxed{\Phi(x) = \frac{q}{4\pi\epsilon_0}\left[\frac{1}{(x^2+r^2-2xr\cos{\gamma})^{1/2}}
+ - \frac{a}{r(x^2+\frac{a^4}{r^2}-2x\frac{a^2}{r}\cos{\gamma})^{1/2}}\right]},
+\end{equation}
+
+donde $\gamma$ es el ángulo entre $\mathbf{r}$ y $\mathbf{x}$.
+
+\vspace{.3cm}
+
+\textbf{(b)} Para calcular la densidad de carga superficial inducida en la esfera, 
+calculamos la derivada normal de $\Phi$ en en la superficie:
+
+\begin{equation}
+ \boxed{\sigma = -\epsilon_0\left\zerodel\frac{\partial \Phi}{\partial x}\right|_{x=a} = 
+ \frac{q}{4\pi a r}\frac{1 - \frac{a^2}{r^2}}{\left(1 + \frac{a^2}{r^2} - 
+ 2\frac{a}{r}\cos{\gamma}\right)^{3/2}}}.
+\end{equation}
+
+\textbf{(c)} La fuerza, como lo expresa Jakcson \cite{jackson3}, podemos calcularla 
+inmediatamente simplemente obteniendo la fuerza entre la carga $q$ y su imagen 
+$q'$. La distancia entre ellas es $r - r' = r(1 - a^2/r^2)$, y recordando que 
+$q' = - aq/r$, obtenemos 
+
+\begin{equation}
+ \mathbf{F} = \frac{1}{4\pi\epsilon_0}\frac{q^2}{a^2}\left(\frac{a}{r}\right)^3 
+ \left(1 - \frac{a^2}{r^2} \right)^{-2} \hat{r},
+\end{equation}
+
+que es igual en magnitud a la fuerza encontrada en la sección 2.2 de Jackson \cite{jackson3},
+pero hacia la dirección opuesta.
+
+\vspace{.3cm}
+
+\textbf{(d}) Si la esfera es mantenida a un potencial fijo, el potencial dentro de 
+la esfera está dado por el potencial $\Phi$ que obtuvimos más $V$, la densidad de 
+carga superficial inducida en la superficie interna y la fuerza se mantendrán. Habrá 
+una densidad de carga superficial uniformemente distribuida en la superficie 
+externa.
+
+\vspace{.3cm}
+
+Si la esfera tiene una carga total $Q$ en sus superficies internas y externas, 
+por la ley de Gauss sabemos que la carga en la superficie interna será la misma, 
+$-q$, y por lo tanto en la superficie externa la carga será $Q+q$, por lo tanto 
+el potencial será igual al que obtuvimos pero sumando el potencial debido a la 
+carga $Q+q$. La densidad de carga superficial en la superficie interna no se ve 
+afectada, pero la externa será proporcional a $Q+q$. Por último la fuerza será 
+la misma.
+
 \section{Problema 3. Problema 2.3 de Classical Electrodynamics (2da edición) de Jackson 
 \cite{jackson2} y 2.7 (3ra edición) de Jackson \cite{jackson3}.}
 
