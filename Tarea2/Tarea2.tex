@@ -390,7 +390,7 @@ condiciones de frontera de Dirichlet sobre el plano $z = 0$ (y en infinito).
 
 \begin{enumerate}[label=\textbf{(\alph*)}]
  \item Escribe la función de Green apropiada $G(\mathbf{x},\mathbf{x}')$.
- \item Si el potencial $z = 0$ es especificado por $\Phi = V$ adentro de un círculo 
+ \item Si el potencial en el plano $z = 0$ es especificado por $\Phi = V$ adentro de un círculo 
  de radio $a$ centrado en el origen, y $\Phi = 0$ afuera del círculo, encuentre 
  una expresión integral para el potencial en el punto $P$ especificado en términos 
  de coordenadas cilíndricas $(\rho,\phi,z)$.
@@ -404,7 +404,7 @@ condiciones de frontera de Dirichlet sobre el plano $z = 0$ (y en infinito).
  los términos más importantes son 
  $$
  \Phi = \frac{Va^2}{2}\frac{z}{(\rho^2 + z^2)^{3/2}}\left[1 - 
- \frac{3a^2}{4(\rho^2 + z^2)} + \frac{5(3\rho^2a^2+a^4)}{8\rho^2 + z^2)^2} 
+ \frac{3a^2}{4(\rho^2 + z^2)} + \frac{5(3\rho^2a^2+a^4)}{8(\rho^2 + z^2)^2} 
  + \dots \right]
  $$
 \end{enumerate}
@@ -415,6 +415,322 @@ con el otro en su rango común de validez.
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+\textbf{(a)} Este problema es similar a uno en el cual tratamos con una carga puntual y un plano 
+conductor infinito, y utilizaremos un poco esta similitud para resolver el problema 
+que no es presentado. La función de Green apropiada para el sistema que propone el 
+problema, con las condiciones de frontera de Dirichlet requieren que $G_D = 0$ en la 
+superficie. Recordemos que podemos escribir esta función como 
+
+\begin{equation}
+ G(\mathbf{x},\mathbf{x}') = \frac{1}{|\mathbf{x} - \mathbf{x}'} + 
+ F(\mathbf{x},\mathbf{x}'),
+\end{equation}
+
+donde la función $F$ debe satisfacer la ecuación de Laplace 
+
+\begin{equation}
+ \nabla^2F(\mathbf{x},\mathbf{x}') = 0.
+\end{equation}
+
+El problema para hallar la función de Green se convierte entonces en encontrar 
+la función $F$ apropiada, tal que, la función de Green se haga cero en la frontera. 
+Como mencionamos, este problema es equivalente a la situación en la que tenemos una 
+carga puntual de carga en $\mathbf{x}'$, que cree un potencial $q/|\mathbf{x}-
+\mathbf{x}'|$, en la presencia de un conductor plano infinito en $z = 0$. Y por lo 
+tanto la función de Green que encontraremos será idéntica en ambos casos. 
+
+\vspace{.3cm}
+
+Para resolver el problema de una carga $q$ en $\mathbf{x}'$ en la presencia de un 
+conductor plano en $z = 0$, usaremos el método de imágenes. Colocamos una carga 
+imagen $q'$ en $(x',y',-z')$ tal que el potencial sea la suma de las dos cargas 
+puntuales:
+
+\begin{equation*}
+ \Phi = \frac{1}{4\pi\epsilon_0}\frac{q}{\sqrt{(x-x')^2 + (y-y')^2 + (z-z')^2}} + 
+ \frac{1}{4\pi\epsilon_0}\frac{q'}{\sqrt{(x-x')^2 + (y-y')^2 + (z-z')^2}}.
+\end{equation*}
+
+Al aplicar la condición de frontera, que $Phi = 0$ en $z = 0$, obtenemos\footnote{
+$(-z')^2 = (z')^2$.}
+
+\begin{equation}
+  0 = \frac{1}{4\pi\epsilon_0}\frac{q}{\sqrt{(x-x')^2 + (y-y')^2 + (z')^2}} + 
+ \frac{1}{4\pi\epsilon_0}\frac{q'}{\sqrt{(x-x')^2 + (y-y')^2 + (z')^2}}.
+\end{equation}
+
+\begin{equation}
+ \therefore q' = -q.
+\end{equation}
+
+Entonces encontramos que la carga imagen tiene una carga inversa a la original, y 
+localizada en la posición opuesta a la original, lo cual tiene sentido ya que podemos 
+ver a la superficie conductora que consideramos en el método de imágenes como un 
+espejo. El potencial es entonces 
+
+\begin{equation*}
+  \Phi = \frac{q}{4\pi\epsilon_0}\left[\frac{1}{\sqrt{(x-x')^2 + (y-y')^2 + (z-z')^2}} - 
+ \frac{1}{\sqrt{(x-x')^2 + (y-y')^2 + (z-z')^2}}\right].
+\end{equation*}
+
+Volviendo ahora a nuestro problema original sin el plano conductor ni la carga 
+puntual, sino con una distribución de carga en la presencia de la condición de 
+frontera de Dirichlet en $z=0$. La solución al problema original debe encontrarse 
+con la ecuación (1.44) de Jakcson \cite{jackson3}, 
+
+\begin{equation}
+ \Phi(\mathbf{x}) = \frac{1}{4\pi\epsilon_0} \int_V \rho(\mathbf{x}')G_D(\mathbf{x},
+ \mathbf{x}')d^3x' - \frac{1}{4\pi}\oint_S \phi(\mathbf{x}')\frac{G_D}{\partial n'}da',
+\end{equation}
+
+pero ya conocemos la función de Green que debe ser usada en esta ecuación, es simplemente 
+la solución equivalente a uno con carga puntual $q = 4\pi\epsilon_0$: 
+
+\begin{equation*}
+ \boxed{G_D(\mathbf{x},\mathbf{x}') = \frac{1}{\sqrt{(x-x')^2 + (y-y')^2 + (z-z')^2}} - 
+ \frac{1}{\sqrt{(x-x')^2 + (y-y')^2 + (z+z')^2}}}.
+\end{equation*}
+
+\textbf{(b)} En este inciso nos solicitan encontrar una expresión integral para 
+el potencial en el punto $P$ especificado en términos de coordenadas cilíndricas, en 
+el caso en que el potencial en el plano $z=0$ es especificado por $\Phi = V$ dentro 
+de un círculo de radio $a$ centrado en el origen y $\Phi = 0$ fuera de ese círculo. 
+Para resolver este inciso podemos asumir que no hay carga en el espacio, y por lo tanto 
+la solución con funciones de Green y condiciones a la frontera de Dirichlet para 
+el potencial se convierte en\footnote{Ver ecuación (1.44) de Jackson \cite{jackson3}, 
+esta ecuación es simplemente esa pero haciendo cero la integral de la izquierda.}
+
+\begin{equation}
+  \Phi(x) = - \frac{1}{4\pi}\oint_S \phi(\mathbf{x}')\frac{G_D}{\partial n'}da',
+\end{equation}
+
+donde la superficie $S$ en este caso es una caja con un lado en el plano $z=0$ y el los 
+otros lados en infinito. El potencial se va a cero en el infinito, por lo tanto los 
+lados en infinito no contribuyen a la integral. El potencial también es cero en todos 
+lados del plano $z=0$ afuera del círculo, por lo tanto la integral será distinta de 
+cero solo de $0$ al radio del círculo $a$. Entonces 
+
+\begin{equation}
+ \Phi(x) = - \frac{1}{4\pi}\int_0^a \int_0^{2\pi} \phi(\mathbf{x}')\frac{G_D}{\partial n'}
+ \rho'd\phi'd\rho',
+\end{equation}
+
+pero $\Phi = V$ adentro del círculo, por lo tanto 
+
+\begin{equation}
+ \Phi(x) = - \frac{V}{4\pi}\int_0^a \int_0^{2\pi} \frac{G_D}{\partial n'}
+ \rho'd\phi'd\rho'.
+\end{equation}
+
+La normal $n'$ es definida como apuntando afuera del volumen encerrado por lo tanto 
+para este problema $n' = -z'$, 
+
+\begin{equation}
+ \Phi(x) = \frac{V}{4\pi}\int_0^a \int_0^{2\pi} \frac{G_D}{\partial z'}
+ \rho'd\phi'd\rho'.
+\end{equation},
+
+sustituyendo ahora la función de Green que encontramos en el anterior inciso tenemos 
+
+\begin{align*}
+  \Phi(x) = \frac{V}{4\pi}\int_0^a \int_0^{2\pi}\left[ \frac{d}{dz'}
+  \frac{1}{\sqrt{(x-x')^2 + (y-y')^2 + (z-z')^2}}\right\zerodel - \\
+ \left\zerodel\frac{1}{\sqrt{(x-x')^2 + (y-y')^2 + (z+z')^2}}
+ \rho'd\phi'd\rho'\right].
+\end{align*}
+
+Pasando ahora a coordenadas cilíndricas obtenemos 
+
+\begin{align*}
+ \Phi(x) = \frac{V}{4\pi}\int_0^a \int_0^{2\pi}\left[ \frac{d}{dz'}
+  \frac{1}{\sqrt{\rho^2 + \rho'^2 - 2\rho\rho'\cos{(\phi - \phi')} + (z-z')^2}}\right\zerodel - \\
+ \left\zerodel\frac{1}{\sqrt{\rho^2 + \rho'^2 - 2\rho\rho'\cos{(\phi - \phi')} + (z+z')^2}}
+ \rho'd\phi'd\rho'\right].
+\end{align*}
+
+Y derivando, 
+
+\begin{align*}
+ \Phi(x) = \frac{V}{4\pi}\int_0^a \int_0^{2\pi}\left[ \left(-\frac{1}{2}\right)
+  \frac{-2(z-z')}{(\rho^2 + \rho'^2 - 2\rho\rho'\cos{(\phi - \phi')} + (z-z')^2)^{3/2}}\right\zerodel - \\
+ \left\zerodel\left(-\frac{1}{2}\right)\frac{2(z+z')}{(\rho^2 + \rho'^2 - 2\rho\rho'\cos{(\phi - \phi')} + (z+z')^2)^{3/2}}
+ \rho'd\phi'd\rho'\right].
+\end{align*}
+
+Ahora evaluamos en $z' = 0$ debido a que nuestra superficie de integración, que es 
+en el sistema primado, está contenido en este plano, y entonces 
+
+\begin{equation}
+ \boxed{\Phi(\mathbf{x}) = \frac{zV}{2\pi}\int_0^a\int_0^{2\pi} 
+ \frac{\rho' d\phi' d\rho'}{(\rho^2 + \rho'^2 - 2\rho\rho'\cos{(\phi - \phi')} + z^2)^{3/2}}}.
+\end{equation}
+
+\textbf{(c)} Debemos ahora probar que a lo largo del eje del círculo $(\rho = 0)$, 
+está dado por 
+
+\begin{equation}
+ \Phi = V\left( 1 - \frac{z}{\sqrt{a^2 + z^2}}\right).
+\end{equation}
+
+Si hacemos $\rho = 0$ en la expresión para el potencial que encontramos en el 
+anterior inciso, nos queda 
+
+\begin{equation}
+ \Phi = \frac{zV}{2\pi}\int_0^a\int_0^{2\pi} \frac{\rho'd\phi'd\rho'}{(\rho'^2 + 
+ z^2)^{3/2}},
+\end{equation}
+
+\begin{equation}
+  \Phi = \frac{zV}{2\pi}\int_0^{2\pi}d\phi'\int_0^a \frac{\rho'd\rho'}{(\rho'^2 + 
+ z^2)^{3/2}},
+\end{equation}
+
+\begin{equation}
+ \Phi = zV \int_0^a \frac{\rho'd\rho'}{(\rho'^2 +  z^2)^{3/2}},
+\end{equation}
+
+y haciendo el cambio de variable $u = \rho'^2 + z^2 \Rightarrow du = 2\rho'd\rho'$, 
+
+\begin{equation}
+ \Phi = \frac{zV}{2}\int_{z^2}^{a^2+z^2} \frac{du}{u^{3/2}},
+\end{equation}
+
+\begin{equation}
+ \Phi = - zV \left[\frac{1}{\sqrt{u}}\right]_{z^2}^{a^2+z^2},
+\end{equation}
+
+\begin{equation}
+ \boxed{\Phi = V\left[1 - \frac{z}{\sqrt{a^2 + z^2}} \right]}.
+\end{equation}
+
+\hspace{10cm}\includegraphics[scale=0.2]{logoQED}
+
+\textbf{(d)} Por último hay que mostar que para distancias grandes, 
+i.e. $\rho^2 + z^2 \gg a^2$, el potencial puede ser expandido en series 
+de potencia para $(\rho^2 + z^2)^{-1}$, y que los términos más importantes 
+de esta expansión son 
+
+\begin{equation}
+ \Phi = \frac{Va^2}{2}\frac{z}{(\rho^2 + z^2)^{3/2}}\left[1 - 
+ \frac{3a^2}{4(\rho^2 + z^2)} + \frac{5(3\rho^2a^2+a^4)}{8\rho^2 + z^2)^2} 
+ + \dots \right],
+\end{equation}
+
+y validar la consistencia de este resultado con lo obtenido en el anterior 
+inciso en su rango común de validez. Recordemos la expresión que 
+encontramos en el inciso (b) para el potencial, 
+
+\begin{equation}
+ \Phi(\mathbf{x}) = \frac{zV}{2\pi}\int_0^a\int_0^{2\pi} 
+ \frac{\rho' d\phi' d\rho'}{(\rho^2 + \rho'^2 - 2\rho\rho'\cos{(\phi - \phi')} + 
+ z^2)^{3/2}},
+\end{equation}
+
+primero viendo que el problema tiene simetría azimutal, podemos hacer 
+el cambio de variables $\phi' \rightarrow \phi' + \phi$, y obtener 
+
+\begin{equation}
+ \Phi(\mathbf{x}) = \frac{zV}{2\pi}\int_0^a\int_0^{2\pi} 
+ \frac{\rho' d\phi' d\rho'}{(\rho^2 + \rho'^2 - 2\rho\rho'\cos{\phi'} + 
+ z^2)^{3/2}},
+\end{equation}
+
+ahora factorizando $(\rho^2 + z^2)^{3/2}$ nos queda 
+
+\begin{equation}
+ \Phi = \frac{zV}{2\pi}\frac{1}{(\rho^2 + z^2)^{3/2}} 
+ \int_0^{2\pi}\int_0^a  \rho'd\rho'd\phi' 
+ \left(1 + \frac{\rho'^2 - 2\rho\rho'\cos{\theta'}}{\rho^+z^2}\right)^{-3/2}.
+\end{equation}
+
+De acuerdo a la expansión en la serie binomial tenemos que 
+
+\begin{equation}
+ (1 + x)^n = 1 + nx + \frac{n(n-1)}{2}x^2 + \dots,
+\end{equation}
+
+por lo tanto nos queda al expandir el término en la integral del 
+potencial resulta (quedándonos hasta segundo orden)
+
+\begin{align*}
+ \Phi &= \frac{zV}{2\pi}\frac{1}{(\rho^2 + z^2)^{3/2}} \int_0^{2\pi} 
+ \int_0^a \rho'd\rho'd\phi' \left[1 - \frac{3}{2}(\rho^2 + z^2)^{-1} 
+ (\rho'^2 - 2\rho\rho'\cos{\phi'})\right\zerodel \\
+ &\left\zerodel + \frac{15}{8}(\rho^2 + z^2)^{-2} + \dots \right].
+\end{align*}
+
+Ahora podemos integrar término a término 
+
+\begin{align*}
+ \Phi &= \frac{zV}{2\pi}\frac{1}{(\rho^2 + z^2)^{3/2}}\int_0^{2\pi}
+ \int_0^a \rho'd\rho'd\phi' \\
+ &- \frac{3}{2}(\rho^2 + z^2)^{-1} 
+ \int_0^{2\pi} \int_0^a \rho'd\rho'd\phi' [\rho'^2 - 2\rho\rho'\cos{\phi}'] \\
+ &+ \frac{15}{8}(\rho^2 + z^2)^{-2} 
+ \int_0^{2\pi}\int_0^a \rho'd\rho'd\phi' [\rho'^2 - 2\rho\rho'\cos{\phi}']
+ + \dots,
+\end{align*}
+
+que resulta luego de integrar y evaluar los límites de integración 
+en 
+
+\begin{align*}
+  \Phi = \frac{zV}{2\pi} \frac{1}{(\rho^2 + z^2)^{3/2}}\left\{[\pi a^2] - 
+ \frac{3}{2}(\rho^2 + z^2)^{-1}\left[\frac{\pi}{2}a^4 \right]\right\zerodel \\
+ + \left\zerodel \frac{15}{8}(\rho^2 + z^2)^{-2}\left[2\pi\frac{a^6}{6} + 
+ 4\pi\rho^2\frac{a^4}{4}\right] + \dots \right\},
+\end{align*}
+
+y con un poco de manipulación algebraica llegamos a 
+
+\begin{equation}
+ \boxed{\Phi = \frac{Va^2}{2}\frac{z}{(\rho^2 + z^2)^{3/2}}\left[1 - 
+ \frac{3a^2}{4(\rho^2 + z^2)} + \frac{5(3\rho^2a^2+a^4)}{8(\rho^2 + z^2)^2} 
+ + \dots \right]}.
+ \label{eq:expansionPoten1}
+\end{equation}
+
+\hspace{10cm}\includegraphics[scale=0.2]{logoQED}
+
+Por último, debemos verificar que esta ecuación que acabamos de obtener 
+sea equivalente a la que encontramos en el inciso anterior, es decir 
+a lo largo del eje del círculo $(\rho = 0)$. Entonces haciendo $\rho = 0$ 
+en \eqref{eq:expansionPoten1} obtenemos 
+
+\begin{equation}
+ \Phi = \frac{Va^2}{2}\frac{1}{z^2}
+ \left[1 - \frac{3}{4}\frac{a^2}{z^2} + 
+ \frac{5}{8}\frac{a^4}{z^4} + \dots \right],
+\end{equation}
+
+\begin{equation}
+ \Phi = V\left[\frac{a^2}{2z^2} - 
+ \frac{3}{8}\frac{a^4}{z^4} + 
+ \frac{5}{16}\frac{a^6}{z^6} + \dots \right],
+\end{equation}
+
+\begin{equation}
+ \therefore \Phi = V\left[1 - \left(1 - \frac{a^2}{2z^2} - 
+ \frac{3}{8}\frac{a^4}{z^4} + 
+ \frac{5}{16}\frac{a^6}{z^6} + \dots  \right) \right],
+\end{equation}
+
+y recordando la expansión $(1 + x)^{-1/2} = 1 - \frac{1}{2}x + 
+\frac{3}{8}x^2 - \frac{5}{16}x^3 + \dots$, donde $x \rightarrow a^2/z^2$, 
+nos queda 
+
+\begin{equation*}
+ \Phi = V\left[1 - \left(1 + \frac{a^2}{z^2} \right)^{-1/2} \right] = 
+ V\left[1 - \left(\frac{a^2+z^2}{z^2} \right)^{-1/2} \right] = 
+ V\left[1 - \left(\frac{(a^2+z^2)^{-1/2}}{z^{-1}} \right) \right],
+\end{equation*}
+
+\begin{equation}
+ \boxed{\therefore \Phi = V \left[1 - \frac{z}{\sqrt{a^2 + z^2}} \right]}.
+\end{equation}
+
+\hspace{10cm}\includegraphics[scale=0.2]{logoQED}
 
 \section{Problema 4. Problema 2.5 de Classical Electrodynamics (2da edición) de Jackson 
 \cite{jackson2} y 2.9 (3ra edición) de Jackson \cite{jackson3}.}
