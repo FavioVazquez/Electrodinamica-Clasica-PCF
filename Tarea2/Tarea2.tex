@@ -749,6 +749,132 @@ separen
 
 \underline{Solución:} \vspace{.3cm}
 
+Este problema es muy similar al que se discute en la sección 2.5 de Jackson \cite{jackson3}. En 
+esta sección el texto calcula la densidad de carga superficial $\sigma$ inducida en una esfera de radio 
+$a$ en un campo eléctrico uniforme $E_0$. Este resultado es muy importante ya que 
+la ecuación que utilizaremos para encontrar la fuerza solicitada en cada caso, 
+mediante la presión electrostática, requiere conocer el valor de $\sigma$. Aunque 
+no calcularemos todo como lo hace el texto, vale la pena recordar cómo calcula 
+esta $\sigma$.
+
+\vspace{.3cm}
+
+\textbf{(a)} Alineamos el eje $z$ en la dirección del campo eléctrico. Como hace 
+el texto, para encontrar el potencial afuera de la esfera colocamos una carga en 
+$z = -R$ y una en $z = R$ con cargas $+Q$ y $-Q$ respectivamente, y dejamos que 
+$R$ y $Q$ se acerquen a infinito con $Q/R^2$ constante. La respuesta de la esfera 
+puede representarse con dos cargas imágenes $-Qa/R$ y $+Qa/R$ en la esfera en 
+$-a^2/R$ y $a^2/R$ respectivamente. El potencial afuera en el caso de que la 
+esfera no tenga carga en el campo eléctrico uniforme es el potencial debido a 
+estas cuatro cargas:
+
+\begin{align*}
+ \Phi &= \frac{Q}{4\pi\epsilon_0}\left[ \frac{1}{\sqrt{r^2 + R^2 + 2rR\cos{\theta}}} 
+ - \frac{1}{\sqrt{r^2 + R^2 - 2rR\cos{\theta}}}\right\zerodel \\
+ &+\left\zerodel \frac{a/R}{\sqrt{r^2+\frac{a^2}{R^2}}-2a^2\frac{r}{R}\cos{\theta}}
+ - \frac{a/R}{\sqrt{r^2+\frac{a^2}{R^2}}+2a^2\frac{r}{R}\cos{\theta}}\right],
+\end{align*}
+
+en el límite cuando $R\gg r$, y reconociendo a $E_0$ como $2Q/4\pi\epsilon_0 R^2$, 
+luego de un poco de cálculo, encontramos que la distribución superficial de carga 
+de la esfera es 
+
+\begin{equation}
+ \sigma = 3\epsilon_0 E_0 \cos{\theta}.
+\end{equation}
+
+Si la esfera es cortada en dos hemisferio en ángulo polar $\theta = \pi/2$, utilizando 
+la definición de presión electrostática, la fuerza que siente el hemisferio inferior 
+será 
+
+\begin{equation}
+ \mathbf{F} = \frac{1}{2\epsilon_0}\int \sigma^2 \hat{r} da,
+\end{equation}
+
+sustituyendo el valor para $\sigma$ que encontramos y la definición del diferencial 
+de área en coordenadas esféricas
+
+\begin{equation}
+ \mathbf{F} = \hat{k} \frac{a^2}{2\epsilon_0}\int_0^2\pi \int_{\pi/2}^\pi 
+ (3\epsilon_0 E_0 \cos{\theta})^2\cos{\theta}\sen{\theta}d\theta d\phi,
+\end{equation}
+
+\begin{equation}
+ \mathbf{F} = \hat{k} 9\pi \epsilon_0 E_0^2 a^2 \int_{\pi/2}^\pi \cos^3{\theta}
+ \sen{\theta} d\theta,
+\end{equation}
+
+\begin{equation}
+ \boxed{\therefore \mathbf{F} = - \frac{9}{4}\pi\epsilon_0E_0^2a^2\hat{k}},
+\end{equation}
+
+y por lo tanto la fuerza necesaria para mantener al hemisferio inferior en su lugar 
+debe ser igual y en dirección opuesta, 
+
+\begin{equation}
+ \boxed{\mathbf{F} = \frac{9}{4}\pi\epsilon_0E_0^2a^2\hat{k}}.
+\end{equation}
+
+Debido a la simetría del problema, la fuerza necesaria para mantener el hemisferio 
+superior en lugar debe ser igual y opuesta a la encontrada.
+
+\vspace{.3cm}
+
+\textbf{(b)} Si la esfera tiene una carga total $Q$, esta se distribuirá uniformemente 
+en la esfera como una carga adicional a la inducida, y utilizando argumentos similares 
+a los del pasado inciso, encontramos 
+
+\begin{equation}
+ \sigma = 3\epsilon_0 E_0 \cos{\theta} + \frac{Q}{4\pi a^2}.
+\end{equation}
+
+De nuevo la fuerza que sentirá el hemisferio inferior luego del corte será:
+
+\begin{equation}
+ \mathbf{F} = \frac{1}{2\epsilon_0}\int \sigma^2 \hat{r} da,
+\end{equation}
+
+sustituyendo el valor para $\sigma$ que encontramos y la definición del diferencial 
+de área en coordenadas esféricas
+
+\begin{equation}
+ \mathbf{F} = \hat{k} \frac{a^2}{2\epsilon_0}\int_0^{2\pi} \int_{\pi/2}^\pi
+ \left(9\epsilon_0^2E_0^2 \cos^2{\theta} + 6\epsilon_0 E_0 \cos{\theta}
+ \frac{Q}{4\pi a^2} + \frac{Q^2}{16\pi^2a^2}\right)\cos{\theta}\sen{\theta}
+ d\theta d\phi.
+\end{equation}
+
+El primer término representa la fuerza en las cargas inducidas debido al campo 
+externo y al campo de las cargas inducidas. El segundo término representa la fuerza 
+en la carga $Q$ debida al campo externo. El tercer término representa la fuerza de 
+$Q$ en sí misma. Hay que destacar que la fuerza del campo externo en la carga puntual
+$Q$ no tenderá a separar el hemisferio, por lo tanto como queremos la fuerza necesaria 
+para que no se separen los hemisferios, despreciamos el término central y nos queda:
+
+\begin{equation}
+ \mathbf{F} = \hat{k} \frac{a^2}{2\epsilon_0}\int_0^{2\pi} \int_{\pi/2}^\pi
+ \left(9\epsilon_0^2E_0^2 \cos^2{\theta} 
+ + \frac{Q^2}{16\pi^2a^2}\right)\cos{\theta}\sen{\theta}
+ d\theta d\phi.
+\end{equation}
+
+Integrando obtenemos 
+
+\begin{equation}
+ \boxed{\mathbf{F} = - \hat{k}\left[\frac{9}{4}\pi a^2 \epsilon_0 E_0^2 +
+ \frac{Q^2}{32\pi\epsilon_0 a^2}\right]}.
+\end{equation}
+
+Por lo tanto la fuerza necesaria para mantener el hemisferio inferior en su lugar 
+debe ser igual y en dirección opuesta:
+
+\begin{equation}
+ \boxed{\mathbf{F} = \hat{k}\left[\frac{9}{4}\pi a^2 \epsilon_0 E_0^2 +
+ \frac{Q^2}{32\pi\epsilon_0 a^2}\right]}.
+\end{equation}
+
+De nuevo, la fuerza en el hemisferio superior será igual y opuesta a la encontrada. 
+
 \section{Problema 5. Problema 2.6 de Classical Electrodynamics (2da edición) de Jackson 
 \cite{jackson2} y 2.10 (3ra edición) de Jackson \cite{jackson3}.}
 
