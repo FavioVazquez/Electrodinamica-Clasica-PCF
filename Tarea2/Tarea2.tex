@@ -901,6 +901,127 @@ lejos del bulto, el campo eléctrico entre las placas es $E_0$.
 
 \underline{Solución:} \vspace{.3cm}
 
+Si asumimos que los planos son infinitos y muy lejos el uno del otro, vemos que 
+el sistema puede aproximarse por una esfera conectada a tierra en un campo eléctrico 
+uniforme (damos por hecho que el propósito de la placa no conectada a tierra es 
+causar que el campo eléctrico entre los planos sea constante y uniforme). Por lo tanto, 
+el potencial eléctrico entre está dado por la ecuación (2.14) de Jackson \cite{jackson3}: 
+
+\begin{equation}
+ \Phi = - E_0\left(r - \frac{a^3}{r^2}\right)\cos{\theta}.
+\end{equation}
+
+En el bulto, la densidad de carga superficial es simplemente la dada por la ecuación 
+(2.15) de Jackson \cite{jackson3}, y usada en los anteriores problemas, 
+
+\begin{equation}
+ \boxed{\sigma_{bulto} = 3\epsilon_0 E_0 \cos{\theta}}.
+\end{equation}
+
+Para encontrar la densidad de carga superficial en el plano (que localizamos en 
+$z=0$), necesitamos convertir el potencial entre las placas a coordenadas 
+cartesianas, si recordamos que $z = r\cos{\theta}$, entonces 
+
+\begin{align*}
+ \Phi &= - E_0 r \cos{\theta}\left(1 - \frac{a^3}{r^3}\right) \\
+ &= - E_0 z \left(1 - \frac{a^3}{r^3}\right),
+\end{align*}
+
+y entonces 
+
+\begin{equation}
+ \sigma_{plano} = - \epsilon_0 \left\zerodel\frac{\partial \Phi}{\partial z}\right|_{z=0},
+\end{equation}
+
+\begin{equation}
+ \boxed{\sigma_{plano} = - E_0 \left(1 - \frac{a^3}{r^3}\right)}.
+\end{equation}
+
+Debajo están graficadas las densidades de carga superficial tanto sobre el bulto 
+como sobre el plano,
+
+\begin{figure}[H]
+ \center
+ \includegraphics[scale=0.8]{problema5fig1}
+ \caption{Esbozo de la densidad de carga superficial tanto para el bulto como 
+ para el plano. La zona central, donde $\sigma$ tiene un mayor valor corresponde 
+ al bulto, y la de la izquierda y derecha al plano. Otro dato importante es que 
+ en la punta del bulto, la densidad de carga superficiales tres veces mayor 
+ que en el plano, sin importar el tamaño del bulto. El gráfico está hecho en 
+ unidades de $\epsilon_0E_0$.}
+\end{figure}
+
+\vspace{.3cm}
+
+\textbf{(b)} Para calcular la carga total en el bulto, integraremos la carga 
+de densidad superficial sobre el área total del bulto, 
+
+\begin{align*}
+ Q &= \int 3\epsilon_0E_0\cos{\theta}ds \\
+   &= 3\epsilon_0E_0 \int_0^{2\pi}\int_{\pi/2}^{\pi} \cos{\theta} a^2 
+   \sen{\theta} d\theta d\phi \\
+   &= 3a^2\epsilon_0E_0 \int_0^{2\pi}\int_{\pi/2}^{\pi} \cos{\theta}
+   \sen{\theta} d\theta d\phi,
+\end{align*}
+
+haciendo ahora el cambio de variable $u = \sen{\theta}$, $du = \cos{\theta}$, 
+
+\begin{align*}
+ Q &= 3a^2\epsilon_0E_0\int_0^{2\pi}\int_{0}^{1} udud\phi \\
+   &= 3a^2\epsilon_0E_0 \frac{1}{2}2\pi,
+\end{align*}
+
+\begin{equation}
+ \boxed{\therefore Q = 3\pi a^2 \epsilon_0E_0 }.
+\end{equation}
+
+\hspace{10cm}\includegraphics[scale=0.2]{logoQED}
+
+\textbf{(c)} Si ahora en vez de tener otra lámina a un diferente potencial, colocamos 
+una carga puntual $q$ directamente arriba del bulto a una distancia $d$ del centro, 
+el problema se resuelve haciendo uso del método de imágenes, en el cual colocamos 
+dos cargas afuera de una esfera conductora con carga neta cero. La geometría que 
+utilizaremos, es colocar las cargas originales $q$ y $-q$ en $z=d$ y $z=-d$, 
+respectivamente. Las cargas imágenes $-q\frac{a}{d}$ y $q\frac{a}{d}$ las colocaremos 
+en $z=q\frac{a^2}{d}$ y $z=-q\frac{a^2}{d}$ respectivamente. El nuevo sistema 
+se muestra debajo, 
+
+\begin{figure}[H]
+ \center
+ \includegraphics[scale=0.8]{problema5fig3}
+ \caption{Disposición de cargas y geometría para el sistema del inciso (c).}
+\end{figure}
+
+Utilizando la ecuación (2.5) de Jackson \cite{jackson3} y el principio de superposición 
+encontramos que la densidad de carga superficial sobre el bulto es ahora
+
+\begin{equation}
+ \sigma_{bulto} = - \frac{q}{4\pi a^2}\frac{a}{d}\left(1 - \frac{a^2}{d^2} \right)
+ \left[\frac{1}{\left(1 + \frac{a^2}{d^2} - 2\frac{a}{d}\cos{\theta}\right)^{3/2}} 
+ - \frac{1}{\left(1 + \frac{a^2}{d^2} - 2\frac{a}{d}\cos{\theta}\right)^{3/2}}\right].
+\end{equation}
+
+La carga $q'$ inducida sobre el bulto es, con $z = cos\theta$, $u = 1+\frac{a^2}{d^2}$ y 
+$v = 2\frac{a}{d}$, 
+
+\begin{align*}
+ q' &= 2\pi a^2 \frac{1}{4\pi a^2}\frac{a}{d}\left(1 - \frac{a^2}{d^2} \right)
+ \left[\int_0^1 \frac{dz}{(u-vz)^{3/2}} - \int_0^1 \frac{dz}{(u+vz)^{3/2}} \right] \\
+   &= - \frac{q}{2}\frac{a}{d}\left(1 - \frac{a^2}{d^2} \right)\left\{
+   \left[\frac{2}{v\sqrt{u - vz}}\right]_0^1 - 
+   \left[ - \frac{2}{v\sqrt{u + vz}}\right]_0^1\right\} \\
+   &= q \left(1 - \frac{a^2}{d^2} \right) 
+   \left[\frac{1}{\sqrt{1 + \frac{a^2}{d^2}}} - \frac{d^2}{d^2 - a^2} \right] \\
+   &= q \left(\frac{d^2 - a^2}{d^2}\right) \left(\frac{d^2}{d^2 - a^2} \right)
+   \left[\frac{d^2 - a^2}{d\sqrt{d^2 + a^2}} - 1 \right]
+\end{align*}
+
+\begin{equation}
+ \boxed{\therefore q' = -q\left[1 - \frac{d^2 - a^2}{d\sqrt{d^2 + a^2}} \right]}
+\end{equation}
+
+\hspace{10cm}\includegraphics[scale=0.2]{logoQED}
+
 \begin{thebibliography}{10}
 \bibitem{jackson2}
 J. Jackson, \emph{Classical Electrodynamics}, 2da edición. John Wiley and Sons, Inc. 
