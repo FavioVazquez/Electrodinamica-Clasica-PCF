@@ -24,11 +24,15 @@
 \usetikzlibrary{calc}
 \numberwithin{equation}{section}
 
+% Footnotes with symbols
+
 \makeatletter
 \def\@fnsymbol#1{\ensuremath{\ifcase#1\or \dagger\or \ddagger\or
    \mathsection\or \mathparagraph\or \|\or **\or \dagger\dagger
    \or \ddagger\ddagger \else\@ctrerr\fi}}
 \makeatother
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 % Cool letters 
 \input{Typocaps.fd}
@@ -42,8 +46,6 @@ gigantium humeris insidentes}
 
 % Big Pictures
 \usepackage[export]{adjustbox}
-
-\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 % Enviroment for theorems
 \newmdtheoremenv[frametitle=Teorema]{theo}{Theorem}
@@ -162,6 +164,14 @@ gigantium humeris insidentes}
 
 \end{titlepage}
 
+% ---------------------------------------------------------------------------------------
+%         HEADER
+%----------------------------------------------------------------------------------------
+
+\fancyhead[L]{Favio Vázquez}
+\fancyhead[R]{\thepage}
+
+%----------------------------------------------------------------------------------------
 \setcounter{footnote}{0}
 \renewcommand*{\thefootnote}{\arabic{footnote}}
 
