@@ -162,6 +162,160 @@ $$
 
 \underline{Solución:} \vspace{.3cm}
 
+Para calcular el campo eléctrico en el eje polar proponemos la siguiente geometría,
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.5]{problema1fig1}
+ \caption{Campo eléctrico de un dipolo en el eje polar.}
+ \label{fig:problema1fig1}
+\end{figure}
+
+y mediremos el campo en un punto $P$ a una distancia $z$ del origen. El potencial 
+eléctrico en el punto $P$ debido a las cargas $q$ y $-q$ será 
+
+\begin{equation}
+ \Phi = \frac{q}{r_{+q}} - \frac{q}{r_{-q}},
+\end{equation}
+
+\begin{equation}
+ \Phi = \frac{q}{(z + l)} - \frac{q}{(z - l)},
+\end{equation}
+
+y utilizando el hecho de que\footnote{ep = eje polar.} 
+
+\begin{equation}
+ E_{ep} = - \text{grad} \, \Phi,
+\end{equation}
+
+vemos que 
+
+\begin{equation}
+ E_{ep} = \frac{q}{(z - l)^2} - \frac{q}{(z + l)^2}.
+\end{equation}
+
+Que podemos escribir como 
+
+\begin{equation}
+ E_{ep} = \frac{q}{z^2}\left[\frac{1}{\left(1 - \frac{l}{z}\right)^2} - 
+ \frac{1}{\left(1 + \frac{l}{z}\right)^2}\right],
+\end{equation}
+
+y asumiendo que $z \gg l$ podemos expandir en series de Maclaurin obteniendo 
+
+\begin{equation}
+ E_{ep} = \frac{q}{z^2}\left[\left(1 + \frac{2l}{z} + \dots \right) - 
+ \left(1 - \frac{2l}{z} + \dots \right) \right]
+\end{equation}
+
+\begin{equation}
+ E_{ep} = \cancel{\frac{q}{z^2}} + \frac{q2l}{z^3} - \cancel{\frac{q}{z^2}} +
+ \frac{q2l}{z^3},
+\end{equation}
+
+\begin{equation}
+ \therefore E_{ep} = \frac{4ql}{z^3},
+\end{equation}
+
+y ahora recordando que $p = 2ql$, y que $\mathbf{E}$ es paralelo a $\mathbf{p}$, 
+encontramos que 
+
+\begin{equation}
+ \boxed{\mathbf{E}_{ep} = \frac{2\mathbf{p}}{z^3}}.
+\end{equation}
+
+\hspace{10cm}\includegraphics[scale=0.25]{logoQED}
+
+\vspace{.2cm}
+
+Ahora para el plano ecuatorial proponemos la siguiente geometría, 
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.5]{problema1fig2}
+ \caption{Campo eléctrico de un dipolo en el plano ecuatorial.}
+ \label{fig:problema1fig2}
+\end{figure}
+
+En este caso el campo eléctrico en el punto $P$ a una distancia $r$ del origen, 
+ubicado en el plano ecuatorial podemos escribirlo como\footnote{pe = plano ecuatorial.}
+
+\begin{equation}
+ E_{pe} = \frac{q}{(r^2+a^2)} + \frac{q}{(r^2+a^2)} = 2 \frac{q}{(r^2+a^2)},
+\end{equation}
+
+ahora el campo resultante $E$ en la dirección vertical se cancela por la simetría 
+del problema, manteniéndose solo la parte horizontal, es decir (ver figura
+\eqref{fig:problema1fig2})
+
+\begin{equation}
+ E_{pe} = \frac{2q}{(r^2+a^2)}\cos{\theta},
+\end{equation}
+
+y viendo la figura \eqref{fig:problema1fig2} vemos que podemos escribir 
+
+\begin{equation}
+ \cos{\theta} = \frac{\text{CA}}{\text{HIP}} = \frac{l}{(r^2+a^2)^2},
+\end{equation}
+
+entonces 
+
+\begin{equation}
+ E_{pe} = \frac{2q}{(r^2+a^2)} \frac{l}{(r^2+a^2)^2} = \frac{2ql}{(r^2+a^2)^{3/2}},
+\end{equation}
+
+que podemos escribir como 
+
+\begin{equation}
+ E_{pe} = \frac{2ql}{r^3}\left(1 + \frac{l^2}{r^2} \right),
+\end{equation}
+
+y en el límite cuando $r \gg l \rightarrow l^2/r^2 \approx 0$,
+
+\begin{equation}
+ \therefore E_{pe} = \frac{2ql}{r^3},
+\end{equation}
+
+y recordando que $p = 2ql$ y que el momento dipolar va en sentido de la $-z$, que 
+es el sentido opuesto del campo eléctrico (ver figura \eqref{fig:problema1fig2}) nos queda 
+
+\begin{equation}
+ \boxed{\mathbf{E}_{pe} = - \frac{\mathbf{p}}{r^3}}.
+\end{equation}
+
+\hspace{10cm}\includegraphics[scale=0.25]{logoQED}
+
+\vspace{.2cm}
+
+Ahora usando estos resultados podemos demostrar la ecuación solicitada. El campo 
+eléctrico en un punto $P$ arbitrario será la superposición del campo en el eje polar 
+de la componente $p_{\parallel} = p \cos{\theta}$, y el campo en el plano ecuatorial de la 
+componente $p_{\bot} = p\sen{\theta}$, esto se puede ver en la figura 
+\eqref{fig:problema1fig3}.
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.5]{problema1fig3}
+ \caption{Campo eléctrico de un dipolo en un punto arbitrario del espacio.}
+ \label{fig:problema1fig3}
+\end{figure}
+
+\begin{equation}
+ \mathbf{E}(r,\theta) = \frac{2p_\parallel}{r^3} \mathbf{e}_r + 
+ \frac{p_\bot}{r^3}\mathbf{e}_\theta,
+\end{equation}
+
+donde el signo negativo del campo en el plano ecuatorial se cancela por el hecho de 
+que, genéricamente, $\mathbf{e}_\theta$ va en el sentido opuesto de $\mathbf{p}$, 
+entonces utilizando la figura \eqref{fig:problema1fig3} vemos que 
+
+\begin{equation}
+ \boxed{\mathbf{E}(r,\theta) = \frac{p}{r^3}(2\cos{\theta}\mathbf{e}_r + 
+ \sen{\theta}\mathbf{e}_\theta)}.
+\end{equation}
+
+\hspace{10cm}\includegraphics[scale=0.25]{logoQED}
+
 \section{Problema 2. Problema 2.2 de Classical Electromagnetic Radiation
 de Marion y Heald \cite{marion2}.}
 
