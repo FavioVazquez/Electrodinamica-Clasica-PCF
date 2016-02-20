@@ -24,6 +24,13 @@
 \usetikzlibrary{calc}
 \numberwithin{equation}{section}
 
+\makeatletter
+\def\@fnsymbol#1{\ensuremath{\ifcase#1\or \dagger\or \ddagger\or
+   \mathsection\or \mathparagraph\or \|\or **\or \dagger\dagger
+   \or \ddagger\ddagger \else\@ctrerr\fi}}
+\makeatother
+
+% Cool letters 
 \input{Typocaps.fd}
 
 % Footer
@@ -32,8 +39,11 @@
 \fancyhf{}
 \cfoot{\fontsize{15pt}{15pt}\usefont{U}{Typocaps}{xl}{n} 
 gigantium humeris insidentes}
+
 % Big Pictures
 \usepackage[export]{adjustbox}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 % Enviroment for theorems
 \newmdtheoremenv[frametitle=Teorema]{theo}{Theorem}
@@ -126,11 +136,11 @@ gigantium humeris insidentes}
 %----------------------------------------------------------------------------------------
 %	AUTHOR SECTION
 %----------------------------------------------------------------------------------------
-
+\setcounter{footnote}{0}
 \center
 \large
 \emph{Autor:} \\ % Your name
-\Large Favio \textsc{Vázquez}\footnote{\href{mailto:favio.vazquez@correo.nucleares.unam.mx}{favio.vazquez@correo.nucleares.unam.mx}}
+\Large Favio \textsc{Vázquez}\footnote[1]{\href{mailto:favio.vazquez@correo.nucleares.unam.mx}{favio.vazquez@correo.nucleares.unam.mx}}
 
 
 % If you don't want a supervisor, uncomment the two lines below and remove the section above
@@ -154,6 +164,9 @@ gigantium humeris insidentes}
 \vfill % Fill the rest of the page with whitespace
 
 \end{titlepage}
+
+\setcounter{footnote}{0}
+\renewcommand*{\thefootnote}{\arabic{footnote}}
 
 \section{Problema 1. Problema 2.1 de Classical Electromagnetic Radiation
 de Marion y Heald \cite{marion2}.}
