@@ -24,6 +24,14 @@
 \usetikzlibrary{calc}
 \numberwithin{equation}{section}
 
+\input{Typocaps.fd}
+
+% Footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\fontsize{15pt}{15pt}\usefont{U}{Typocaps}{xl}{n} 
+gigantium humeris insidentes}
 % Big Pictures
 \usepackage[export]{adjustbox}
 
@@ -90,6 +98,7 @@
 \begin{document}
 
 \begin{titlepage}
+\thispagestyle{fancy}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
 
