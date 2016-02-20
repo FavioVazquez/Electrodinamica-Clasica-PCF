@@ -300,6 +300,7 @@ es el sentido opuesto del campo eléctrico (ver figura \eqref{fig:problema1fig2}
 
 \begin{equation}
  \boxed{\mathbf{E}_{pe} = - \frac{\mathbf{p}}{r^3}}.
+ \label{eq:campoElecDipoloEcuador}
 \end{equation}
 
 \hspace{10cm}\includegraphics[scale=0.25]{logoQED}
@@ -346,6 +347,43 @@ $40^\circ$.
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+Ya que podemos aproximar el campo magnético de la Tierra como un dipolo, y la geometría
+de los campos externos de un dipolo eléctrico y magnético es la misma, podemos utilizar 
+las ecuaciones que obtuvimos en el anterior problema, solamente reemplazando $\mathbf{p}$ 
+por $\mathbf{m}$ y $\mathbf{E}$ por $\mathbf{B}$. La componente horizontal, asumiendo 
+una Tierra perfectamente esférica, es simplemente la componente $\mathbf{e}_\theta$; 
+y recordando que el ángulo de latitud $\theta_l$ se mide desde el ecuador, podemos 
+escribir\footnote{Ver ecuación \eqref{eq:campoElecDipoloEcuador}.}
+
+\begin{equation}
+ B_{\text{horizontal}} = \frac{m\cos{\theta_l}}{R_t^3},
+ \label{eq:campoMagnDipoloTierra}
+\end{equation}
+
+  donde $R_t$ es el radio de la tierra y  $\theta_l$ se mide de acuerdo a la siguiente 
+figura 
+
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.5]{problema2fig1}
+ \caption{Campo magnético de la tierra. El dipolo magnético apunta 
+ hacia la Antártica con los pingüinos.}
+ \label{fig:problema2fig1}
+\end{figure}
+
+Debido a que el radio de la tierra es aproximadamente $R_t = 6.37 \times 10^8$ cm, 
+resolviendo \eqref{eq:campoMagnDipoloTierra} para $m$ nos queda, 
+
+\begin{equation}
+ \boxed{m = \frac{(0.23 \text{ G})(6.37 \times 10^8 \text{ cm})^3}{\cos{40^\circ}} = 
+ 7.8 \times 10^{25} \text{ G}\text{ cm}^3}.
+\end{equation}
+
+El dipolo magnético de la tierra apunta hacia la Antártica y por lo tanto las líneas 
+del campo magnético retornan hacia el Ártico (con los esquimales) en el norte de la 
+superficie de la Tierra.
 
 \section{Problema 3. Problema 2.3 de Classical Electromagnetic Radiation
 de Marion y Heald \cite{marion2}.}
