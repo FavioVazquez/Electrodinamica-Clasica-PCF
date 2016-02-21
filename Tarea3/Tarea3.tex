@@ -466,6 +466,96 @@ Si tus resultados violan la tercera ley de Newton, inténtalo de nuevo.
 
 \underline{Solución:} \vspace{.3cm}
 
+Si colocamos el origen de nuestro sistema (cartesiano) en el centro del dipolo, y 
+expandimos el campo eléctrico en una serie de Maclaurin sobre este origen obtenemos:
+
+\begin{equation}
+ E(x,y,z) = E_0 + \left(\frac{\partial E}{\partial x} \right)_0 x + 
+  \left(\frac{\partial E}{\partial y} \right)_0 y + 
+   \left(\frac{\partial E}{\partial z} \right)_0 z + \dots
+\end{equation}
+
+Que en notación de Marion y Heald \cite{marion2} escribimos como 
+
+\begin{equation}
+ E(x,y,z) = E_0 + (\mathbf{r}\cdot \text{\textbf{grad}})\mathbf{E} + \dots 
+\end{equation}
+
+Ahora recordando que que $\mathbf{F} = q\mathbf{E}$ podemos sumar las fuerzas 
+vectoriales de nuestro modelo de dipolo que consisten en dos cargas $\pm q$ en 
+las posiciones $\pm l$ respectivamente, para obtener 
+
+\begin{equation}
+ \mathbf{F} = q[E_0 + (\mathbf{l}\cdot \text{\textbf{grad}})\mathbf{E} + \dots ]
+ - q[E_0 + (\mathbf{l}\cdot \text{\textbf{grad}})\mathbf{E} + \dots ],
+\end{equation}
+
+\begin{equation}
+ \therefore \mathbf{F} = 2q (\mathbf{l}\cdot \text{\textbf{grad}})\mathbf{E},
+\end{equation}
+
+y recordando la definición de momento dipolar nos queda 
+
+\begin{equation}
+ \boxed{\mathbf{F} = (\mathbf{p}\cdot \text{\textbf{grad}})\mathbf{E}}.
+\end{equation}
+
+\hspace{10cm}\includegraphics[scale=0.25]{logoQED}
+
+Consideremos la interacción de una carga $q$ y un dipolo 
+$\mathbf{p}$ que están a una distancia $r$, con el dipolo orientado perpendicular a 
+la línea que los une. Para el caso (a), para calcular la fuerza en $q$ debido a 
+$\mathbf{p}$, colocando la carga $q$ en el plano ecuatorial del dipolo, del problema 
+1 sabemos que la fuerza que sentirá la partícula será\footnote{Ver ecuación 
+\eqref{eq:campoElecDipoloEcuador}}
+
+\begin{equation}
+ \boxed{\mathbf{F}_{\text{p sobre q}} = q E_{pe} = - \frac{qp}{r^3}\mathbf{e}_p},
+ \label{eq:dipoloPsobreQ}
+\end{equation}
+
+donde $\mathbf{e}_p$ es el vector unitario en la dirección de $\mathbf{p}$. En 
+el caso (b), para calcular la fuerza en $\mathbf{p}$ debido a $q$, utilizamos 
+la ecuación que derivamos al principio del problema, 
+
+\begin{equation}
+ \mathbf{F}_{\text{q sobre p}} = (\mathbf{p}\cdot \text{\textbf{grad}})\mathbf{E}(q).
+\end{equation}
+
+Ahora, el operador $(\mathbf{p}\cdot \text{\textbf{grad}})$ es el operador de 
+derivada espacial en la dirección de $\mathbf{e}_p$, y podría parecer que el campo 
+debido a $q$ en $p$ solo cambiaría en la dirección radial desde $q$ y por lo tanto 
+la derivada en la dirección de $\mathbf{e}_p$ es cero, lo cual violaría la tercera 
+ley de Newton, ya que las fuerzas que esperamos deberían ser iguales y opuestas en 
+$q$ y $\mathbf{p}$; pero haciendo un estudio más detallado nos damos cuenta que 
+el campo cambia de dirección, así no cambie de signo, por lo tanto la fuerza 
+sobre $p$ no sería cero. Nos faltaría demostrar que en efecto es igual y opuesta 
+a la fuerza sobre $q$, para esto calculamos las componentes del campo eléctrico 
+en un sistema de coordenadas con origen en $q$, el eje $x$ hacia $p$ y el eje 
+$y$ paralelo a $\mathbf{p}$, por lo tanto escribimos (para el campo cercano a p)
+
+\begin{align*}
+ E_x = \frac{q}{(x^2+y^2)}\frac{x}{(x^2+y^2)^{1/2}} \approx \frac{q}{x^2} \\
+ E_y = \frac{q}{(x^2+y^2)}\frac{y}{(x^2+y^2)^{1/2}} \approx \frac{qy}{x^3} \\
+ E_x = \frac{q}{(x^2+y^2)}\frac{z}{(x^2+y^2)^{1/2}} \approx \frac{qz}{x^3},
+\end{align*}
+
+y debido a la geometría que propusimos para el sistema el operador relevante 
+será solo el correspondiente a $y$, por lo tanto reescribimos la fuerza en 
+$\mathbf{p}$ debido a $q$ como 
+
+\begin{equation}
+ \mathbf{F}_{\text{q sobre p}} = p\frac{\partial}{\partial y}\left( \frac{q}{x^2} 
+ \mathbf{e}_x + \frac{qy}{x^3}\mathbf{e}_y + \frac{qz}{x^3}\mathbf{e}_z\right),
+\end{equation}
+ 
+\begin{equation}
+ \boxed{\therefore  \mathbf{F}_{\text{q sobre p}} = \frac{qp}{x^3}\mathbf{e}_y},
+\end{equation}
+
+que colocando $x \rightarrow r$ y $\mathbf{e}_y \rightarrow \mathbf{e}_p$ es igual y 
+opuesta a \eqref{eq:dipoloPsobreQ}, de acuerdo a la tercera ley de Newton.
+
 \section{Problema 5. Problema 2.5 de Classical Electromagnetic Radiation
 de Marion y Heald \cite{marion2}.}
 
