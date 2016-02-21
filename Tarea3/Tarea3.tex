@@ -796,6 +796,121 @@ cuadrupolar.
 
 \underline{Solución:} \vspace{.3cm}
 
+Usando las ecuaciones (2.35) y (2.36) de Marion y Heald \cite{marion2} podemos 
+escribir el tensor cuadrupolar como 
+
+\begin{align*}
+ Q_{11} &= \sum_\alpha q_\alpha(3x'_{\alpha,1}x'_{\alpha,1} -
+ r'^2_\alpha\cancelto{1}{\delta_{11}}) 
+ = q(3(0)(0) - l^2) - q(3(l)(l) - l^2) + q(3(l)(l) - l^2) \\ 
+ &- q(3(0)(0) - l^2) = 0,
+\end{align*}
+
+\begin{equation*}
+ Q_{12} = \sum_\alpha q_\alpha(3x'_{\alpha,1}x'_{\alpha,2} - 
+ r'^2_\alpha\cancelto{0}{\delta_{12}}) = 3q(0)(l) - 3q(l)(l) 
+ + 3q(l)(0) - 3(0)(0) = -3ql^2,
+\end{equation*}
+
+\begin{equation*}
+ Q_{13} = \sum_\alpha q_\alpha(3x'_{\alpha,1}x'_{\alpha,3} - 
+ r'^2_\alpha\cancelto{0}{\delta_{13}}) = 3q(0)(0) - 3q(l)(0) 
+ + 3q(l)(0) - 3q(0)(0) = 0,
+\end{equation*}
+
+\begin{equation*}
+ Q_{21} = \sum_\alpha q_\alpha(3x'_{\alpha,2}x'_{\alpha,1} - 
+ r'^2_\alpha\cancelto{0}{\delta_{21}}) = 3q(l)(0) - 3q(l)(l) 
+ + 3q(0)(l) - 3q(0)(0) = -3ql^2,
+\end{equation*}
+
+\begin{align*}
+ Q_{22} &= \sum_\alpha q_\alpha(3x'_{\alpha,2}x'_{\alpha,2} -
+ r'^2_\alpha\cancelto{1}{\delta_{22}}) 
+ = q(3(l)(l) - l^2) - q(3(l)(l) - l^2) + q(3(0)(0) - l^2) \\ 
+ &- q(3(0)(0) - l^2) = 0,
+\end{align*}
+
+\begin{equation*}
+ Q_{23} = \sum_\alpha q_\alpha(3x'_{\alpha,2}x'_{\alpha,3} - 
+ r'^2_\alpha\cancelto{0}{\delta_{23}}) = 3q(l)(0) - 3q(l)(0) 
+ + 3q(0)(0) - 3q(0)(0) = 0,
+\end{equation*}
+
+\begin{equation*}
+ Q_{31} = \sum_\alpha q_\alpha(3x'_{\alpha,3}x'_{\alpha,1} - 
+ r'^2_\alpha\cancelto{0}{\delta_{31}}) = 3q(0)(l) - 3q(0)(l) 
+ + 3q(0)(l) - 3q(0)(0) = 0,
+\end{equation*}
+
+\begin{equation*}
+ Q_{32} = \sum_\alpha q_\alpha(3x'_{\alpha,3}x'_{\alpha,2} - 
+ r'^2_\alpha\cancelto{0}{\delta_{32}}) = 3q(0)(l) - 3q(0)(l) 
+ + 3q(0)(0) - 3q(0)(0) = 0,
+\end{equation*}
+
+\begin{align*}
+ Q_{33} &= \sum_\alpha q_\alpha(3x'_{\alpha,3}x'_{\alpha,3} -
+ r'^2_\alpha\cancelto{1}{\delta_{33}}) 
+ = q(3(0)(0) - l^2) - q(3(0)(0) - l^2) + q(3(0)(0) - l^2) \\ 
+ &- q(3(0)(0) - l^2) = 0,
+\end{align*}
+
+\begin{equation}
+ \{ \mathbf{Q} \} = \begin{pmatrix}
+                     0 & -3ql^2 & 0 \\
+                     -3ql^2 & 0 & 0 \\
+                     0 & 0 & 0
+                    \end{pmatrix},
+\end{equation}
+
+Para diagonalizar esta matrix utilizamos la librería 
+\texttt{Sympy}\footnote{\href{http://www.sympy.org/en/index.html}{http://www.sympy.org/en/index.html}} 
+de Python3, la cual arrojó la siguiente matriz de transformación 
+
+\begin{equation}
+ \{ \mathbf{U_Q} \} = \begin{pmatrix}
+                     0 & 1 & -1 \\
+                     0 & 1 & 1 \\
+                     0 & 0 & 0
+                    \end{pmatrix},
+\end{equation}
+
+y entonces diagonalizamos $\{ \mathbf{Q} \}$ con 
+
+\begin{equation*}
+ \{\mathbf{Q}'\} = \{\mathbf{U_Q}\}^{-1}\{\mathbf{Q}'\}\{\mathbf{U_Q}\}
+		 = \begin{pmatrix}
+                     0 & 0 & 1 \\
+                     1/2 & 1/2 & 0 \\
+                     -1/2 & 1/2 & 0
+                    \end{pmatrix}
+                    \cdot 
+                    \begin{pmatrix}
+                     0 & -3ql^2 & 0 \\
+                     -3ql^2 & 0 & 0 \\
+                     0 & 0 & 0
+                    \end{pmatrix}
+                    \cdot 
+                    \begin{pmatrix}
+                     0 & 1 & -1 \\
+                     0 & 1 & 1 \\
+                     0 & 0 & 0
+                    \end{pmatrix},
+\end{equation*}
+
+\begin{equation}
+ \therefore \{ \mathbf{Q'} \} = \begin{pmatrix}
+                     0 & 0 & 0 \\
+                     0 & -3ql^2 & 0 \\
+                     0 & 0 & 3ql^2
+                    \end{pmatrix},
+\end{equation}
+
+Cabe destacar que debido a que el sistema no es una figura de revolución, 
+la ecuación (2.38) de Marion y Heald \cite{marion2} para el momento 
+cuadrupolar para los elementos diagonales no aplica en este caso.
+
 \section{Problema 8. Problema 2.12 de Classical Electromagnetic Radiation
 de Marion y Heald \cite{marion2}.}
 
