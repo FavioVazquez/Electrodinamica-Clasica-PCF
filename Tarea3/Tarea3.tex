@@ -566,6 +566,52 @@ tiene un momento cuadrupolar cero con respecto a su centro como origen.
 
 \underline{Solución:} \vspace{.3cm}
 
+Recordemos la ecuación para el momento cuadrupolar, vía el tensor cuadrupolar, 
+que según la ecuación (2.32) de Marion y Heald \cite{marion2} escribimos como 
+
+\begin{equation}
+ Q_ij \equiv \sum_\alpha q_\alpha(3x'_{\alpha,i}x'_{\alpha,j} - r'^2_\alpha\delta_{ij}),
+\end{equation}
+
+que podemos representar por la matriz (en tres dimensiones)\footnote{Ver ecuación 
+(2.33) de Marion y Heald \cite{marion2}.}
+
+
+\begin{equation}
+ \{ \mathbf{Q} \} = \begin{pmatrix}
+                     \sum q(2x^2 - y^2 - z^2) & \sum q(3xy) & \sum q(3xz) \\
+                     \sum q(3xy) & \sum q(-x^2 + 2y - z^2) & \sum q(3yz) \\
+                     \sum q(3xz) & \sum q(3yz) & \sum(-x^2 - y^2 + 2z^2)
+                    \end{pmatrix}.
+\end{equation}
+
+Para la primera carga $q$ de nuestro dipolo en $(0,0,+l)$ esta matriz se convierte en 
+
+\begin{equation}
+ \{ \mathbf{Q}_1 \} = \begin{pmatrix}
+                     -ql^2 & 0 & 0 \\
+                     0 & -ql^2 & 0 \\
+                     0 & 0 & +2ql^2
+                    \end{pmatrix},
+\end{equation}
+
+y para la segunda carga $-q$ en $(0,0,-l)$ tenemos 
+
+\begin{equation}
+ \{ \mathbf{Q}_2 \} = \begin{pmatrix}
+                     ql^2 & 0 & 0 \\
+                     0 & ql^2 & 0 \\
+                     0 & 0 & -2ql^2
+                    \end{pmatrix},
+\end{equation}
+
+que es exactamente el negativo de la matriz para $q$. Por lo tanto el momento cuadrupolar 
+total $\{ \mathbf{Q} \} = \{ \mathbf{Q}_1 \} + \{ \mathbf{Q}_2 \} = 0$ para un dipolo 
+que tiene como centro el origen. Esta claro de la forma de la matriz para el momento 
+cuadrupolar que si el origen es otro que el del dipolo, $\{ \mathbf{Q} \}$ no será 
+cero, por lo tanto el momento cuadrupolar depende del origen, a diferencia del momento 
+dipolar, que como vimos en el problema 3, es independiente del origen para este sistema.
+
 \section{Problema 6. Problema 2.6 de Classical Electromagnetic Radiation
 de Marion y Heald \cite{marion2}.}
 
