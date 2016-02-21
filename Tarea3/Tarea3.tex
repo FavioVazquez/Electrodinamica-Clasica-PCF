@@ -622,6 +622,7 @@ y $(5,0)$ en las siguientes maneras:
 \begin{enumerate}[label=\textbf{(\alph*)}]
 \item Mediante un cálculo directo de $q/R$ para cada carga,
 \item Considerando un término de una expansión multipolar:
+\subitem - De un término,
 \subitem - De dos términos,
 \subitem - De tres términos.
 \end{enumerate}
@@ -632,6 +633,151 @@ los dos diferentes puntos del campo.
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+Planteamos la geometría del sistema dado como en la siguiente figura
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.4]{problema6fig1}
+ \caption{Geometría para el sistema de una carga de $+2e$ localizada en el origen y 
+ una de $-e$ localizada en el punto $(1,0)$.}
+\end{figure}
+
+\textbf{(a)} Para calcular el potencial mediante un cálculo directo de $q/R$ para 
+cada carga lo hacemos mediante la siguiente ecuación 
+
+\begin{equation}
+ \Phi(P_i) = \sum_i \frac{q_i}{|r-r_i|},
+\end{equation}
+
+entones para $P_1(0,5)$, 
+
+\begin{align*}
+ \Phi(P_1) &= \frac{2e}{\sqrt{(0-0)^2 + (0 - 5)^2}} - \frac{e}{\sqrt{(0-1)^2 + 
+ (0 - 5)^2}} \\ 
+ &= \frac{2e}{5} - \frac{e}{\sqrt{26}},
+\end{align*}
+
+\begin{equation}
+ \boxed{\Phi(P_1) = 0.2039 \, e.}.
+\end{equation}
+
+Y para $P_2(5,0)$, 
+
+\begin{align*}
+ \Phi(P_2) &= \frac{2e}{\sqrt{(5-0)^2 + (0 - 0)^2}} - \frac{e}{\sqrt{(5-1)^2 + 
+ (0 - 0)^2}} \\ 
+ &= \frac{2e}{5} - \frac{e}{4},
+\end{align*}
+
+\begin{equation}
+ \boxed{\Phi(P_1) = 0.1500 \, e.}.
+\end{equation}
+
+\textbf{(b)} Para calcular el potencial considerando una expansión multipolar 
+de un término, solo necesitamos calcular el momento monopolar
+
+\begin{equation}
+ \Phi^{(1)} = \sum_\alpha \frac{q_\alpha}{r},
+\end{equation}
+
+y en este caso $\sum_\alpha q_\alpha = 2e -e = +e$, entonces para $P_1$ tenemos 
+
+\begin{equation}
+ \boxed{\Phi^{(1)}(P_1) = \Phi^{(1)}(P_2)  = \frac{q}{r} = \frac{e}{5} = 0.2000 \, e.}
+\end{equation}
+
+Para calcular el potencial considerando una expansión multipolar 
+de dos términos, necesitamos calcular el momento monopolar y el dipolar, ya que 
+calculamos el monopolar solo queda calcular el dipolar. Lo hacemos con la 
+ecuación 
+
+\begin{equation}
+ \Phi^{(2)} = \frac{\mathbf{p}\cdot \mathbf{e}_r}{r^2},
+\end{equation}
+
+donde $\mathbf{p} = \sum_\alpha q_\alpha r'_\alpha$. En este caso debido a que 
+ambas cargas están en el eje $x$, el momento dipolar irá en la dirección de 
+$ \mathbf{e}_x$, y su magnitud será 
+
+\begin{equation}
+ p_x = (+2e)(0) + (-e)(1) = -e,
+\end{equation}
+
+por lo tanto 
+
+\begin{equation}
+ \mathbf{p} = -e \, \mathbf{e}_x.
+\end{equation}
+
+Entonces tenemos, 
+
+\begin{equation}
+ \boxed{\Phi^{(2)}(P_1) = \frac{\mathbf{p}\cdot \mathbf{e}_r}{r^2} = 
+ \frac{e \, \cancelto{0}{\cos{90^\circ}}}{(5)^2} = 0}.
+\end{equation}
+
+y 
+
+\begin{equation}
+ \boxed{\Phi^{(2)}(P_2) = \frac{\mathbf{p}\cdot \mathbf{e}_r}{r^2} = 
+ \frac{e \,\cancelto{1}{\cos{180^\circ}}}{(5)^2} = - 0.0400e}.
+\end{equation}
+
+Entonces los potenciales en los puntos $P_1$ y $P_2$ en una expansión multipolar de 
+dos términos será igual a 
+
+\begin{equation}
+ \Phi_2(P_1) = \Phi^{(1)}(P_1) + \Phi^{(2)}(P_1) = 0.2000 e + 0 = 0.2000 e,
+\end{equation}
+
+\begin{equation}
+ \Phi_2(P_2) = \Phi^{(1)}(P_2) + \Phi^{(2)}(P_2) = 0.2000 e - 0.0400e = 0.1600 e,
+\end{equation}
+
+Por último para un cálculo de los potenciales mediante una expansión multipolar de 
+3 términos debemos obtener el momento cuadrupolar para sumarlo a los anteriores 
+momentos. Primero obtenemos el tensor cuadrupolar, expresado por la matriz 
+
+\begin{equation}
+ \{ \mathbf{Q} \} = \begin{pmatrix}
+                     -2e & 0 & 0 \\
+                     0 & +e & 0 \\
+                     0 & 0 & +e
+                    \end{pmatrix},
+\end{equation}
+
+y tenemos entonces 
+
+\begin{equation}
+ \boxed{\Phi^{(4)}(P_1) = \frac{1}{6}\sum_j Q_jj \frac{3x_j^2 - r^2}{r^5} = 
+ \frac{1}{6}e\frac{2 + 2 - 1}{5^3} = 0.0040 e},
+\end{equation}
+
+y 
+
+\begin{equation}
+ \boxed{\Phi^{(4)}(P_1) = \frac{1}{6}\sum_j Q_jj \frac{3x_j^2 - r^2}{r^5} = 
+ \frac{1}{6}e\frac{-4 -1 - 1}{5^3} = -0.0080 e},
+\end{equation}
+
+Entonces los potenciales en los puntos $P_1$ y $P_2$ en una expansión multipolar de 
+tres términos será igual a 
+
+\begin{equation}
+ \Phi_3(P_1) = \Phi^{(1)}(P_1) + \Phi^{(2)}(P_1) + \Phi^{(4)}(P_1) 
+ = 0.2000 e + 0 + 0.0040 e = 0.2040 e,
+\end{equation}
+
+\begin{equation}
+ \Phi_3(P_2) = \Phi^{(1)}(P_2) + \Phi^{(2)}(P_2) + \Phi^{(4)}(P_2)
+ = 0.2000 e - 0.0400e - 0.0080 = 0.1520 e,
+\end{equation}
+
+Debido a que la distribución de cargas de tamaño finito se extiende en el eje $x$, 
+vemos que el potencial para $P_2$ en la expansión multipolar que hicimos es más
+cercano al valor directo que el del potencial para $P_1$, y su serie converge (para 
+$P_1$) por lo tanto más lentamente.
 
 \section{Problema 7. Problema 2.7 de Classical Electromagnetic Radiation
 de Marion y Heald \cite{marion2}.}
