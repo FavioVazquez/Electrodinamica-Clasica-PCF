@@ -917,7 +917,7 @@ de Marion y Heald \cite{marion2}.}
 La densidad de carga lineal de un anillo de radio $a$ está dada por 
 
 $$
-\lambda = \frac{q}{a}(\cos{\phi} - \sen{2\phi})
+\lambda = \frac{q}{a}(\cos{\phi} - \sen{2\phi}).
 $$
 
 \begin{enumerate}[label=\textbf{(\alph*)}]
@@ -929,6 +929,164 @@ términos en $q/r^3$.
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+
+Por simplicidad colocaremos el anillo en el plano $xy$, y su geometría luciría 
+como la figura de abajo 
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.5]{problema8fig1}
+ \caption{Anillo de radio $a$ y densidad de carga $\lambda$.}
+\end{figure}
+
+y utilizaremos coordenadas cilíndricas polares para el desarrollo del problema debido 
+a las simetrías del anillo, 
+
+\begin{align*}
+ x = a\cos{\phi} \\
+ y = a\sen{\phi}.
+\end{align*}
+
+\textbf{(a)} El momento monopolar lo calculamos con\footnote{$dl = ad\phi$.}
+
+\begin{equation}
+ q = \oint \lambda dl = \frac{q}{a} \cancelto{0}{\int_0^{2\pi} a\cos{\phi}d\phi} - 
+ \frac{q}{a} \cancelto{0}{\int_0^{2\pi} a\sen{2\phi}d\phi},
+\end{equation}
+
+\begin{equation}
+ \boxed{\therefore q = 0}.
+\end{equation}
+
+El momento dipolar lo podemos calcular por componentes, obteniendo\footnote{
+$\sen(2\phi) = 2 \sen{\phi}\cos{\phi}.$}
+
+\begin{equation}
+ p_x = \oint \lambda x dl = \oint \lambda a\cos{\theta} dl = 
+ \frac{q}{a}\int_0^{2\pi} (\cos{\phi} - \sen{2\phi})(a\cos{\phi}) ad\phi,
+\end{equation}
+
+\begin{equation}
+ p_x = qa\left[\cancelto{\pi}{\int_0^{2\pi}\cos^2{\phi}d\phi} -
+ 2 \cancelto{0}{\int_0^{2\pi}\sen{\phi}\cos^2{\phi}} d\phi \right] = qa(\pi + 0) = qa\pi,
+\end{equation}
+
+y 
+
+\begin{equation}
+ p_y = \oint \lambda y dl = \oint \lambda a\sen{\theta} dl = 
+ \frac{q}{a}\int_0^{2\pi} (\cos{\phi} - \sen{2\phi})(a\sen{\phi}) ad\phi,
+\end{equation}
+
+\begin{equation}
+ p_y = qa\left[\cancelto{0}{\int_0^{2\pi}\sen{\phi}\cos{\phi}d\phi} -
+ 2 \cancelto{0}{\int_0^{2\pi}\sen^2{\phi}\cos{\phi}} d\phi \right] = qa(0 + 0) = 0,
+\end{equation}
+
+Entonces el momento dipolar irá dirigido en la dirección de $\mathbf{e}_x$ debido a 
+que la componente $p_y$ es cero, por lo tanto 
+
+\begin{equation}
+ \boxed{\mathbf{p} = aq\pi\mathbf{e}_x}. 
+\end{equation}
+
+Por último para calcular el momento cuadrupolar, necesitamos obtener el tensor 
+cuadrupolar utilizando la ecuación (2.32) de Marion y Heald \cite{marion2} en 
+su forma integral, 
+
+\begin{equation}
+ Q_{ij} = \oint \lambda(3x_ix_j - r^2\delta_{ij})dl.
+\end{equation}
+
+Calculemos todas las componentes del tensor, recordando que por simetría del mismo 
+$Q_{ij} = Q_{ji}$. Y debido a que hemos colocado el anillo en el plano $xy$ tendremos 
+que $z=0$ para toda la distribución de carga. 
+
+\begin{align*}
+ Q_{xx} &= \frac{q}{a}\int_0^{2\pi} (\cos{\phi} - \sen{2\phi})(3a^2\cos^2{\phi} - 
+ a^2)ad\phi \\
+ &= qa^2\left[\cancelto{0}{\int_0^{2\pi}\cos{\phi}(3\cos^2{\phi} - 1)d\phi} - 
+ 2 \cancelto{0}{\int_0^{2\pi} \sen{\phi} \cos{\phi} (3\cos^2{\phi} - 1)d\phi}\right] \\
+ &= qa^2 ( 0 - 0),
+\end{align*}
+
+\begin{equation}
+ \therefore Q_{xx} = 0.
+\end{equation}
+
+\begin{align*}
+ Q_{yy} &= \frac{q}{a}\int_0^{2\pi} (\cos{\phi} - \sen{2\phi})(3a^2\sen^2{\phi} - 
+ a^2)ad\phi \\
+ &= qa^2\left[\cancelto{0}{\int_0^{2\pi}\cos{\phi}(3\sen^2{\phi} - 1)d\phi} - 
+ 2 \cancelto{0}{\int_0^{2\pi} \sen{\phi} \cos{\phi} (3\sen^2{\phi} - 1)d\phi}\right] \\
+ &= qa^2 ( 0 - 0),
+\end{align*}
+
+\begin{equation}
+ \therefore Q_{yy} = 0.
+\end{equation}
+
+\begin{align*}
+ Q_{zz} &= \frac{q}{a}\int_0^{2\pi} (\cos{\phi} - \sen{2\phi})(-a^2)ad\phi \\
+ &= qa^2\left[\cancelto{0}{\int_0^{2\pi}\cos{\phi}d\phi} - 
+ 2\cancelto{0}{\int_0^{2\pi}\sen{\phi}\cos{\phi}d\phi} \right] \\
+ &= qa^2(0 - 0),
+\end{align*}
+
+\begin{equation}
+ \therefore Q_{zz} = 0.
+\end{equation}
+
+\begin{align*}
+ Q_{xy} = Q_{yx} &= \frac{q}{a}\int_0^{2\pi} (\cos{\phi} - \sen{2\phi})(3a^2\sen{\phi}\cos{\theta})ad\phi \\
+ &= 3qa^2\left[\cancelto{0}{\int_0^{2\pi}\sen{\phi}\cos^2{\phi}d\phi} - 
+ \frac{1}{2} \cancelto{\pi}{\int_0^{2\pi} \sen^2{2\phi}d\phi}\right] \\
+ &= qa^2 ( 0 - \frac{\pi}{2}),
+\end{align*}
+
+\begin{equation}
+ \therefore Q_{xy} = Q_{yx} = -\frac{3}{2}qa^2\pi.
+\end{equation}
+
+Claramente todos los otros elementos del tensor serán cero, porque como dijimos 
+$z=0$ para toda la distribución de carga. Entonces en forma matricial podemos 
+escribir el tensor cuadrupolar como 
+
+\begin{equation}
+ \therefore \{ \mathbf{Q} \} = \begin{pmatrix}
+                     0 & -\frac{3}{2}qa^2\pi & 0 \\
+                     -\frac{3}{2}qa^2\pi & 0 & 0 \\
+                     0 & 0 & 0
+                    \end{pmatrix},
+\end{equation}
+
+\textbf{(b)} Para calcular el potencial en un punto arbitrario del espacio,
+preciso hasta términos en $q/r^3$ calcularemos el potencial para una expansión 
+de un término (monopolar), una de dos términos (dipolar) y para una de tres 
+términos (cuadrupolar) y sumaremos los resultados de cada una, manteniendo términos 
+solo hasta $q/r^3$ (en este caso hasta términos hasta $q/r^5$ debido a que ya teníamos 
+el momento cuadrupolar que decrece con $r^5$). Tenemos entonces\footnote{Ver 
+ecuaciones (2.20a), (2.23) y (2.31a) de Marion y Heald \cite{marion2}.}
+
+\begin{equation}
+ \Phi^{(1)} = 0,
+\end{equation}
+
+\begin{equation}
+ \Phi^{(2)} = aq\pi \frac{\mathbf{e}_x\cdot\mathbf{e}_r}{r^2} = \frac{aq\pi x}{r^3}, 
+\end{equation}
+
+\begin{equation}
+ \Phi^{(4)} = \frac{1}{6r^5}(Q_{xy} + Q_{yx})(3xy) =  - \frac{3a^2q\pi xy}{2r^5}.
+\end{equation}
+
+Por lo tanto el potencial será 
+
+\begin{equation}
+ \boxed{\Phi = \Phi^{(1)} + \Phi^{(2)} + \Phi^{(4)} = qa\pi\left(\frac{x}{r^3} - 
+ \frac{3axy}{2r^5} + \dots \right)}.
+\end{equation}
 
 \begin{thebibliography}{10}
 \bibitem{marion2}
