@@ -9,7 +9,7 @@ Ayudante: M.Sc. Edward Reyes.
 
 --------
 
-##### **Nota importante**: Estas tareas son mi intento de resolución de los problemas de la materia, algunas pueden no estar correctas debido a que no me considero un experto en el área. Sí hay erroreres intentaré irlas arreglando lentamente. Así que por una parte, pueden servir de guía para una solución propia a los problemas para otra persona, y como en cada problema remito a bibliografía, recomiendo a los lectores realmente interesados validar que lo que digo está registrado en bibliografía pertinente. Si encuentran algún error por favor háganmelo llegar como un Issue o al correo para así mejorar las tareas.
+##### **Nota importante**: Estas tareas son mi intento de resolución de los problemas de la materia, algunas pueden no estar correctas debido a que no me considero un experto en el área. Si hay erroreres intentaré irlas arreglando lentamente. Principalmente pueden servir de guía para una solución propia a los problemas para otra persona, y como en cada problema remito a bibliografía, recomiendo a los lectores realmente interesados validar que lo que digo está registrado en bibliografía pertinente. Si encuentran algún error por favor háganmelo llegar como un Issue o al correo para así mejorar las tareas.
 
 ---------
 
