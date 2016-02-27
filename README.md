@@ -31,7 +31,7 @@ En tal caso de alguna pregunta no relacionada directamente con el repositorio pu
 
 ## Tareas compiladas en línea con [ShareLaTeX](https://www.sharelatex.com/)
 
-### Tarea 1 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazquez/Electrodinamica-Clasica-PCF/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/FavioVazquez/Electrodinamica-Clasica-PCF/builds/0fade0f617c05ba6ae41037679b1672f91bdfaea/raw/output.pdf)
+### Tarea 1 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazquez/Electrodinamica-Clasica-PCF/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/FavioVazquez/Electrodinamica-Clasica-PCF/builds/38a8afd3441f6769c0b8e926efe6c4c84d0d42c0/raw/output.pdf)
 
 ### Tarea 2 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazquez/Electrodinamica-Clasica-PCF/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/FavioVazquez/Electrodinamica-Clasica-PCF/builds/8d34203a71176734723be556fb3572d8587cfa6c/raw/output.pdf)
 
