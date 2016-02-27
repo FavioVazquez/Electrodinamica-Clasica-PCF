@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage[affil-it]{authblk}
@@ -15,14 +15,37 @@
 \usepackage{multicol} % Multiple columns
 \usepackage{float}
 \usepackage{cleveref}
- \usepackage{relsize} % bigger math symbols
-\usepackage[margin=1.4in]{geometry}
+\usepackage{relsize} % bigger math symbols
+\usepackage[margin=1.1in]{geometry}
 \usepackage[titletoc,toc,title]{appendix}
 \usepackage{enumitem}
 \usepackage{etoolbox}
 \usepackage{mdframed} %frame theorems
 \usetikzlibrary{calc}
 \numberwithin{equation}{section}
+
+% Footnotes with symbols
+
+\makeatletter
+\def\@fnsymbol#1{\ensuremath{\ifcase#1\or \dagger\or \ddagger\or
+   \mathsection\or \mathparagraph\or \|\or **\or \dagger\dagger
+   \or \ddagger\ddagger \else\@ctrerr\fi}}
+\makeatother
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+% Cool letters 
+\input{Typocaps.fd}
+
+% Footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\fontsize{15pt}{15pt}\usefont{U}{Typocaps}{xl}{n} 
+gigantium humeris insidentes}
+
+% Big Pictures
+\usepackage[export]{adjustbox}
 
 % Enviroment for theorems
 \newmdtheoremenv[frametitle=Teorema]{theo}{Theorem}
@@ -84,35 +107,74 @@
   \fi}
 \makeatother
 
-%opening
-\title{Electrodinámica Clásica. Tarea \# 1}
-\author{Favio Vázquez\thanks{Correo: favio.vazquezp@gmail.com}}\affil{Instituto de Ciencias Nucleares. Universidad Nacional Autónoma de México.}
-\date{}
-
 \begin{document}
 
-\makeatletter
-\def\@maketitle{%
-  \newpage
-  \null
-  \vskip 2em%
-  \begin{center}%
-  \let \footnote \thanks
-    {\Large\bfseries \@title \par}%
-    \vskip 1.5em%
-    {\normalsize
-      \lineskip .5em%
-      \begin{tabular}[t]{c}%
-        \@author
-      \end{tabular}\par}%
-    \vskip 1em%
-    {\normalsize \@date}%
-  \end{center}%
-  \par
-  \vskip 1.5em}
-\makeatother
+\begin{titlepage}
+\thispagestyle{fancy}
 
-\maketitle
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+ 
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+\textsc{\LARGE Universidad Nacional Autónoma de México}\\[0.3cm] % Name of your university/college
+
+%----------------------------------------------------------------------------------------
+%	LOGO SECTION
+%----------------------------------------------------------------------------------------
+
+\includegraphics[scale=0.17]{unam}
+
+%----------------------------------------------------------------------------------------
+%	SUBHEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+\textsc{\Large Electrodinámica Clásica}\\[0.5cm] % Major heading such as course name
+\textsc{\large Semestre 2016-II}\\[0.5cm] % Minor heading such as course title
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Tarea \# 1. \\ Introducción a al 
+Electrostática.}\\[0.2cm] % Title of your document
+\HRule \\[0.2cm]
+ 
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+\setcounter{footnote}{0}
+\center
+\large
+\emph{Autor:} \\ % Your name
+\Large Favio \textsc{Vázquez}\footnote[1]{\href{mailto:favio.vazquez@correo.nucleares.unam.mx}{favio.vazquez@correo.nucleares.unam.mx}}
+
+%----------------------------------------------------------------------------------------
+%	COOL IMAGE SECTION
+%----------------------------------------------------------------------------------------
+
+\includegraphics[scale=0.35]{angelsDemonsEscher}
+
+%----------------------------------------------------------------------------------------
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+% ---------------------------------------------------------------------------------------
+%         HEADER
+%----------------------------------------------------------------------------------------
+
+\fancyhead[L]{Favio Vázquez}
+\fancyhead[R]{\thepage}
+
+%----------------------------------------------------------------------------------------
+\setcounter{footnote}{0}
+\renewcommand*{\thefootnote}{\arabic{footnote}}
 
 \section{Problema 1. Problema 1.2 de Classical Electrodynamics (3ra ed) de 
 Jackson \cite{jackson}.}
