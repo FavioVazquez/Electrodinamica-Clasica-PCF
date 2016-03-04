@@ -177,4 +177,151 @@ de Medios Macroscópicos, Dieléctricos.}\\ % Title of your document
 \setcounter{footnote}{0}
 \renewcommand*{\thefootnote}{\arabic{footnote}}
 
+\section{Problema 1. Problema 4.1 de Classical Electromagnetic Radiation
+de Marion y Heald \cite{marion2}.}
+
+Calcule los momentos multipolares $q_{lm}$ de las distribuciones de carga mostradas 
+como las partes $a$ y $b$. Intente obtener resultados para todo los momentos que 
+no se hacen cero válidos para todo $l$, pero en cada caso encuentre los primeros 
+dos conjuntos de momentos que no se hacen cero al menos.
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale = 0.5]{problema1fig1}
+ \caption{Disposición de la distribución de cargas para el problema 1.}
+\end{figure}
+
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\setcounter{enumi}{2}
+\item Para la distribución de carga del segundo conjunto $b$ escriba la expansión 
+multipolar para el potencial. Manteniendo solo los términos de orden bajo en la 
+expansión, grafique el potencial en el plano $x-y$ como una función de la distancia 
+desde el origen para distancias mayores a $a$.
+\item Calcule directamente de la ley de Coulomb el potencial exacto para $b$ en 
+el plano $x-y$. Grafíquelo como una función de la distancia y compare con el resultados
+encontrado en la parte $c$.
+\end{enumerate}
+
+Divida la forma asintótica en las partes $c$ y $d$ para ver el comportamiento a 
+distancias grandes más claramente.
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\newpage
+
+\section{Problema 2. Problema 4.7 de Classical Electromagnetic Radiation
+de Marion y Heald \cite{marion2}.}
+
+Una distribución de carga localizada tiene la densidad de carga 
+
+$$
+\rho(\mathbf{r}) = \frac{1}{64\pi}r^2\euler^{-r}\sen^2{\theta}
+$$
+
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item Haga una expansión multipolar del potencial debido a esta densidad de 
+carga y determine todos los momentos multipolares que no se hacen cero. Escriba 
+el potencial a grandes distancias como una expansión finita en polinomios de 
+Legendre. 
+\item Determine el potencial explícitamente en cualquier punto del espacio, y 
+muestre que cerca del origen, correcto a $r^2$ inclusive,
+
+$$
+\Phi(\mathbf{r}) \simeq \frac{1}{4\pi\epsilon_0}\left[\frac{1}{4} 
+ - \frac{r^2}{120}P_2(\cos{\theta})\right]
+$$
+
+\item Si existe en el origen un núcleo con un momento cuadrupolar $Q = 10^{-28}$ m$^2$, 
+determine la magnitud de la energía de interacción, asumiendo que la unidad de 
+carga en $\rho(\mathbf{r})$ arriba es la carga electrónica y que la unidad de 
+longitud es el radio de Bohr del hidrógeno $a_0 = 4\pi\epsilon_0\hslash/me^2 = 
+0.529 \times 10^{-10}$ m. Exprese su respuesta como una frecuencia dividida por 
+la constante de Planck $h$.
+\end{enumerate}
+
+La densidad de carga en este problema es la de los estados $m = \pm 1$ del nivel 
+$2p$ en el hidrógeno, mientras que la interacción cuadrupolar es del mismo orden 
+que el encontrado en moléculas.
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\newpage
+
+\section{Problema 3. Problema 4.8 de Classical Electromagnetic Radiation
+de Marion y Heald \cite{marion2}.}
+
+Un cascarón cilíndrico, muy largo y circular recto, de constante dieléctrica 
+$\epsilon/\epsilon_0$ y radio interno y externo $a$ y $b$, respectivamente, 
+es colocado en un previamente campo eléctrico uniforme $E_0$ con su eje perpendicular 
+al campo. El medio adentro y afuera del cilindro tiene una constante dieléctrica de 
+uno.
+
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item Determine el potencial y campo eléctrico en las tres regiones, despreciando 
+efectos finales.
+\item Esboce las líneas de fuerza para un caso típico de $b \simeq 2a$.
+\item Discuta las formas limitantes en su solución apropiadas para un cilindro 
+dieléctrico sólido en un campo uniforme, y una cavidad cilíndrica en un dieléctrico 
+uniforme.
+\end{enumerate}
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\newpage
+
+\section{Problema 4. Problema 4.9 de Classical Electromagnetic Radiation
+de Marion y Heald \cite{marion2}.}
+
+Una carga puntual $q$ es colocada en el espacio libre a una distancia $d$ del centro 
+de una esfera dieléctrica de radio $a$ ($a < d)$ y constante dieléctrica 
+$\epsilon/\epsilon_0$. 
+
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item Encuentre el potencial en todos los puntos del espacio como una expansión 
+en armónicos esféricos.
+\item Calcule las componentes rectangulares del campo eléctrico cerca del 
+centro de la esfera.
+\item Verifique que, en el límite $\epsilon/\epsilon_0 \rightarrow \infty$, tu 
+resultado es el mismo que para la esfera conductora.
+\end{enumerate}
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\newpage
+
+\section{Problema 5. Problema 4.13 de Classical Electromagnetic Radiation
+de Marion y Heald \cite{marion2}.}
+
+Dos superficies cilíndricas conductoras, largas y coaxiales, de radios $a$ y $b$ 
+son bajadas verticalmente a un líquido dieléctrico. Si el líquido sube una altura 
+promedio de $h$ entre los electrodos cuando una diferencia de potencial $V$ es 
+establecida entre ellos, muestre que la susceptibilidad del líquido es 
+
+$$
+\chi_e = \frac{(b^2 - a^2)\rho g h \ln{(b/a)}}{\epsilon_0 V^2}
+$$
+
+donde $\rho$ es la densidad del líquido, $g$ es la aceleración debida a la gravedad, 
+y la susceptibilidad del aire es depreciada.
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\newpage
+
+\begin{thebibliography}{10}
+\bibitem{marion2}
+J. Marion, M. Heald, \emph{Classical Electromagnetic Radiation}, 2da edición, Academic 
+Press, 1965.
+\end{thebibliography}
+
 \end{document}
