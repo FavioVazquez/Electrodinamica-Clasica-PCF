@@ -497,6 +497,271 @@ que el encontrado en moléculas.
 
 \underline{Solución:} \vspace{.3cm}
 
+\textbf{(a)} Recordando que la expresión integral para los momentos multipolares es 
+
+\begin{equation}
+ q_{lm} = \int \rho(r',\theta',\phi')r'^l Y^*_{lm}(\theta',\phi')dV',
+\end{equation}
+
+y debido a que no hay dependencia en $\phi$ en el problema, solo serán distintos de 
+cero los momentos con $m=0$. Tenemos entonces\footnote{Ver el problema anterior 
+para una referencia sobre la relación entre los armónicos esféricos y los polinomios 
+de Legendre.} (ver ecuación (3.57) de Jackson \cite{jackson})
+
+\begin{equation}
+ q_{l0} = \frac{1}{64\pi}\sqrt{\frac{2l+1}{4\pi}}\int_0^\infty \int_0^\pi \int_0^{2\pi} 
+ r^{l+4}\euler^{-r}\sen^3{\theta}P_l(\cos{\theta})drd\theta d\phi
+\end{equation}
+
+que por propiedades de los polinomios de Legendre\footnote{Ver sección 3.3 de 
+Jackson \cite{jackson}.}
+
+\begin{equation}
+ q_{l0} = \frac{1}{32}\sqrt{\frac{2l+1}{4\pi}}\left[\int_0^\infty r^{l+4}e^{-r} dr \right]
+ \left[\int_{-1}^1 (1-x^2)P_l(x)dx \right],
+\end{equation}
+
+La segunda integral puede escribirse como 
+
+\begin{equation}
+ \int_{-1}^1 (1-x^2)P_l(x)dx = \int_{-1}^1 P_l(x)dx - \int_{-1}^1 x^2P_l(x)dx,
+\end{equation}
+
+y por la ortogonalidad de los polinomios de Legendre vemos que la primera integral 
+no es cero solamente para $l=0$ y por lo tanto será igual a 2, y para la segunda
+integral podemos usar la ecuación 3.32 de Jackson \cite{jackson} que nos dice 
+que esta integral tendrá un valor de $2/3$ para $l=0$, $4/15$ para $l=2$ y será 
+cero para cualquier otro valor de $l$. Por lo tanto 
+
+\begin{equation}
+ \int_{-1}^1 (1-x^2)P_l(x)dx = \begin{cases}
+				 \frac{4}{3}, \quad  \qquad l=0 \\
+				 -\frac{5}{15}, \quad \quad l=2 \\
+				 0 \quad \qquad \text{de otra manera}.
+				\end{cases}
+\end{equation}
+
+Entonces solo necesitamos evaluar la otra integral para $l=0$ y $l=2$, y de 
+tablas de integrales vemos que\footnote{\href{http://1.usa.gov/1TxNpSt}{http://1.usa.gov/1TxNpSt}}
+
+\begin{equation}
+ \int_0^\infty r^n \euler^{-r}dr = n!,
+\end{equation}
+
+\begin{equation}
+\therefore \int_0^\infty r^{l+4} \euler^{-r}dr = (l+4)!
+\end{equation}
+
+y tenemos entonces 
+
+\begin{equation}
+ \int_0^\infty r^{l+4} \euler^{-r}dr = \begin{cases}
+				    24, \hspace{.8cm} l=0 \\
+				    720, \hspace{.6cm} l=2.
+				\end{cases}
+\end{equation}
+
+Y utilizando estos resultados encontramos que los momentos multipolares 
+que no se hacen cero son 
+
+\begin{equation}
+ \boxed{q_{00} = \sqrt{\frac{1}{4\pi}}}.
+\end{equation}
+
+\begin{equation}
+ \boxed{q_{20} = -6 \sqrt{\frac{5}{4\pi}}}.
+\end{equation}
+
+Ahora, la expansión multipolar del potencial podemos escribirla como\footnote{Ver 
+ecuación (4.1) de Jackson \cite{jackson}.}
+
+\begin{equation}
+  \Phi(r,\theta,\phi) = \frac{1}{4\pi\epsilon_0 r}\sum_{l=0}^\infty 
+ \sum_{m=-l}^l \frac{4\pi}{2l+1} 
+ q_{lm} \frac{Y_{lm}(\theta,\phi)}{r^{l+1}},
+\end{equation}
+
+que con los momentos multipolares que hemos encontrado puede escribirse como 
+
+\begin{equation}
+  \Phi(r,\theta) = \frac{1}{4\pi\epsilon_0}\left[\frac{1}{r} - 
+  \frac{6}{r^3}P_2(\cos{\theta})  \right]
+\end{equation}
+
+\begin{equation}
+ \boxed{\therefore \Phi(r,\theta) = \frac{1}{4\pi\epsilon_0 r}\left[1 - 
+  \frac{6}{r^2}P_2(\cos{\theta})\right]}.
+\end{equation}
+
+\textbf{(b)} La forma explícita para el potencial en cualquier punto del 
+espacio la calculamos con 
+
+\begin{equation}
+ \Phi(\mathbf{x}) = \frac{1}{4\pi\epsilon_0} \int \frac{\rho(\mathbf{r}'}{|\mathbf{x} - 
+ \mathbf{x}'|}d\mathbf{x}',
+\end{equation}
+
+expandiendo el término $1/|\mathbf{x} -  \mathbf{x}'|$ en armónicos esféricos y usando 
+la diferencial de volumen en coordenadas esféricas podemos escribir (usando la notación 
+de Jackson \cite{jackson})
+
+\begin{equation}
+ \Phi(\mathbf{x}) = \frac{1}{64\pi \epsilon_0 }\sum_{lm} \frac{1}{2l+1}Y_{lm}(\theta,\phi) 
+ \left[\int \frac{r^l_{<}}{r^{l+1}_{>}}r'^4\euler^{-r'} dr\right]
+ \left[\int Y^*_{lm}(\theta',\phi')\sen^3{\theta'}d\theta' d\phi' \right],
+\end{equation}
+
+\begin{equation}
+ \therefore \Phi(\mathbf{x}) = \frac{1}{128\pi \epsilon_0 }\sum_l P_l(\cos{\theta})
+ \left[\int \frac{r^l_{<}}{r^{l+1}_{>}}r'^4\euler^{-r'} dr\right]
+ \left[\int_{-1}^1 (1-x^2)P_l(x)dx\right].
+\end{equation}
+
+De nuevo como arriba, todos los términos con $m \neq 0$ serán cero. Ya hemos resuelto 
+la integral de la derecha, y sustituyendo estos valores encontramos que\footnote{Utilizando 
+una muy inteligente notación de \href{http://homerreid.dyndns.org/physics/jackson/}{http://homerreid.dyndns.org/physics/jackson/}}
+
+\begin{equation}
+ \boxed{\Phi(\mathbf{x}) = \frac{1}{128}\left[\frac{4}{3}\xi_0 - \frac{4}{15}\xi_2 
+ P_2(\cos{\theta})\right]},
+\end{equation}
+
+donde $xi_l$ se refiere a la integral en $r'$. Esta integral solo debe evaluarse 
+para $l=0$ y para $l=2$. Para el caso en que $l=0$ tenemos 
+
+\begin{equation}
+ \xi_0 = \frac{1}{r}\int_0^r r'^4 \euler^{-r'} dr' + \int_r^\infty r'^3\euler^{-r'} dr',
+\end{equation}
+
+\begin{equation}
+ \boxed{\xi_0 = \frac{1}{r}[24 - \euler^{-r}(r^3 + 6r^2 + 18r + 24)]},
+\end{equation}
+
+y para el caso en que $l=2$ tenemos 
+
+\begin{equation}
+  \xi_2 = \frac{1}{r^3}\int_0^r r'^6 \euler^{-r'} dr' + r^2 \int_r^\infty r'\euler^{-r'} dr',
+\end{equation}
+
+\begin{equation*}
+ \boxed{\xi_2 = \frac{1}{r^3}[720 - \euler^{-r}(r^6 + 6r^5 + 30r^4 + 120r^3 + 360r^4 + 
+ 720r + 720)] + r^2[\euler^{-r}(1-r)]}
+\end{equation*}
+
+Lo cual completa el cálculo del potencial en cualquier punto del espacio. Ahora cerca 
+del origen, es decir cuando $r \rightarrow 0$ tenemos 
+
+\begin{equation}
+ \xi_0 \simeq 6, \qquad \quad \xi_2 \simeq r^2 - 2r^3 + \frac{3}{2}r^4.
+\end{equation}
+
+Por lo tanto al sustituir estas expresiones en la ecuación que encontramos para el 
+potencial en todo punto del espacio encontramos 
+
+\begin{equation}
+ \boxed{\Phi(\mathbf{x}) = \frac{1}{4\pi\epsilon_0}\left[\frac{1}{4} - \frac{r^2}{120} 
+ P_2(\cos{\theta})\right]}.
+\end{equation}
+
+\hspace{10cm}\includegraphics[scale=0.25]{logoQED}
+
+\textbf{(c)} La energía de la interacción cuadrupolar está dada por el tercer término
+de la ecuación (4.24) de Jackson \cite{jackson}, 
+
+\begin{equation}
+ W^(4) = -\frac{1}{6}\sum_{ij} Q_{ij} \left\zerodel\frac{\partial E_j}{\partial x_i}
+ \right|_{x=0},
+\end{equation}
+
+además para un núcleo atómico tenemos simetría en el eje $z$ (eje arbitrario), por 
+lo tanto se cumple que\footnote{Ver ecuación (2.38) de Marion y Heald \cite{marion2}.} 
+
+\begin{equation}
+ Q_{33} = - 2Q_{11} = - 2Q_{22} = eQ,
+\end{equation}
+
+y todos las demás componentes son cero. Y entonces 
+
+\begin{equation}
+ W = \frac{eQ}{6}\left|\frac{1}{2}\frac{\partial E_x}{\partial x} + 
+ \frac{1}{2}\frac{\partial E_y}{\partial y} - \frac{\partial E_z}{\partial z}
+ \right|_{\mathbf{x}=0}, 
+\end{equation}
+
+que podemos escribir como 
+
+\begin{equation}
+ W = \frac{eQ}{6}\left|\frac{1}{2}\nabla \cdot \mathbf{E} 
+ - \frac{3}{2}\frac{\partial E_z}{\partial z}\right|_{\mathbf{x}=0},
+\end{equation}
+
+y utilizando la ley de Gauss encontramos 
+
+\begin{equation}
+  W = \frac{eQ}{6}\left|\frac{1}{2}\frac{\cancelto{0}{\rho}}{\epsilon_0}
+ - \frac{3}{2}\frac{\partial E_z}{\partial z}\right|_{\mathbf{x}=0},
+\end{equation}
+
+donde recordamos que $\rho \rightarrow 0$ en el origen. Tenemos entonces 
+
+\begin{equation}
+ W = - \frac{eQ}{4}\left|\frac{\partial E_z}{\partial z} \right|_{\mathbf{x}=0},
+\end{equation}
+
+\begin{equation}
+ \therefore W = -\frac{eQ}{4}\left|\frac{\partial^2 \Phi}{\partial z^2} \right|_{\mathbf{x}=0}.
+\end{equation}
+
+Para calcular esta última derivada parcial necesitamos expresar el potencial obtenido 
+en el inciso anterior en coordenadas cartesianas, que ignorando la parte constante 
+podemos escribir como 
+
+\begin{equation}
+ \Phi(\mathbf{x}) = \frac{1}{480\pi\epsilon_0}r^2P_2(\cos{\theta}),
+\end{equation}
+
+\begin{equation}
+  \Phi(\mathbf{x}) = \frac{1}{960\pi\epsilon_0}r^2(3\cos{\theta} - 1),
+\end{equation}
+
+usando la definición de $r$ y de $\cos{\theta}$
+
+\begin{equation}
+  \therefore \Phi(\mathbf{x}) = \frac{1}{960\pi\epsilon_0}(2z^2 - x^2 - y^2),
+\end{equation}
+
+y diferenciando obtenemos 
+
+\begin{equation}
+ \frac{\partial^2 \Phi}{\partial z^2} = \frac{1}{240\pi\epsilon_0},
+\end{equation}
+
+y sustituyendo este resultado en la ecuación para $W$ obtenemos 
+
+\begin{equation}
+ W = \frac{eQ}{960\pi\epsilon_0},
+\end{equation}
+
+ahora para asegurar que las dimensiones están correctas debemos multiplicar por 
+$e$ y dividir por $a_0^3$, obtenemos entonces 
+
+\begin{equation}
+ \frac{W}{\hbar} = \frac{1}{240}\frac{e^2Q}{4\pi\epsilon_0\hbar a_0^3},
+\end{equation}
+
+que podemos escribir como\footnote{Utilizando la ecuación para la constante 
+de estructura fina $\alpha = \frac{1}{4\pi\epsilon_0}\frac{e^2}{\hbar c}$.}
+
+\begin{equation}
+ \frac{W}{\hbar} = \frac{1}{240}\frac{\alpha c Q}{a_0^3},
+\end{equation}
+
+y sustituyendo los valores que nos da el texto encontramos 
+
+\begin{equation}
+ \boxed{\frac{W}{\hbar} = 6.16 \times 10^6 \text{ rad/s} \simeq 1 \text{ MHz}}.
+\end{equation}
+
 \newpage
 
 \section{Problema 3. Problema 4.8 de Classical Electromagnetic Radiation
@@ -570,6 +835,9 @@ y la susceptibilidad del aire es depreciada.
 \bibitem{jackson}
 J. Jackson, \emph{Classical Electrodynamics}, 3ra edición. John Wiley and Sons, Inc. 
 1999.
+\bibitem{marion2}
+J. Marion, M. Heald, \emph{Classical Electromagnetic Radiation}, 2da edición, Academic 
+Press, 1965.
 \end{thebibliography}
 
 \end{document}
