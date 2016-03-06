@@ -786,6 +786,313 @@ uniforme.
 
 \underline{Solución:} \vspace{.3cm}
 
+Debido a que el cilindro es muy largo y uniforme sobre su eje, y el campo original 
+es también uniforme, el problema puede reducirse a dos dimensiones, y por la simetría 
+del mismo trabajaremos en coordenadas polares. Supongamos además que el campo apunta 
+hacia el lado positivo del eje $x$. 
+
+\vspace{.3cm}
+
+Por otra parte, ya que no hay carga libre en ningún lado, y además no hay carga ligada 
+en ningún lado excepto la superficie del cilindro, podemos dividir el problema en 
+tres regiones, y usar la solución a la respectiva ecuación de Laplace en cada 
+región.
+
+\vspace{.3cm}
+
+Recordemos que la solución general de la ecuación de Laplace en coordenadas polares
+cuando se trabaja con un barrido angular total es\footnote{Ver ecuación (2.71) de 
+Jackson \cite{jackson}.}
+
+\begin{equation}
+ \Phi(\rho,\phi) = a_0 + b_0 \ln{\rho} + \sum_{m=1}^\infty (a_m \rho^m + b_m \rho^{-m})
+ (A_m \euler^{im\phi} + B_m \euler^{-im\phi}).
+\end{equation}
+
+La región interna incluye el origen, por lo que debe tener la forma 
+
+\begin{equation}
+ \boxed{\Phi_{\rho < a} = \sum_{m=0}^\infty \rho^m (A_m \euler^{im\phi} + B_m \euler^{-im\phi})}.
+\end{equation}
+
+La región externa debe comportarse como un campo uniforme a distancias grandes, entonces 
+recordando que hemos escogido que el campo apunta hacia el lado positivo del eje $x$
+
+\begin{equation}
+ - E_0\rho\cos{\phi} =  a_0 + b_0 \ln{\rho} + \sum_{m=1}^\infty (a_m \rho^m + b_m \rho^{-m})
+ (A_m \euler^{im\phi} + B_m \euler^{-im\phi}),
+\end{equation}
+
+debido a la ortogonalidad tenemos que $a_0 = 0$, $b_0 = 0$, y solo el término con 
+$m=1$ no se hace cero, y $A_1 = B_1$, entonces 
+
+\begin{equation}
+ -E_0 = a_1 2 B_1,
+\end{equation}
+
+por lo que la solución se convierte en 
+
+\begin{equation}
+ \boxed{\Phi_{\rho>b} = (-E_0 \rho + b_1 \rho^{1})\cos{\theta}}.
+\end{equation}
+
+La región del medio simplemente conecta las otras dos regiones, 
+
+\begin{equation}
+ \boxed{\therefore \Phi_{a < \rho < b} = c_0 + d_0 \ln{\rho} + \sum_{m=1}^\infty (c_m \rho^m + d_m \rho^{-m})
+ (C_m \euler^{im\phi} + D_m \euler^{-im\phi})}.
+\end{equation}
+
+Debemos ahora calcular estos parámetros que hemos puesto a lo largo de las expresiones 
+para los potenciales; para hacer esto partimos de las condiciones de frontera que 
+deben cumplirse, i.e.
+
+\begin{equation}
+ (\epsilon_2 \mathbf{E}_2 - \epsilon_1 \mathbf{E}_1)\cdot \mathbf{n} = \sigma,
+\end{equation}
+
+pero debido a que no hay carga libre y que el campo eléctrico se propaga la dirección 
+radial tenemos 
+
+\begin{equation}
+  \epsilon_2 \mathbf{E}_2 \cdot \hat{\rho} =
+  \epsilon_1 \mathbf{E}_1 \cdot \hat{\rho}.
+\end{equation}
+
+Aplicando esto a la superficie exterior ($\rho = b$) obtenemos
+
+\begin{equation}
+ \epsilon_0 \left\zerodel\frac{\partial \Phi_{\rho>b}}{\partial \rho}\right|_{\rho=b} = 
+ \epsilon \left\zerodel\frac{\partial \Phi_{a < \rho < b}}{\partial \rho}\right|_{\rho=b},
+\end{equation}
+
+\begin{align*}
+ \epsilon_0 \left\zerodel\frac{\partial}{\partial \rho}\left[ (-E_0 \rho + b_1 \rho^{1})\cos{\phi}
+ \right]\right|_{\rho=b} &= \epsilon \frac{\partial}{\partial \rho} \left[c_0 + d_0 \ln{\rho}\right\zerodel \\
+ &+ \left\zerodel\sum_{m=1}^\infty (c_m \rho^m + d_m \rho^{-m})
+ (C_m \euler^{im\phi} + D_m \euler^{-im\phi})]\right|_{\rho=b},
+\end{align*}
+
+\begin{equation*}
+ \therefore \epsilon_0\left[(-E_0 - b_1b^{-2})\cos{\phi}\right] = 
+ \epsilon \left[ d_0 \frac{1}{b} + \sum_{m=1}^\infty(c_m m b^{m-1} - 
+ m d_m b^{-m-1})(C_m \euler^{im\phi} + D_m \euler^{-im\phi})\right].
+\end{equation*}
+
+Debido a la ortogonalidad encontramos que $d_0 = 0$, $D_m = C_m$ y solamente se 
+mantienen los términos con $m=1$; también podemos despreciar el $c_0$ ya que es 
+una constante que no afecta el resultado final, entonces 
+
+\begin{equation}
+ \epsilon_0\left[(-E_0 - b_1b^{-2})\cos{\phi}\right] = 
+ \epsilon [(c_1 - d_1 b^{-2})C_1 2\cos{\phi}),
+\end{equation}
+
+combinando ahora los factores de $c_1$ con $C_1$ encontramos 
+
+\begin{equation}
+ C_1 = \frac{-\epsilon_0(-E_0 - b_1b^{-2})}{2\epsilon(1 - d_1b^{-2}},
+\end{equation}
+
+y la solución del medio se convierte por ahora en 
+
+\begin{equation}
+ \Phi_{a < \rho < b} = -(\rho + d_1 \rho^{-1})
+ \frac{-\epsilon_0(-E_0 - b_1b^{-2})}{2\epsilon(1 - d_1b^{-2}}\cos{\phi}.
+\end{equation}
+
+Aplicando la otra condición de frontera en la superficie exterior ($\rho = b$) 
+
+\begin{equation}
+ \left\zerodel E_{r,2}\right|_{\rho=b} = \left\zerodel E_{r,1}\right|_{\rho=b},
+\end{equation}
+
+\begin{equation*}
+ \left\zerodel\frac{\partial \Phi_{\rho>b}}{\partial \phi}\right|_{\rho=b} = 
+ \left\zerodel\frac{\partial \Phi_{a < \rho < b}}{\partial \phi}\right|_{\rho=b},
+\end{equation*}
+
+\begin{equation*}
+ \left\zerodel\frac{\partial}{\partial \phi}\left[(-E_0 \rho + b_1 \rho^{1})\cos{\phi} \right]\right|_{\rho=b} = 
+\left\zerodel \frac{\partial}{\partial \phi}\left[c_0  -(\rho + d_1 \rho^{-1})
+ \frac{-\epsilon_0(-E_0 - b_1b^{-2})}{2\epsilon(1 - d_1b^{-2}}\cos{\phi}\right]\right|_{\rho=b}
+\end{equation*}
+
+\begin{equation}
+ \therefore (E_0 - b_1b^{-2})\epsilon(1 - d_1 b^{-2}) = (1 + d_1b^{-2})\epsilon_0 
+ (E_0+ b_1b^{-2}),
+\end{equation}
+
+y entonces 
+
+\begin{equation}
+ d_1 = b^2 \frac{b_1(\epsilon + \epsilon_0) - E_0b^2(\epsilon - \epsilon_0)}
+ {b_1(\epsilon - \epsilon_0) - E_0b^2(\epsilon + \epsilon_0)},
+\end{equation}
+
+y la solución en la región central se convierte en 
+
+\begin{equation*}
+ \boxed{\Phi_{a < \rho < b} = \frac{1}{2\epsilon b^2}\cos{\phi}\left\{
+ b_1(\epsilon - \epsilon_0) - E_0 b^2 (\epsilon + \epsilon_0)\rho 
+ + b^2[(b_1(\epsilon+\epsilon_0) - E_0 b^2(\epsilon - \epsilon_0)\rho^{-1}]\right\}}.
+\end{equation*}
+
+Ahora aplicando las condiciones de frontera en la superficie interna $(\rho = a)$ 
+
+\begin{equation}
+  \epsilon_0 \left\zerodel\frac{\partial \Phi_{\rho>b}}{\partial \rho}\right|_{\rho=a} = 
+ \epsilon \left\zerodel\frac{\partial \Phi_{a < \rho < b}}{\partial \rho}\right|_{\rho=a},
+\end{equation}
+
+obtenemos 
+
+\begin{equation}
+ \frac{1}{2b^2}\left\{
+ b_1(\epsilon - \epsilon_0) - E_0 b^2 (\epsilon + \epsilon_0) 
+ + b^2[(b_1(\epsilon+\epsilon_0) - E_0 b^2(\epsilon - \epsilon_0)]a^{-2}\right\} = 
+ \epsilon_0 A_1,
+\end{equation}
+
+y 
+
+\begin{equation}
+ \left\zerodel\frac{\partial \Phi_{\rho>b}}{\partial \phi}\right|_{\rho=a} = 
+ \left\zerodel\frac{\partial \Phi_{a < \rho < b}}{\partial \phi}\right|_{\rho=a},
+\end{equation}
+
+obtenemos 
+
+\begin{equation}
+ \frac{1}{2\epsilon a b^2}\left\{
+ [b_1(\epsilon - \epsilon_0) - E_0 b^2 (\epsilon + \epsilon_0)]a 
+ + b^2[(b_1(\epsilon+\epsilon_0) - E_0 b^2(\epsilon - \epsilon_0)]a^{-1}\right\} = 
+ A_1,
+\end{equation}
+
+Y resolviendo este sistema de ecuaciones con \texttt{Mathematica$^\circledR$} obtenemos 
+
+\begin{equation}
+ b_1 = E_0 b^2 \frac{(b^2 - a^2)(\epsilon^2 - \epsilon_0^2)}{b^2(\epsilon + 
+ \epsilon_0)^2 - a^2(\epsilon - \epsilon_0)^2}, 
+\end{equation}
+
+y 
+
+\begin{equation}
+ A_1 = - \frac{4b^2 E_0 \epsilon \epsilon_0}{b^2(\epsilon + \epsilon_0)^2 
+ - a^2(\epsilon - \epsilon_0)^2}.
+\end{equation}
+
+Ya tenemos todos los parámetros que necesitamos para escribir las expresiones que 
+encontramos arriba para los potenciales en las tres regiones, que resultan 
+
+\begin{equation}
+ \boxed{\Phi_{\rho < a} = E_0\rho\cos{\phi} \left[- \frac{4b^2 E_0 \epsilon
+ \epsilon_0}{b^2(\epsilon + \epsilon_0)^2 
+ - a^2(\epsilon - \epsilon_0)^2} \right]},
+\end{equation}
+
+\begin{equation}
+ \boxed{\Phi_{a < \rho < b} = \frac{-2ab^2\epsilon_0}{b^2(\epsilon + \epsilon_0)^2 
+ - a^2(\epsilon - \epsilon_0)^2}\left[(\epsilon + \epsilon_0)\frac{\rho}{a} 
+ + (\epsilon + \epsilon_0)\frac{a}{\rho}\right]E_0\cos{\phi}},
+\end{equation}
+
+\begin{equation}
+ \boxed{\Phi_{\rho>b} = E_0\cos{\phi}\left[-\rho + \frac{(b^2 - a^2)(\epsilon^2 -
+ \epsilon_0^2)}{b^2(\epsilon +  \epsilon_0)^2 - a^2(\epsilon - \epsilon_0)^2} 
+ \frac{b^2}{\rho}\right]}.
+\end{equation}
+
+Para obtener los campos eléctricos utilizamos
+
+\begin{equation}
+ \mathbf{E} = -\hat{\rho}\frac{\partial \Phi}{\partial \rho} 
+ - \hat{\phi}\frac{1}{\rho}\frac{\partial \Phi}{\partial \phi},
+\end{equation}
+
+y luego de hacer las derivadas y un poco de álgebra, recordando la 
+dirección del campo eléctrico que hemos escogido, obtenemos 
+
+\begin{equation}
+ \boxed{\mathbf{E}_{\rho < a} = E_0 \left[- \frac{4b^2 E_0 \epsilon
+ \epsilon_0}{b^2(\epsilon + \epsilon_0)^2 
+ - a^2(\epsilon - \epsilon_0)^2} \right]\hat{i}},
+\end{equation}
+
+\begin{equation}
+ \boxed{\mathbf{E}_{a < \rho < b} = \frac{2ab^2\epsilon_0E_0}{b^2(\epsilon + \epsilon_0)^2 
+ - a^2(\epsilon - \epsilon_0)^2}\left[(\epsilon + \epsilon_0)\hat{i}
+ - (\epsilon - \epsilon_0)\frac{a^2}{\rho^2}(\hat{i} + 2\hat{\phi}\sen{\phi})\right]},
+\end{equation}
+
+\begin{equation}
+ \boxed{E_{\rho > b} = E_0 \hat{i} + \frac{(b^2-a^2)(\epsilon^2 - \epsilon_0^2)}{
+ b^2(\epsilon + \epsilon_0)^2 - a^2(\epsilon - \epsilon_0)^2}\frac{b^2}{\rho^2}
+ E_0(\hat{i} + 2\hat{\phi}\sen{\phi})}.
+\end{equation}
+
+
+\textbf{(b)} Para esbozar las líneas de fuerza para un caso típico de $b \simeq 2a$, 
+primero hagamos esta sustitución en los campos eléctricos que hemos encontrado en 
+el inciso anterior 
+
+\begin{equation}
+ \mathbf{E}_{\rho < a} = E_0 \left[- \frac{16 E_0 \epsilon
+ \epsilon_0}{4(\epsilon + \epsilon_0)^2 
+ - a^2(\epsilon - \epsilon_0)^2} \right]\hat{i},
+\end{equation}
+
+\begin{equation}
+ \mathbf{E}_{a < \rho < b} = \frac{8\epsilon_0E_0}{4(\epsilon + \epsilon_0)^2 
+ - (\epsilon - \epsilon_0)^2}\left[(\epsilon + \epsilon_0)\hat{i}
+ - (\epsilon - \epsilon_0)\frac{a^2}{\rho^2}(\hat{i} + 2\hat{\phi}\sen{\phi})\right],
+\end{equation}
+
+\begin{equation}
+ E_{\rho > b} = E_0 \hat{i} + \frac{12(\epsilon^2 - \epsilon_0^2)}{
+ 4(\epsilon + \epsilon_0)^2 - (\epsilon - \epsilon_0)^2}\frac{a^2}{\rho^2}
+ E_0(\hat{i} + 2\hat{\phi}\sen{\phi}).
+\end{equation}
+
+El gráfico de estas tres regiones es el siguiente
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.46]{problema3fig1}
+ \caption{Gráfico del comportamiento del campo eléctrico para el caso $b\simeq 2a$. Notar 
+ que la figura no la realicé completamente yo, la tome de 
+ \href{http://bit.ly/1pslIha}{http://bit.ly/1pslIha} y 
+ la modifiqué un poco.}
+\end{figure}
+
+\textbf{(c)} Para un cilindro dieléctrico sólido en un campo, solamente tenemos que 
+hacer $a \rightarrow 0$, y tenemos 
+
+\begin{equation}
+ \boxed{\mathbf{E}_{\rho < b} = \frac{2\epsilon_0}{\epsilon + \epsilon_0}E_0 \hat{i}},
+\end{equation}
+
+\begin{equation}
+ \boxed{ \mathbf{E}_{\rho > b} = E_0\hat{i} + \frac{(\epsilon - \epsilon_0)b^2}
+ {(\epsilon + \epsilon_0)\rho^2}E_0(\hat{i} + 2\hat{\phi}\sen{\phi})}.
+\end{equation}
+
+Para una cavidad cilíndrica en un dieléctrico uniforme, solamente tenemos que 
+hacer $b \rightarrow 0$, y obtenemos 
+
+\begin{equation}
+ \boxed{\mathbf{E}_{\rho < a} = \frac{3\epsilon\epsilon_0}{(\epsilon + \epsilon_0)^2}
+ E_0 \hat{i}},
+\end{equation}
+
+\begin{equation}
+ \boxed{\mathbf{E}_{\rho > a} = \frac{2\epsilon_0}{(\epsilon + \epsilon_0)^2}E_0 
+ \left[(\epsilon + \epsilon_0)\hat{i} - (\epsilon - \epsilon_0)\frac{a^2}{\rho^2}
+ (\hat{i} + 2\hat{\phi}\sen{\phi})\right]}.
+\end{equation}
+
 \newpage
 
 \section{Problema 4. Problema 4.9 de Classical Electromagnetic Radiation
