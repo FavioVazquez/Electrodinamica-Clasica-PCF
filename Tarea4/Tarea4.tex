@@ -1433,20 +1433,31 @@ entre ellos, es decir que debe proveerse energía externa al sistema para manten
 el potencial mientras el sistema cambia. Tenemos entonces 
 
 \begin{equation}
- \Delta W = W - W',
+ \Delta W = W' - W,
 \end{equation}
 
+y recordando que en materiales $W = \frac{1}{2}\int \mathbf{E}\cdot \mathbf{D} d^3x$
+tenemos\footnote{Los primados se refieren a luego de introducidos en el líquido.}
+
 \begin{equation}
- \Delta W = \frac{1}{2}\int \mathbf{E}\cdot \mathbf{D} d^3 \mathbf{x} - 
- \frac{1}{2}\int \mathbf{E}'\cdot \mathbf{D}' d^3 \mathbf{x},
+ \Delta W = \frac{1}{2}\int \mathbf{E}'\cdot \mathbf{D}' d^3 \mathbf{x} - 
+ \frac{1}{2}\int \mathbf{E}\cdot \mathbf{D} d^3 \mathbf{x},
 \end{equation}
 
 y ya que esta ecuación debe depender de las propiedades del líquido en que 
 las superficies cilíndricas son introducidas podemos escribir esta ecuación 
 como\footnote{Ver ecuación (4.38) de Jackson \cite{jackson}.}
 
+\begin{equation*}
+ \Delta W = \left[\frac{1}{2}(L -h)\epsilon_0  \int E_{\text{aire}}^2 d^2 \mathbf{x} 
+ +  \frac{1}{2}h\epsilon_0(1 + \chi_e)h \int E_{\text{líquido}}^2 d^2 \mathbf{x} 
+ \right] - \left[\frac{1}{2}L\epsilon_0\int E_{\text{aire}}^2 d^2 \mathbf{x} \right]
+\end{equation*}
+
+donde $L$ es la longitud de los cilindros. Esta ecuación se reduce a 
+
 \begin{equation}
- \Delta W = \frac{1}{2}h\epsilon_0 \int E_{\text{aire}}^2 d^2 \mathbf{x} +
+ \therefore \Delta W = \frac{1}{2}h\epsilon_0 \int E_{\text{aire}}^2 d^2 \mathbf{x} +
  \frac{1}{2}h\epsilon_0(1 + \chi_e)h \int E_{\text{líquido}}^2 d^2 \mathbf{x}.
 \end{equation}
 
