@@ -1345,18 +1345,169 @@ de Jackson \cite{jackson}.}
 Dos superficies cilíndricas conductoras, largas y coaxiales, de radios $a$ y $b$ 
 son bajadas verticalmente a un líquido dieléctrico. Si el líquido sube una altura 
 promedio de $h$ entre los electrodos cuando una diferencia de potencial $V$ es 
-establecida entre ellos, muestre que la susceptibilidad del líquido es 
+establecida entre ellos, muestre que la susceptibilidad del líquido es\footnote{Hemos 
+cambiado la letra usada para la densidad por conveniencia.}
 
 $$
-\chi_e = \frac{(b^2 - a^2)\rho g h \ln{(b/a)}}{\epsilon_0 V^2}
+\chi_e = \frac{(b^2 - a^2)\xi g h \ln{(b/a)}}{\epsilon_0 V^2}
 $$
 
-donde $\rho$ es la densidad del líquido, $g$ es la aceleración debida a la gravedad, 
+donde $\xi$ es la densidad del líquido, $g$ es la aceleración debida a la gravedad, 
 y la susceptibilidad del aire es depreciada.
 
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+Hay dos regiones que considerar en este problema, una entre los cilindros con aire 
+y la otra entre los cilindros con agua. Aunque existan dos permitividades distintas, 
+el campo $\mathbf{D}$ debe ser el mismo en las dos regiones. Por conveniencia colocaremos 
+el eje del cilindro en el eje $z$, y debido a que el cilindro es largo, podemos 
+ignorar la dimensión $z$ y podemos resolver la ecuación de Laplace en dos dimensiones. 
+Recordemos que esta tiene la forma\footnote{Ver ecuación (2.71) de Jackson \cite{jackson}.}
+
+\begin{equation}
+ \Phi(\rho,\phi) = a_0 + b_0 \ln{\rho} + \sum_{m=1}^\infty (a_m \rho^m + b_m \rho^{-m})
+ (A_m \euler^{im\phi} + B_m \euler^{-im\phi}).
+\end{equation}
+
+Y ya que el problema tiene simetría azimutal, esta ecuación se reduce a 
+
+\begin{equation}
+ \Phi(\rho,\phi) = a_0 + b_0 \ln{\rho}.
+\end{equation}
+
+Si asumimos ahora que la diferencia de potencial $V$ establecida entre las superficies 
+cilíndricas conductoras es tal que en la de adentro es cero el potencial, y en la 
+de afuera es $V$, tenemos que 
+
+\begin{equation}
+ \Phi(\rho = a) = 0,
+\end{equation}
+
+\begin{equation}
+ 0 = a_0 + b_0\ln{a},
+\end{equation}
+
+\begin{equation}
+ \therefore q_0 = - b_0 \ln_a,
+\end{equation}
+
+y la solución se convierte por ahora en (utilizando las propiedades de los logaritmos)
+
+\begin{equation}
+ \Phi(\rho,\phi) = b_0 \ln({\rho/a}),
+\end{equation}
+
+para obtener la forma de $b_0$ hacemos, 
+
+\begin{equation}
+ \Phi(\rho = b) = V,
+\end{equation}
+
+\begin{equation}
+ V =  b_0 \ln({\rho/a}),
+\end{equation}
+
+\begin{equation}
+ \therefore b_0 = \frac{V}{\ln{(b/a)}}.
+\end{equation}
+
+Y el potencial es entonces 
+
+\begin{equation}
+ \Phi(\rho,\phi) = V \frac{\ln{(\rho/a)}}{\ln{(b/a)}}.
+\end{equation}
+
+El campo eléctrico será 
+
+\begin{equation}
+ \mathbf{E} = -\nabla \Phi = - V \frac{1}{\ln{(b/a)}}\frac{1}{\rho} \hat{\rho}.
+\end{equation}
+
+Ahora, debido a que se debe conservar la energía, la energía potencial $W$ que 
+había cuando la región entre los cilindros estaba completamente llena de aire y
+la energía potencial después que se introducen los cilindros en el agua y se llega 
+al equilibrio $W'$, debe ser tal que se mantenga la diferencia de potencial $V$ 
+entre ellos, es decir que debe proveerse energía externa al sistema para mantener 
+el potencial mientras el sistema cambia. Tenemos entonces 
+
+\begin{equation}
+ \Delta W = W - W',
+\end{equation}
+
+\begin{equation}
+ \Delta W = \frac{1}{2}\int \mathbf{E}\cdot \mathbf{D} d^3 \mathbf{x} - 
+ \frac{1}{2}\int \mathbf{E}'\cdot \mathbf{D}' d^3 \mathbf{x},
+\end{equation}
+
+y ya que esta ecuación debe depender de las propiedades del líquido en que 
+las superficies cilíndricas son introducidas podemos escribir esta ecuación 
+como\footnote{Ver ecuación (4.38) de Jackson \cite{jackson}.}
+
+\begin{equation}
+ \Delta W = \frac{1}{2}h\epsilon_0 \int E_{\text{aire}}^2 d^2 \mathbf{x} +
+ \frac{1}{2}h\epsilon_0(1 + \chi_e)h \int E_{\text{líquido}}^2 d^2 \mathbf{x}.
+\end{equation}
+
+Y ya que el campo eléctrico debe ser el mismo en las dos regiones tenemos 
+
+\begin{equation}
+ \Delta W = \frac{h\epsilon_0 \chi_e}{2}\int E^2 d^2\mathbf{x},
+\end{equation}
+
+\begin{equation}
+ \therefore \Delta W = \frac{h\epsilon_0 \chi_e}{2}2\pi \int_a^b E^2 \rho d\rho,
+\end{equation}
+
+e introduciendo la expresión para el campo eléctrico que obtuvimos 
+
+\begin{equation}
+ \therefore \Delta W = \frac{h\epsilon_0 \chi_e}{2}2\pi \int_a^b 
+ \left(V^2 \frac{1}{\ln^2{(b/a)}}\frac{1}{\rho^2} \right)\rho d\rho,
+\end{equation}
+
+e integrando obtenemos 
+
+\begin{equation}
+  \Delta W = \frac{\pi h \epsilon_0 \chi_e V^2}{\ln^2{(b/a)}}.
+\end{equation}
+
+Esta es la energía potencial ganada en los campos resultante de introducir las 
+superficies cilíndricas en el líquido dieléctrico a una altura $h$. También podemos 
+ver el cambio de energía potencial como una energía potencial gravitacional, en 
+este caso 
+
+\begin{equation}
+ \Delta W = mhg,
+\end{equation}
+
+y usando la definición de densidad $\xi = m/V$ podemos escribir 
+
+\begin{equation}
+ \Delta W = \xi h A gh,
+\end{equation}
+
+pero el área $A = \pi(b^2 - a^2)h$, 
+
+\begin{equation}
+ \therefore \Delta W = \xi \pi(b^2 - a^2)h^2 g,
+\end{equation}
+
+Ahora claramente estas dos diferencias de energía cinética deben ser iguales, por lo 
+tanto 
+
+\begin{equation}
+  \frac{\pi h \epsilon_0 \chi_e V^2}{\ln^2{(b/a)}} = \xi \pi(b^2 - a^2)h^2 g,
+\end{equation}
+
+y resolviendo para $\chi_e$ encontramos 
+
+\begin{equation}
+ \boxed{\chi_e = \frac{(b^2 - a^2)\xi g h \ln{(b/a)}}{\epsilon_0 V^2}}.
+\end{equation}
+
+\hspace{10cm}\includegraphics[scale=0.25]{logoQED}
 
 \newpage
 
