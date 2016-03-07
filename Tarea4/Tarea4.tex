@@ -1115,6 +1115,228 @@ resultado es el mismo que para la esfera conductora.
 
 \underline{Solución:} \vspace{.3cm}
 
+Si colocamos la esfera en el origen y la carga puntual en el eje $z$ a una distancia 
+$z = d$ el problema tendrá simetría azimutal, y por lo tanto $m = 0$ y la solución 
+puede expresarse en términos de los polinomios de Legendre, lo cual será más simple 
+que en armónicos esféricos, y no se pierde generalidad con esta suposición. 
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.8]{problema4fig1}
+ \caption{Geometría asumida para el sistema del problema 4.}
+\end{figure}
+
+
+Debemos resolver el problema para las dos regiones, y utilizar las condiciones 
+de frontera para así encontrar una solución completa. Tenemos las siguientes dos 
+regiones:
+
+\begin{equation}
+ \Phi_{r < a} \quad \qquad \text{donde tenemos } \epsilon,
+\end{equation}
+
+\begin{equation}
+  \Phi_{r > a} \quad \qquad \text{donde tenemos } \epsilon_0.
+\end{equation}
+
+Resolvamos primero la región $r > a$ utilizando el método de imágenes. Para esto 
+colocamos una carga imagen $q'$ en $z = a^2/d$ para dar cuenta de los efectos 
+de la esfera dieléctrica, y la posición que hemos escogido ha sido basada en 
+los resultados obtenidos en la sección 2.2 de Jackson \cite{jackson}, específicamente 
+la ecuación (2.4). El potencial en la región exterior debido a la carga puntual 
+y la carga imagen es 
+
+\begin{equation}
+ \Phi_{r > a} = \frac{1}{4\pi\epsilon_0}\left(\frac{q}{|\mathbf{r}-d\hat{z}|} 
+ + \frac{q'}{|\mathbf{r} - (a^2/d)\hat{z}|}\right),
+\end{equation}
+
+ahora expandiendo en series de polinomios de Legendre y combinando
+
+\begin{equation}
+ \frac{1}{|\mathbf{r} - \mathbf{r}_0} = 
+ \sum_{l=0}^\infty \frac{r_{>}^l}{r_{<}^{l+1}}P_l(\cos{\theta}),
+\end{equation}
+
+donde $r_{<}$ es el más pequeño entre $(r,r_0)$. Entonces si $r > d$ 
+
+\begin{equation}
+ \Phi_{r > a} = \frac{1}{4\pi\epsilon_0}\sum_{l=0}^\infty P_l(\cos{\theta} 
+ \frac{1}{r^{l+1}} \left(qd^l + q'\frac{a^{2l}}{d^l}\right),
+\end{equation}
+
+y si $r < d$
+
+\begin{equation}
+  \Phi_{r > a} = \frac{1}{4\pi\epsilon_0}\sum_{l=0}^\infty P_l(\cos{\theta} 
+  \left(q\frac{r^l}{d^{l+1}} + q'\frac{a^{2l}}{d^lr^{l+1}} \right).
+\end{equation}
+
+Resolvamos ahora para el potencial adentro de la esfera. Ya que no hay carga adentro 
+de la esfera, solo necesitamos una carga imagen $q''$ afuera de la esfera en $z=d$ 
+para simular los efectos de el material dieléctrico. Tenemos entonces 
+
+\begin{equation}
+ \Phi_{r < a} = \frac{1}{4\pi\epsilon}\left(\frac{q''}{|\mathbf{r} - d\hat{z}|}\right). 
+\end{equation}
+
+Ahora ya que $r$ siempre es más pequeño que $d''$, solo necesitamos una expansión 
+
+\begin{equation}
+ \Phi_{r < a} = \frac{1}{4\pi\epsilon}\left(\sum_{l=0}^\infty q'' 
+ \frac{r^l}{d^{l+1}}P_l(\cos{\theta})\right).
+\end{equation}
+
+Para encontrar expresiones para $q'$ y $q''$ debemos aplicar la condición de 
+frontera en $r = a$ que nos dice que $(\mathbf{D}_2 
+- \mathbf{D}_1)\cdot n_{12} = \sigma$, y debido a que no hay densidad de carga 
+libre en la superficie de la esfera, esta condición se convierte en\footnote{Donde 
+estamos usando el hecho de que $\mathbf{D} = \epsilon \mathbf{E}$ en este caso.}
+
+\begin{equation}
+ \left(\epsilon_0 \mathbf{E}_{r > a} - \epsilon \mathbf{E}_{r < a}\right)\cdot \hat{r} = 0,
+\end{equation}
+
+que implica usando la definición de campo eléctrico dado el potencial eléctrico 
+
+\begin{equation}
+ \epsilon_0 \frac{\partial \Phi_{r > a}}{\partial r} = \epsilon 
+ \frac{\partial \Phi_{r < a}}{\partial r},
+\end{equation}
+
+y derivando obtenemos 
+
+\begin{equation}
+ \boxed{ql + q'(-l -1)\frac{d}{a} = q'' l}.
+\end{equation}
+
+Aplicando la segunda condición de frontera en $r = a$ que nos dice que 
+$(\mathbf{E}_2 - \mathbf{E}_1) \times \mathbf{n}_{12} = 0$ tenemos 
+
+\begin{equation}
+ \left\zerodel E_{r < a}\right|_\theta = \left\zerodel E_{r > a}\right|_\theta,
+\end{equation}
+
+\begin{equation}
+ \therefore \frac{\partial \Phi_{r > a}}{\partial r} = 
+ \frac{\partial \Phi_{r < a}}{\partial r},
+\end{equation}
+
+y derivando encontramos 
+
+\begin{equation}
+ \boxed{q'' = \frac{\epsilon}{\epsilon_0}q + \frac{\epsilon}{\epsilon_0}q'\frac{d}{a}}.
+\end{equation}
+
+Resolviendo las ecuaciones en cajas con \texttt{Mathematica$^\circledR$} encontramos 
+
+\begin{equation}
+ q' = \frac{\frac{\epsilon_0}{\epsilon} - 1}{d\left[\frac{\epsilon_0}{\epsilon}(l+1) + l\right]},
+\end{equation}
+
+y 
+
+\begin{equation}
+ q'' = \frac{q(2l + 1)}{\frac{\epsilon_0}{\epsilon}(l+1) +l}.
+\end{equation}
+
+Podemos escribir el resultado final para los potenciales como 
+
+\begin{equation}
+ \boxed{\Phi_{r < a} = \frac{q}{4\pi\epsilon d}\left[\sum_{l=0}^\infty 
+ \frac{q(2l + 1)}{\frac{\epsilon_0}{\epsilon}(l+1) +l} \left(\frac{r}{d}\right)^l
+ P_l(\cos{\theta})\right]},
+\end{equation}
+
+\begin{equation}
+ \boxed{\Phi_{r > a} =  \frac{q}{4\pi\epsilon d}\sum_{l=0}^\infty P_l(\cos{\theta})
+ \frac{d^{l+1}}{r^{l+1}}\left[1 +  \frac{l\left(\frac{\epsilon_0}{\epsilon} - 1\right)}{\left[\frac{\epsilon_0}{\epsilon}(l+1) + l\right]}
+ \left(\frac{a}{d}\right)^{2l+1}\right] \qquad \text{si } r > d},
+\end{equation}
+
+\begin{equation}
+ \boxed{\Phi_{r > a} =  \frac{q}{4\pi\epsilon d}\sum_{l=0}^\infty P_l(\cos{\theta})
+ \left[\left(\frac{r}{d}\right)^l +  \frac{l\left(\frac{\epsilon_0}{\epsilon} - 1\right)}{\left[\frac{\epsilon_0}{\epsilon}(l+1) + l\right]}
+ \left(\frac{a}{d}\right)^{l}\left(\frac{a}{r}\right)^{l+1}\right] \qquad \text{si } r < d}.
+\end{equation}
+
+\textbf{(b)} Cerca del centro de la esfera tenemos $r \ll d \rightarrow r/d \ll 1$. 
+Debido a que el campo interno está en términos de potencias de $r/d$, los órdenes 
+superiores pueden despreciarse 
+
+\begin{equation}
+ \Phi_{r \ll d} = \frac{q}{4\pi\epsilon_0 d}\left[1 + \frac{3}{1+2\epsilon_0/\epsilon}
+ \frac{r}{d}\cos{\theta}\right],
+\end{equation}
+
+que podemos escribir como 
+
+\begin{equation}
+ \Phi_{r \ll d} = \frac{q}{4\pi\epsilon_0 d}\left[1 + \frac{3}{2 + \epsilon/\epsilon_0}
+ \frac{z}{d}\right].
+\end{equation}
+
+El campo eléctrico lo calculamos con 
+
+\begin{equation}
+ \mathbf{E}_{r \ll d} = -\nabla \Phi_{r \ll d},
+\end{equation}
+
+que resulta en 
+
+\begin{equation}
+ \boxed{\mathbf{E}_{r \ll d} = - \frac{q}{4\pi\epsilon_0 d^2}\left[\frac{3}{2 + 
+ \epsilon/\epsilon_0}\right] \hat{z}}.
+\end{equation}
+
+El campo eléctrico cera del centro de la esfera apunta haca el lado contrario 
+de la carga puntual, en la dirección negativa del eje $z$.
+
+\vspace{.3cm}
+
+\text{(c)} En el límite en que $\epsilon/\epsilon_0$, vemos que todos los términos 
+de la serie se hacen cero menos el término con $l=0$, entonces 
+
+\begin{equation}
+ \boxed{\Phi_{r < a} = \frac{q}{4\pi\epsilon_0d}},
+\end{equation}
+
+exactamente lo que encontramos para una esfera conductora. Y el otro caso, comenzamos 
+por reescribir $\Phi_{r > a}$ como 
+
+\begin{equation}
+ \Phi_{r > a} = \frac{q}{4\pi\epsilon_0}\frac{a}{rd} + \frac{q}{4\pi\epsilon_0} 
+ \sum_{l=0}^\infty \frac{r_{<}^l}{r_{>}^{l+1}}P_l(\cos{\theta}) - 
+ \frac{qa}{4\pi\epsilon_0}\sum_{l=0}^\infty \frac{a^{2l}}{(rd)^{l+1}}P_l(\cos{\theta}),
+\end{equation}
+
+pero según la ecuación (3.38) de Jackson \cite{jackson}
+
+\begin{equation}
+  \sum_{l=0}^\infty \frac{r_{<}^l}{r_{>}^{l+1}}P_l(\cos{\theta}) = 
+  \frac{1}{|\mathbf{r} - d\mathbf{z}|},
+\end{equation}
+
+y 
+
+\begin{equation}
+ \sum_{l=0}^\infty \frac{a^{2l}}{(rd)^{l+1}}P_l(\cos{\theta}) = 
+ \frac{1}{|a^2\mathbf{z} - d\mathbf{r}|},
+\end{equation}
+
+por lo tanto 
+
+\begin{equation}
+ \boxed{\Phi_{r > a} = \frac{q}{4\pi\epsilon_0}\left[\frac{a}{rd} + 
+ \frac{1}{|\mathbf{r} - d\mathbf{z}|} -
+  \frac{a/d}{|\frac{a^2}{d}\mathbf{z} - d\mathbf{r}|}\right]},
+\end{equation}
+
+que también tiene la misma forma que la ecuación (2.8) de Jackson \cite{jackson} 
+donde se calcula este potencial.
+
+\hspace{10cm}\includegraphics[scale=0.25]{logoQED}
+
 \newpage
 
 \section{Problema 5. Problema 4.13 de Classical Electromagnetic Radiation
