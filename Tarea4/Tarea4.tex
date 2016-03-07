@@ -181,8 +181,8 @@ de Medios Macroscópicos, Dieléctricos.}\\ % Title of your document
 de Jackson \cite{jackson}.}
 
 Calcule los momentos multipolares $q_{lm}$ de las distribuciones de carga mostradas 
-como las partes $a$ y $b$. Intente obtener resultados para todo los momentos que 
-no se hacen cero válidos para todo $l$, pero en cada caso encuentre los primeros 
+como las partes $a$ y $b$. Intente obtener resultados para todos los momentos que 
+no se hacen cero, válidos para todo $l$, pero en cada caso encuentre los primeros 
 dos conjuntos de momentos que no se hacen cero al menos.
 
 \begin{figure}[H]
@@ -251,8 +251,8 @@ Pero recordando que\footnote{Ver ecuación (3.53) y (3.54) de Jackson \cite{jack
  \label{eq:esfericosArmonicosLegendre}
 \end{equation}
 
-donde $P_l^m(\cos{\theta}$ son las funciones de Legendre asociadas (ver ecuación 
-(3.49) de Jackson) y
+donde $P_l^m(\cos{\theta})$ son las funciones de Legendre asociadas\footnote{Ver ecuación 
+(3.49) de Jackson.} y
 
 \begin{equation}
  Y_{l,-m}(\theta,\phi) = (-1)^m Y^*_{lm}(\theta,\phi), 
@@ -286,7 +286,7 @@ el término entre corchetes $\left[1 +  (-i)^m - (-1)^m - i^m \right]$ es cero
 para $m$ par, y se hace $(2-2i)$ para $m = -7,-3,1,5,9,\dots$ y $(2+2i)$ para 
 $m=-5,-1,3,7,\dots$, además por las propiedades de $P_l^m(0)$ sabemos que se 
 hace cero cuando $l$ y $m$ tienen signos diferentes. Estas dos consideraciones 
-no hacen ver que los únicos momentos que no se hacen cero son aquellos con 
+nos hacen ver que los únicos momentos que no se hacen cero son aquellos con 
 $l$ y $m$ impares. Y como el texto lo solicita, los primeros conjuntos de momentos 
 que no se hacen cero son 
 
@@ -306,7 +306,7 @@ que no se hacen cero son
 
 \textbf{(b)} Viendo la figura de la parte (b) vemos que las cargas, en coordenadas 
 esféricas se ubican según la siguiente tabla\footnote{La primera carga es la ubicada 
-en $(x=0,y=0,z=a)$}
+en $(x=0,y=0,z=a)$.}
 
 \begin{table}[H]
 \centering
@@ -334,7 +334,7 @@ y usando \eqref{eq:esfericosArmonicosLegendre} podemos escribir esto como
 \end{equation}
 
 \begin{equation}
- \therefore q_{lm}qa^l\sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}} 
+ \therefore q_{lm} = qa^l\sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}} 
  \left[P_l^m(1) + P_l^m(-1) \right].
 \end{equation}
 
@@ -343,7 +343,7 @@ $m=0$ serán distintos de cero, y notando que $P_l^0(1) = 1, P_l^0(-1) = (-1)^l$
 tenemos que 
 
 \begin{equation}
- q_{l0} = qa^l\left[\frac{2l+1}{4\pi} \right]^{1/2}[1 + (-1)^l],
+ q_{l0} = qa^l\left[\frac{2l+1}{4\pi} \right]^{1/2}\left[1 + (-1)^l\right],
 \end{equation}
 
 y tendremos que para $l$ par y $m=0$, 
@@ -465,20 +465,20 @@ de Jackson \cite{jackson}.}
 Una distribución de carga localizada tiene la densidad de carga 
 
 $$
-\rho(\mathbf{r}) = \frac{1}{64\pi}r^2\euler^{-r}\sen^2{\theta}
+\rho(\mathbf{r}) = \frac{1}{64\pi}r^2\euler^{-r}\sen^2{\theta}.
 $$
 
 \begin{enumerate}[label=\textbf{(\alph*)}]
 \item Haga una expansión multipolar del potencial debido a esta densidad de 
 carga y determine todos los momentos multipolares que no se hacen cero. Escriba 
-el potencial a grandes distancias como una expansión finita en polinomios de 
+el potencial a distancias grandes como una expansión finita en polinomios de 
 Legendre. 
 \item Determine el potencial explícitamente en cualquier punto del espacio, y 
 muestre que cerca del origen, correcto a $r^2$ inclusive,
 
 $$
 \Phi(\mathbf{r}) \simeq \frac{1}{4\pi\epsilon_0}\left[\frac{1}{4} 
- - \frac{r^2}{120}P_2(\cos{\theta})\right]
+ - \frac{r^2}{120}P_2(\cos{\theta})\right].
 $$
 
 \item Si existe en el origen un núcleo con un momento cuadrupolar $Q = 10^{-28}$ m$^2$, 
@@ -597,7 +597,7 @@ que con los momentos multipolares que hemos encontrado puede escribirse como
 espacio la calculamos con 
 
 \begin{equation}
- \Phi(\mathbf{x}) = \frac{1}{4\pi\epsilon_0} \int \frac{\rho(\mathbf{r}'}{|\mathbf{x} - 
+ \Phi(\mathbf{x}) = \frac{1}{4\pi\epsilon_0} \int \frac{\rho(\mathbf{r}')}{|\mathbf{x} - 
  \mathbf{x}'|}d\mathbf{x}',
 \end{equation}
 
@@ -626,7 +626,7 @@ una muy inteligente notación de \href{http://homerreid.dyndns.org/physics/jacks
  P_2(\cos{\theta})\right]},
 \end{equation}
 
-donde $xi_l$ se refiere a la integral en $r'$. Esta integral solo debe evaluarse 
+donde $\xi_l$ se refiere a la integral en $r'$. Esta integral solo debe evaluarse 
 para $l=0$ y para $l=2$. Para el caso en que $l=0$ tenemos 
 
 \begin{equation}
@@ -669,7 +669,7 @@ potencial en todo punto del espacio encontramos
 de la ecuación (4.24) de Jackson \cite{jackson}, 
 
 \begin{equation}
- W^(4) = -\frac{1}{6}\sum_{ij} Q_{ij} \left\zerodel\frac{\partial E_j}{\partial x_i}
+ W^{(4)} = -\frac{1}{6}\sum_{ij} Q_{ij} \left\zerodel\frac{\partial E_j}{\partial x_i}
  \right|_{x=0},
 \end{equation}
 
@@ -1154,7 +1154,7 @@ y la carga imagen es
 ahora expandiendo en series de polinomios de Legendre y combinando
 
 \begin{equation}
- \frac{1}{|\mathbf{r} - \mathbf{r}_0} = 
+ \frac{1}{|\mathbf{r} - \mathbf{r}_0|} = 
  \sum_{l=0}^\infty \frac{r_{>}^l}{r_{<}^{l+1}}P_l(\cos{\theta}),
 \end{equation}
 
@@ -1218,8 +1218,8 @@ $(\mathbf{E}_2 - \mathbf{E}_1) \times \mathbf{n}_{12} = 0$ tenemos
 \end{equation}
 
 \begin{equation}
- \therefore \frac{\partial \Phi_{r > a}}{\partial r} = 
- \frac{\partial \Phi_{r < a}}{\partial r},
+ \therefore \frac{\partial \Phi_{r > a}}{\partial \theta} = 
+ \frac{\partial \Phi_{r < a}}{\partial \theta},
 \end{equation}
 
 y derivando encontramos 
@@ -1349,7 +1349,7 @@ establecida entre ellos, muestre que la susceptibilidad del líquido es\footnote
 cambiado la letra usada para la densidad por conveniencia.}
 
 $$
-\chi_e = \frac{(b^2 - a^2)\xi g h \ln{(b/a)}}{\epsilon_0 V^2}
+\chi_e = \frac{(b^2 - a^2)\xi g h \ln{(b/a)}}{\epsilon_0 V^2},
 $$
 
 donde $\xi$ es la densidad del líquido, $g$ es la aceleración debida a la gravedad, 
