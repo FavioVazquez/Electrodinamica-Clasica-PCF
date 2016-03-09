@@ -37,6 +37,8 @@ En tal caso de alguna pregunta no relacionada directamente con el repositorio pu
 
 ### Tarea 3 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazquez/Electrodinamica-Clasica-PCF/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/FavioVazquez/Electrodinamica-Clasica-PCF/builds/efb02f51f4f95ffdc71c07d4114d523f54599367/raw/output.pdf)
 
+### Tarea 4 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazquez/Electrodinamica-Clasica-PCF/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/FavioVazquez/Electrodinamica-Clasica-PCF/builds/3ed93cc2c06e7e90de65fb55acdef648068bc1dd/raw/output.pdf)
+
 ---------
 
 ## **Acceso a los PDFs de las tareas en GitHub**
@@ -46,3 +48,4 @@ Se pueden también ver las tareas directamente en GitHub. Se renderizarán en l�
 ### [Tarea 1](https://github.com/FavioVazquez/Electrodinamica-Clasica-PCF/blob/master/Tarea1/Tarea1.pdf)
 ### [Tarea 2](https://github.com/FavioVazquez/Electrodinamica-Clasica-PCF/blob/master/Tarea2/Tarea2.pdf)
 ### [Tarea 3](https://github.com/FavioVazquez/Electrodinamica-Clasica-PCF/blob/master/Tarea3/Tarea3.pdf)
+### [Tarea 4](https://github.com/FavioVazquez/Electrodinamica-Clasica-PCF/blob/master/Tarea4/Tarea4.pdf)
