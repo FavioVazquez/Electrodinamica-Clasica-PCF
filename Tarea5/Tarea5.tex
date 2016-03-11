@@ -176,5 +176,102 @@ electromagnetismo macroscópico y leyes de conservación.}\\ % Title of your doc
 %----------------------------------------------------------------------------------------
 \setcounter{footnote}{0}
 \renewcommand*{\thefootnote}{\arabic{footnote}}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%%			BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+
+\section{Problema 1. Problema 6.8 de Classical Electromagnetic Radiation
+de Jackson \cite{jackson}.}
+
+Una esfera de constante dieléctrica constante $\epsilon$ y radio $a$ está situada 
+en el origen. Hay un campo eléctrico $E_0$ uniforme aplicado en la dirección $x$. 
+La esfera rota con una velocidad angular $\omega$ sobre el eje $z$. Muestre que 
+hay un campo magnético $\mathbf{H} = - \mathbf{\nabla} \Phi_M$, donde 
+
+$$
+\Phi_M = \frac{3}{5}\left(\frac{\epsilon - \epsilon_0}{\epsilon + 2\epsilon_0}\right)
+\epsilon_0E_0\omega\left(\frac{a}{r_>}\right)\cdot xz,
+$$
+
+donde $r_>$ es el más grande de $r$ y $a$. El movimiento es no relativista. Puede 
+utilizar los resultados de la sección $4.4$ para la esfera dieléctrica en un campo 
+aplicado.
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\newpage
+
+\section{Problema 2. Problema 6.9 de Classical Electromagnetic Radiation
+de Jackson \cite{jackson}.}
+
+Discuta la conservación de la energía y el impulso lineal para un sistema macroscópico 
+de fuentes y campos electromagnéticos en un medio uniforme e isotrópico, descrito 
+por una permitividad $\epsilon$ y una permeabilidad $\mu$. Muestre en un cálculo 
+simple que la densidad de energía, el vector de Poynting, la densidad de campo-impulso, 
+y el tensor de esfuerzo de Maxwell están dados por las expresiones de Minkowski,
+
+\begin{align*}
+u &= \frac{1}{2}(\epsilon E^2 + \mu H^2), \\
+\mathbf{S} &= \mathbf{E} \times \mathbf{H}, \\
+\mathbf{g} &= \mu\epsilon \mathbf{E} \times \mathbf{H}, \\
+T_{ij} &= [\epsilon E_iE_j + \mu H_iH_j - \frac{1}{2}\delta_{ij}(\epsilon E^2 + \mu H^2)].
+\end{align*}
+
+¿Qué modificaciones surgen si $\epsilon$ y $\mu$ son funciones de la posición?
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\newpage
+
+\section{Problema 3. Problema 6.15 de Classical Electromagnetic Radiation
+de Jackson \cite{jackson}.}
+
+Un capacitor de placas paralelas circular ideal de radio $a$ y separación entre 
+las placas $d \ll a$ está conectado a una fuente de corriente mediante hilos de 
+conexión axial, como se muestra en el bosquejo. La corriente en el cable es 
+$I(t) = I_0\cos{\omega t}$.
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.5]{problema3fig1}
+\end{figure}
+
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item Calcule el campo eléctrico y el magnético entre las placas a segundo orden 
+en potencias de la frecuencia (o número de onda), despreciado los efectos de campos 
+de borde.
+\item Calcule las integrales de volumen de $w_e$ y $w_m$ que entran en la definición 
+de la reactancia $X$, (6.140), a segundo orden en $\omega$. Muestre que en términos 
+de la corriente de entrada $I_i$, definida por $I_i = - i\omega Q$, donde $Q$ es 
+a la carga total en una placa, estas energías son 
+
+$$
+\int w_e d^3 = \frac{1}{4\pi\epsilon}\frac{|I_i|^2d}{\omega^2 a^2}, \qquad 
+\int w_m d^3 = \frac{\mu_0}{4\pi}\frac{|I_i|^2d}{8}\left(1 +
+\frac{\omega^2 a^2}{12c^2} \right).
+$$
+\item Muestre que los circuitos en serie equivalentes tienen $C \simeq \pi\epsilon_0 
+a^2/d$, $L \simeq \mu_0d/8\pi$, y que un estimado para la frecuencia de resonancia 
+del sistema es $\omega_{res} \simeq 2\sqrt{2}c/a$. Compare con la primera raíz 
+de $J_0(x)$.
+\end{enumerate}
+
+\vspace{.3cm}
+
+\underline{Solución:} \vspace{.3cm}
+
+\newpage
+
+\begin{thebibliography}{10}
+\bibitem{jackson}
+J. Jackson, \emph{Classical Electrodynamics}, 3ra edición. John Wiley and Sons, Inc. 
+1999.
+\end{thebibliography}
 
 \end{document}
