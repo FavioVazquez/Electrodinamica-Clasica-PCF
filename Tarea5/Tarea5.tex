@@ -192,7 +192,7 @@ hay un campo magnético $\mathbf{H} = - \mathbf{\nabla} \Phi_M$, donde
 
 $$
 \Phi_M = \frac{3}{5}\left(\frac{\epsilon - \epsilon_0}{\epsilon + 2\epsilon_0}\right)
-\epsilon_0E_0\omega\left(\frac{a}{r_>}\right)\cdot xz,
+\epsilon_0E_0\omega\left(\frac{a}{r_>}\right)^5\cdot xz,
 $$
 
 donde $r_>$ es el más grande de $r$ y $a$. El movimiento es no relativista. Puede 
@@ -202,6 +202,213 @@ aplicado.
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+La idea básica que nos ayudará a solucionar este problema, fue lo que se vio en 
+clase y en la sección 4.4 de Jackson \cite{jackson}, y es que un campo uniforme
+$E_0$ aplicado a la esfera la polariza, induciendo una carga superficial de 
+polarización (o ligada) sobre la misma, la cual se convierte en corriente de 
+polarización (o ligada) debido a la rotación de la esfera. Y como se vio en el 
+capítulo 6 de Jackson \cite{jackson} estas corrientes dan lugar a campos 
+magnéticos.
+
+\vspace{.3cm}
+
+Para obtener el potencial magnético que nos pide el problema, utilizaremos la expresión 
+indicada en la ecuación (5.100) de Jackson \cite{jackson}, para el caso en que 
+la magnetización sobre el volumen de integración es constante y por lo tanto 
+se cancela el primer término de esta ecuación y nos queda 
+
+\begin{equation}
+ \Phi_M = \frac{1}{4\pi} \oint_s \frac{\sigma_M}{|\mathbf{x} - \mathbf{x'}|}da',
+ \label{eq:potencialMagnetico}
+\end{equation}
+
+y por lo tanto necesitamos una expresión para la densidad superficial de carga magnética 
+$\sigma_M$, y ya que esta depende del momento magnético total $\mathbf{M}$ debemos
+calcularlo. Esto  lo haremos calculando primero la densidad de corriente superficial
+ $\mathbf{J}_M$ inducida en la esfera a partir de su polarización, tomando en cuenta la rotación
+de la misma.
+
+\vspace{.3cm}
+
+De la sección 4.4 sabemos que la carga superficial inducida en la esfera 
+será\footnote{Ver ecuación (4.58) de Jackson \cite{jackson}.}, en coordenadas 
+cartesianas 
+
+\begin{equation}
+ \sigma_{pol} \equiv \sigma =  3 \left(\frac{\epsilon - \epsilon_0}{\epsilon + 2\epsilon_0}
+ \right)\epsilon_0E_0 \frac{x}{a}.
+\end{equation}
+
+Ahora debido a que esta densidad de carga está girando en la superficie de la esfera 
+de radio $a$ a una velocidad angular $\omega$, utilizando\footnote{Ver página 187 de 
+Jackson \cite{jackson}.}
+
+\begin{equation}
+ \mathbf{J}_M = \sigma \mathbf{v},
+\end{equation}
+
+el hecho de que $\mathbf{v} = \pmb{\omega} \times \mathbf{r}$ y que la velocidad 
+angular puede escribirse como $\pmb{\omega} = \omega \hat{z}$ y $\mathbf{r} = a
+\hat{r}$ obtenemos 
+
+\begin{equation}
+ \mathbf{J}_M = \sigma (\omega \hat{z}) \times (a\hat{r}),
+\end{equation}
+
+\begin{equation}
+ \therefore \mathbf{J}_M = \sigma \omega a \sen{\theta} \hat{\phi},
+\end{equation}
+
+donde hemos utilizado que en coordenadas esféricas $\hat{z} \times \hat{r} = \hat{\phi}$, 
+y sustituyendo la expresión para la densidad superficial obtenemos
+
+\begin{equation}
+ \mathbf{J}_M = 3 \left(\frac{\epsilon - \epsilon_0}{\epsilon + 2\epsilon_0}
+ \right)\epsilon_0E_0 x \sen{\theta} \hat{\phi}.
+\end{equation}
+
+Ya que obtuvimos la densidad de corriente superficial podemos obtener el momento 
+magnético total con\footnote{Ver ecuación (5.79) de Jackson \cite{jackson}.}
+
+\begin{equation}
+  \mathbf{J}_M = \mathbf{M} \times \hat{r},
+\end{equation}
+
+y debido que el momento magnético estará dirigido exclusivamente hacia el lado positivo 
+del eje $z$, tenemos 
+
+\begin{equation}
+  \mathbf{J}_M = (M\hat{z}) \times \hat{r},
+\end{equation}
+
+ahora utilizando la definición del producto vectorial, las propiedades de los vectores 
+unitarios en coordenadas esféricas y la expresión que obtuvimos para 
+$ \mathbf{J}_M$ esta ecuación se puede escribir como 
+
+\begin{equation}
+ M \sen{\theta}\hat{\phi} =  3\left(\frac{\epsilon - \epsilon_0}{\epsilon + 2\epsilon_0}
+ \right)\epsilon_0E_0 x \sen{\theta} \hat{\phi},
+\end{equation}
+
+y resolviendo para el momento magnético obtenemos 
+
+\begin{equation}
+ \mathbf{M} =  3\left(\frac{\epsilon - \epsilon_0}{\epsilon + 2\epsilon_0}
+ \right)\epsilon_0E_0 x \hat{z}.
+\end{equation}
+
+Lo único que nos falta para poder utilizar la ecuación \eqref{eq:potencialMagnetico}
+es obtener una expresión para la densidad  densidad superficial de carga magnética, lo 
+cual podemos hacer utilizando la ecuación (5.99) de Jackson \cite{jackson}, 
+
+\begin{equation}
+ \sigma_M = \mathbf{n} \times \mathbf{M},
+\end{equation}
+
+que en nuestro caso puede escribirse como 
+
+\begin{equation}
+ \sigma_M = \hat{r} \times \mathbf{M},
+\end{equation}
+
+y sustituyendo la expresión que obtuvimos para el momento magnético nos queda
+
+\begin{equation}
+ \sigma_M = 3\left(\frac{\epsilon - \epsilon_0}{\epsilon + 2\epsilon_0}
+ \right)\epsilon_0E_0 \frac{\omega}{a} xz.
+\end{equation}
+
+Estamos ahora en posición para utilizar la ecuación \eqref{eq:potencialMagnetico} y 
+calcular el potencial magnético; pero, para expresarlo en la notación que utiliza 
+el texto conviene primero expandir $1/|\mathbf{x} - \mathbf{x}'|$ en esféricos 
+armónicos, entonces\footnote{Ver ecuación (3.70) de Jackson \cite{jackson}.}
+
+\begin{equation}
+ \frac{1}{|\mathbf{x} - \mathbf{x}'|} = 4\pi \sum_{l=0}^\infty \sum_{m=-l}^l 
+ \frac{1}{2l+1}\frac{r_<^l}{r_>^{l+1}}Y_{lm}^*(\theta',\phi')Y_{lm}(\theta,\phi).
+\end{equation}
+
+Entonces \eqref{eq:potencialMagnetico} se escribe como\footnote{Donde hemos utilizado 
+las expresiones para $x$ y $z$ en coordenadas esféricas.}
+
+\begin{align*}
+ \Phi_M = &3\left(\frac{\epsilon - \epsilon_0}{\epsilon + 2\epsilon_0}
+ \right)\epsilon_0E_0 \frac{\omega}{a}\left[ \int_0^{\pi}\int_0^{2\pi} a^2\sen{\theta}'
+ \cos{\theta}'\cos{\phi}'\right\zerodel  \\
+ &\left\zerodel\sum_{l=0}^\infty \sum_{m=-l}^l 
+ \frac{1}{2l+1}\frac{r_<^l}{r_>^{l+1}}Y_{lm}^*(\theta',\phi')Y_{lm}(\theta,\phi)
+ a^2\sen{\theta}'d\theta'd\phi'\right],
+\end{align*}
+
+que podemos escribir como 
+
+\begin{align*}
+ \Phi_M = &3\left(\frac{\epsilon - \epsilon_0}{\epsilon + 2\epsilon_0}
+ \right)\epsilon_0E_0 \omega a^3 \sum_{l=0}^\infty \sum_{m=-l}^l 
+ \frac{1}{2l+1}\frac{r_<^l}{r_>^{l+1}}Y_{lm}(\theta',\phi')\left[ \int_0^{\pi}\int_0^{2\pi} \sen{\theta}'
+ \cos{\theta}'\cos{\phi}'\right\zerodel \\
+ &\left\zerodel Y_{lm}^*(\theta,\phi)
+ a^2\sen{\theta}'d\theta'd\phi' \frac{}{} \right],
+\end{align*}
+
+Y usando la relación 
+
+\begin{equation}
+ \sin{\theta}'\cos{\theta}'\cos{\phi}' = \sqrt{\frac{2\pi}{15}}(Y_{2,-1} - Y_{2,1}),
+\end{equation}
+
+obtenemos 
+
+\begin{align*}
+ \Phi_M = &3\left(\frac{\epsilon - \epsilon_0}{\epsilon + 2\epsilon_0}
+ \right)\epsilon_0E_0 \omega a^3 \sum_{l=0}^\infty \sum_{m=-l}^l 
+ \frac{1}{2l+1}\frac{r_<^l}{r_>^{l+1}}Y_{lm}(\theta',\phi')\left[ \int_0^{\pi}\int_0^{2\pi} 
+ \sqrt{\frac{2\pi}{15}}(Y_{2,-1} - Y_{2,1})\right\zerodel \\
+ &\left\zerodel Y_{lm}^*(\theta,\phi)
+ a^2\sen{\theta}'d\theta'd\phi' \frac{}{} \right],
+\end{align*}
+
+usando las propiedades de los armónicos esféricos podemos integrar y obtener 
+
+\begin{equation}
+  \Phi_M = 3\left(\frac{\epsilon - \epsilon_0}{\epsilon + 2\epsilon_0}
+ \right)\epsilon_0E_0 \omega a^3 \sum_{l=0}^\infty \sum_{m=-l}^l 
+ \frac{1}{2l+1}\frac{r_<^l}{r_>^{l+1}}Y_{lm}(\theta',\phi')\sqrt{\frac{2\pi}{15}}
+ [\delta_{l,2}\delta_{m,-1} - \delta_{1,2}\delta_{m,1}],
+\end{equation}
+
+que siguiendo los resultados de la sección 3.9 de Jackson \cite{jackson} escribimos 
+como
+
+\begin{equation}
+ \Phi_M = \frac{3}{5}\left(\frac{\epsilon - \epsilon_0}{\epsilon + 2\epsilon_0}
+ \right)\epsilon_0E_0 \omega a^3\frac{r_<^2}{r_>^3}\frac{xz}{r}.
+\end{equation}
+
+Entonces tenemos dos casos, si $r < a$ se cancelarán las contribuciones de las $r^2$ 
+y la $a^3$ con $r^3$ obtenemos 
+
+\begin{equation}
+ \Phi_M = \frac{3}{5}\left(\frac{\epsilon - \epsilon_0}{\epsilon + 2\epsilon_0}
+ \right)\epsilon_0E_0 \omega xz,
+\end{equation}
+
+y si $r>a$, 
+
+\begin{equation}
+ \Phi_M = \frac{3}{5}\left(\frac{\epsilon - \epsilon_0}{\epsilon + 2\epsilon_0}
+ \right)\epsilon_0E_0 \omega \frac{a^5}{r_5}xz.
+\end{equation}
+
+Si ahora combinamos estos resultados obtenemos 
+
+\begin{equation}
+\boxed{\Phi_M = \frac{3}{5}\left(\frac{\epsilon - \epsilon_0}{\epsilon + 2\epsilon_0}\right)
+\epsilon_0E_0\omega\left(\frac{a}{r_>}\right)^5\cdot xz}.
+\end{equation}
+
+\hspace{10cm}\includegraphics[scale=0.25]{logoQED}
 
 \newpage
 
