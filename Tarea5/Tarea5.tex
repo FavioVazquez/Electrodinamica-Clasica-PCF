@@ -434,6 +434,225 @@ T_{ij} &= [\epsilon E_iE_j + \mu H_iH_j - \frac{1}{2}\delta_{ij}(\epsilon E^2 + 
 
 \underline{Solución:} \vspace{.3cm}
 
+\begin{mdframed}[linewidth=2]
+\textbf{Nota}: Los resultados solicitados por el problema se encuentran adentro 
+de cajas (marcos). Todas las demás ecuaciones son solamente necesarias para 
+su deducción y para que la demostración sea completa y autosuficiente.
+\end{mdframed}
+
+Comencemos con la ecuación de la fuerza de Lorentz 
+
+\begin{equation}
+ \mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B}),
+\end{equation}
+
+si multiplicamos ambos lados de esta ecuación por la velocidad obtenemos 
+
+\begin{equation}
+ \mathbf{F}\cdot d\mathbf{l} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})\cdot 
+ \mathbf{v}dt,
+\end{equation}
+
+y por las propiedades del producto vectorial esta ecuación se convierte en 
+
+\begin{equation}
+ \mathbf{F}\cdot d\mathbf{l} = q\mathbf{E}\cdot \mathbf{v}dt,
+\end{equation}
+
+En términos de densidades de carga y corrientes\footnote{$q \rightarrow \rho d\tau$ 
+y $\rho\mathbf{v} \rightarrow \mathbf{J}$. Ver página 357 de Griffiths \cite{griffiths}.} 
+esta ecuación puede escribirse como\footnote{Ver ecuación (8.6) de Griffiths \cite{griffiths}.}
+el trabajo que es hecho sobre todas las cargas en un volumen $V$ 
+
+\begin{equation}
+ \frac{dW}{dt} = \int_V (\mathbf{E} \cdot \mathbf{J}) d\tau.
+\end{equation}
+
+Ahora para un sistema macroscópicos de fuentes y campos electromagnéticos en 
+un medio uniforme e isotrópico, solo nos interesa el trabajo hecho sobre las cargas y 
+corrientes libres, entonces esta ecuación se convierte en\footnote{$l$ se refiere 
+a ``libre''.}
+
+\begin{equation}
+ \frac{dW}{dt} = \int_V (\mathbf{E} \cdot \mathbf{J}_l) d\tau.
+ \label{eq:trabajoMateriales}
+\end{equation}
+
+Ahora de la ley de Ampère-Maxwell para medios 
+
+\begin{equation}
+ \pmb{\nabla} \times \mathbf{H} = \mathbf{J}_l + \frac{\partial \mathbf{D}}{\partial t},
+\label{eq:amperemaxwell}
+\end{equation}
+
+vemos que 
+
+\begin{equation}
+ \mathbf{J}_l = \pmb{\nabla} \times \mathbf{H} - \frac{\partial \mathbf{D}}{\partial t},
+\end{equation}
+
+y tomando el producto punto en ambos lados del campo eléctrico obtenemos 
+
+\begin{equation}
+ \mathbf{E} \cdot \mathbf{J}_l  = \mathbf{E} \cdot (\pmb{\nabla} \times \mathbf{H}) - 
+  \mathbf{E} \cdot \frac{\partial \mathbf{D}}{\partial t}.
+\end{equation}
+
+Ahora utilizando propiedades de productos vectoriales tenemos que 
+
+\begin{equation}
+ \mathbf{\nabla} \cdot (\mathbf{E} \times \mathbf{H}) = \mathbf{H} \cdot 
+ (\mathbf{\nabla} \times \mathbf{E}) - \mathbf{E}\cdot (\mathbf{\nabla} \times 
+ \mathbf{H}),
+\end{equation}
+
+y recordando que 
+
+\begin{equation}
+ \mathbf{\nabla} \times \mathbf{E} = - \frac{\mathbf{B}}{\partial t},
+\end{equation}
+
+obtenemos 
+
+\begin{equation}
+  \mathbf{E}\cdot (\mathbf{\nabla} \times 
+ \mathbf{H}) = - \mathbf{H}\cdot \frac{\mathbf{B}}{\partial t} - 
+ \mathbf{\nabla} \cdot (\mathbf{E} \times \mathbf{H}).
+\end{equation}
+
+Y podemos reescribir \eqref{eq:amperemaxwell} como 
+
+\begin{equation}
+ \mathbf{E} \cdot \mathbf{J}_l = - \mathbf{H}\cdot \frac{\mathbf{B}}{\partial t}
+ - \frac{\partial \mathbf{D}}{\partial t} - \mathbf{\nabla} \cdot (\mathbf{E} \times \mathbf{H}),
+\end{equation}
+
+sustituyendo esta ecuación en \eqref{eq:trabajoMateriales} obtenemos\footnote{Donde 
+hemos usado el teorema de Gauss.}
+
+\begin{equation}
+ \frac{dW}{dt} = - \int_V \left(\mathbf{E} \cdot \frac{\partial \mathbf{D}}{\partial 
+ t} + \mathbf{H}\cdot\frac{\partial \mathbf{B}}{\partial t} \right) - 
+ \oint_s (\mathbf{E} \times \mathbf{H})\cdot d\mathbf{a}.
+ \label{eq:consEnergiaMateriales}
+\end{equation}
+
+Este es el teorema de Poynting para los campos electromagnéticos en materiales. De 
+forma análoga al caso de campos electromagnéticos en el vacío podemos identificar 
+el vector de Poynting como (segundo término del lado derecho 
+de \eqref{eq:consEnergiaMateriales}) 
+
+\begin{equation}
+ \boxed{\mathbf{S} = \mathbf{E} \times \mathbf{H}},
+\end{equation}
+
+el cual representa la potencia por unidad de área transportada por los campos. Y 
+también podemos ver que la tasa de cambio de la densidad de energía de 
+electromagnética es (primer término del lado derecho 
+de \eqref{eq:consEnergiaMateriales})
+
+\begin{equation}
+ \frac{\partial u}{\partial t} = \mathbf{E} \cdot \frac{\partial \mathbf{D}}{\partial 
+ t} + \mathbf{H}\cdot\frac{\partial \mathbf{B}}{\partial t},
+\end{equation}
+
+ahora ya que tratamos con un medio uniforme e isotrópico descrito por una permitividad 
+$\epsilon$ y una permeabilidad $\mu$ tenemos que 
+
+\begin{equation}
+ \mathbf{D} = \epsilon\mathbf{E} \qquad \quad \mathbf{B} = \mu\mathbf{H}, 
+\end{equation}
+
+y por lo tanto
+
+\begin{equation}
+ \frac{\partial u}{\partial t} = \epsilon\mathbf{E} \cdot \frac{\partial \mathbf{E}}{\partial 
+ t} + \frac{1}{\mu}\mathbf{B}\cdot\frac{\partial \mathbf{B}}{\partial t},
+\end{equation}
+
+que podemos escribir como 
+
+\begin{equation}
+  \frac{\partial u}{\partial t} = \frac{1}{2}\epsilon \frac{\partial}{\partial t}
+  (\mathbf{E}\cdot \mathbf{E}) + \frac{1}{2\mu} \frac{\partial}{\partial t}
+  (\mathbf{B}\cdot \mathbf{B}),
+\end{equation}
+
+y entonces 
+
+\begin{equation}
+  \frac{\partial u}{\partial t} = \frac{1}{2}\frac{\partial}{\partial t}
+  (\mathbf{E}\cdot\mathbf{D} + \mathbf{B}\cdot\mathbf{H}).
+\end{equation}
+
+De esta ecuación, vemos que 
+
+\begin{equation}
+ u =  \frac{1}{2}
+  (\mathbf{E}\cdot\mathbf{D} + \mathbf{B}\cdot\mathbf{H}),
+\end{equation}
+
+pero por las relaciones entre los campos en teoría de respuesta lineal esta 
+ecuación puede escribirse como 
+
+\begin{equation}
+ \boxed{u = \frac{1}{2}\left(\epsilon E^2 + \mu H^2\right)}.
+\end{equation}
+
+Por otra parte, si recordamos la expresión para la densidad de campo-impulso\footnote{
+Ver ecuación (8.29) de Griffiths \cite{griffiths}.}
+
+\begin{equation}
+ \mathbf{g} = \frac{\mathbf{S}}{\nu^2},
+\end{equation}
+
+donde $\nu$ es la velocidad de las ondas en el medio y está dada por 
+
+\begin{equation}
+ \nu = \frac{1}{\sqrt{\mu\epsilon}},
+\end{equation}
+
+y utilizando la ecuación para el vector de Poynting que encontramos arriba vemos que 
+
+\begin{equation}
+ \mathbf{g} = \mathbf{E} \times \mathbf{H}(\sqrt{\mu\epsilon})^2,
+\end{equation}
+
+\begin{equation}
+ \boxed{\therefore \mathbf{g} = \mu\epsilon\mathbf{E} \times \mathbf{H}}.
+\end{equation}
+
+Para terminar debemos obtener la expresión del tensor de esfuerzo de Maxwell 
+para materiales. Comenzamos por escribir el tensor de Maxwell para campos 
+en el vacío 
+
+\begin{equation}
+ T_{ij} = \left[\epsilon_0 E_iE_j + \frac{1}{\mu_0} B_iB_j - \frac{1}{2}\delta_{ij}\left(\epsilon_0 E^2 + 
+ \frac{1}{\mu_0} B^2\right)\right].
+\end{equation}
+
+Ahora para el tipo de materiales que estamos considerando, solo debemos reemplazar 
+la permitividad y permeabilidad del vacío con las del material, y obtenemos 
+
+\begin{equation}
+ T_{ij} = \left[\epsilon E_iE_j + \frac{1}{\mu} B_iB_j - \frac{1}{2}\delta_{ij}\left(\epsilon E^2 + 
+ \frac{1}{\mu} B^2\right)\right].
+\end{equation}
+
+Ahora intercambiando las $\mathbf{B}$ por las $\mathbf{H}$ con $\mathbf{B} = \mu 
+\mathbf{H}$ obtenemos 
+
+\begin{equation}
+ \boxed{T_{ij} = [\epsilon E_iE_j + \mu H_iH_j - \frac{1}{2}\delta_{ij}(\epsilon E^2 + \mu H^2)]}.
+\end{equation}
+
+Con respecto a qué modificaciones surgen si $\epsilon$ y $\mu$ son funciones de la 
+posición, vemos que debido a que todas las ecuaciones en caja que obtuvimos contienen 
+densidades que dependen de la posición, automáticamente toman en cuenta la posibilidad 
+de que la permeabilidad y la permitividad dependan del tiempo. Por lo tanto 
+no hay que hacer ningún cambio en las ecuaciones, y esta es la gran ventaja de 
+trabajar con densidades en vez de valores totales.
+
 \newpage
 
 \section{Problema 3. Problema 6.15 de Classical Electromagnetic Radiation
@@ -479,6 +698,8 @@ de $J_0(x)$.
 \bibitem{jackson}
 J. Jackson, \emph{Classical Electrodynamics}, 3ra edición. John Wiley and Sons, Inc. 
 1999.
+\bibitem{griffiths}
+D. Griffiths, \emph{Indtroduction to Electrodynamics}, 4ta edición. Pearson, 2013.
 \end{thebibliography}
 
 \end{document}
