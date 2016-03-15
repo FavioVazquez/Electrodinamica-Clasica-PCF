@@ -678,8 +678,8 @@ de la corriente de entrada $I_i$, definida por $I_i = - i\omega Q$, donde $Q$ es
 a la carga total en una placa, estas energías son 
 
 $$
-\int w_e d^3 = \frac{1}{4\pi\epsilon}\frac{|I_i|^2d}{\omega^2 a^2}, \qquad 
-\int w_m d^3 = \frac{\mu_0}{4\pi}\frac{|I_i|^2d}{8}\left(1 +
+\int w_e d^3x = \frac{1}{4\pi\epsilon}\frac{|I_i|^2d}{\omega^2 a^2}, \qquad 
+\int w_m d^3x = \frac{\mu_0}{4\pi}\frac{|I_i|^2d}{8}\left(1 +
 \frac{\omega^2 a^2}{12c^2} \right).
 $$
 \item Muestre que los circuitos en serie equivalentes tienen $C \simeq \pi\epsilon_0 
@@ -691,6 +691,175 @@ de $J_0(x)$.
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+\textbf{(a)} Por la simetría del problema trabajaremos en coordenadas cilíndricas polares $(\rho,\theta)$,
+y por la forma de la corriente podemos asumir una dependencia temporal armónica 
+para todas las cantidades. Si, como dice el enunciado, despreciamos los efectos 
+de bordes, el sistema es simétrico en $\theta$, y el campo eléctrico entre las 
+placas será en la dirección de $z$, mientras que el campo magnético irá en 
+la dirección de la $\theta$. Podemos utilizar entonces las ecuaciones de Maxwell 
+para campos armónicos\footnote{Ver ecuación (6.130) de Jackson \cite{jackson}.}, 
+que tomando en cuenta las simetrías que acabamos de mencionar queda como 
+
+\begin{equation}
+ [\pmb{\nabla} \times \mathbf{E}]_\theta = - \frac{\partial E_z}{\partial \rho} = 
+ i\omega B_\theta,
+\end{equation}
+
+\begin{equation}
+ [\pmb{\nabla} \times \mathbf{B}]_z = \frac{1}{\rho}
+ \frac{\partial (\rho B_\theta)} {\partial \rho} = - i\frac{\omega}{c^2}E_z,
+\end{equation}
+
+y ahora sustituyendo de la primera ecuación a la segunda obtenemos 
+
+\begin{equation}
+ \frac{d^2E_z}{d\rho^2} + \frac{1}{\rho}\frac{dE_z}{d\rho} + k^2E_z = 0,
+\end{equation}
+
+donde $k^2 = \omega^2/c^2$. Recordando la teoría de ecuaciones diferenciales y 
+funciones especiales, vemos que esta es la ecuación de Bessel, la cual tiene 
+una solución regular en $\rho=0$ igual a 
+
+\begin{equation}
+ E_z(\rho) ) = AJ_0(k\rho),
+\end{equation}
+
+donde $J_\alpha$ son las funciones de Bessel de primer tipo y $A$ es una constante 
+a determinar. Por otra parte el campo magnético será 
+
+\begin{equation}
+ B_\theta(\rho) = \frac{i}{kc}\frac{dE_z}{d\rho} = - \frac{i}{c}AJ_1(k\rho).
+\end{equation}
+
+Para determinar la forma de $A$ utilizamos la ecuación para la densidad de 
+carga superficial 
+
+\begin{equation}
+ \sigma(\rho) = \epsilon_0E_z(\rho) = \epsilon_0 A J_0(k\rho),
+\end{equation}
+
+e integrando encontramos que la carga total en la placa es 
+
+\begin{equation}
+ Q = 2\pi\epsilon_0A \int_0^a \rho J_0(k\rho) d\rho = 2\pi\epsilon_0\frac{a}{k} 
+ AJ_1(ka).
+\end{equation}
+
+Resolviendo para $A$, relacionada a la carga $Q = iI_i/\omega$, encontramos 
+
+\begin{equation}
+ A = \frac{kQ}{2\pi a \epsilon_0 J_1(ka)}.
+\end{equation}
+
+Por lo tanto 
+
+\begin{equation}
+ E_z(\rho) = \frac{kQ}{2\pi a \epsilon_0 J_1(ka)} J_0(k\rho),
+\end{equation}
+
+
+\begin{equation}
+ B_\theta(\rho) = - \frac{i}{c} \frac{kQ}{2\pi a \epsilon_0 J_1(ka)} J_1(k\rho).
+\end{equation}
+
+Entonces haciendo la expansión hasta segundo orden en $k$, utilizando relaciones 
+para las funciones de Bessel\footnote{\href{http://bit.ly/1pslIha}{http://bit.ly/1pslIha}},
+encontramos 
+
+\begin{equation}
+ \boxed{E_z(\rho) = \frac{Q}{\pi a^2 \epsilon_0}\left[1 + \left(\frac{a^2}{8} - \frac{\rho^2}{4}
+ \right)k^2 + \dots \right]},
+\end{equation}
+
+\begin{equation}
+ \boxed{B_\theta(\rho) = \frac{\mu_0I_i\rho}{2\pi a^2}\left[1 + \left(\frac{a^2}{8} - \frac{\rho^2}{4}
+ \right)k^2 + \dots \right]},
+\end{equation}
+
+donde hemos usado $I_i = - i\omega Q$. 
+
+\vspace{.3cm}
+
+\textbf{(b)} Podemos ahora calcular las densidades armónicas de energía eléctrica 
+y magnética, a segundo orden en $\omega$, que utilizando las ecuaciones (6.133) de 
+Jackson \cite{jackson} podemos escribir como 
+
+\begin{equation}
+ \int w_e d^3x = \frac{\epsilon_0}{4}2\pi d \int_0^a \rho |E_z|^2 d\rho,
+\end{equation}
+
+\begin{equation}
+ \int w_m d^3x = \frac{1}{4\mu_0}2\pi d \int_0^a \rho |B_\theta|^2 d\rho,
+\end{equation}
+
+e introduciendo estas integrales un poco complicadas en \texttt{Mathematica$^\circledR$}
+encontramos que 
+
+\begin{equation}
+ \boxed{\int w_e d^3x = \frac{1}{4\pi\epsilon}\frac{|I_i|^2d}{\omega^2 a^2}},
+\end{equation}
+
+\begin{equation}
+ \boxed{\int w_m d^3x = \frac{\mu_0}{4\pi}\frac{|I_i|^2d}{8}\left(1 +
+\frac{\omega^2 a^2}{12c^2} \right)}.
+\end{equation}
+
+\hspace{10cm}\includegraphics[scale=0.25]{logoQED}
+
+\textbf{(c)} De la ecuación (6.140) de Jackson \cite{jackson} vemos que 
+
+\begin{equation}
+ X \simeq \frac{4\omega}{|I_i|^2}\int_V (w_m - w_e)d^3x,
+\end{equation}
+
+y sustituyendo las ecuaciones que encontramos en el inciso anterior tenemos que 
+
+\begin{equation}
+ X \simeq  \frac{\omega \mu_0 d}{8\pi} - \frac{d}{\epsilon_0 \omega \pi a^2},
+\end{equation}
+
+pero según el último párrafo de la sección 6.9 de Jackson \cite{jackson} (página 
+267) también tenemos que 
+
+\begin{equation}
+ X \simeq \omega L - \frac{1}{\omega C},
+\end{equation}
+
+donde $L$ es la inductancia, y $C$ es la capacitancia. Igualando tenemos que 
+
+\begin{equation}
+ X \simeq \frac{\omega \mu_0 d}{8\pi} - \frac{d}{\epsilon_0 \omega \pi a^2} \simeq 
+ \omega L - \frac{1}{\omega C},
+\end{equation}
+
+por lo tanto 
+
+\begin{equation}
+ \boxed{C \simeq \frac{\epsilon_0\pi a^2}{d}},
+\end{equation}
+
+\begin{equation}
+ \boxed{L \simeq \frac{\mu_0d}{8\pi}}.
+\end{equation}
+
+Ahora recordando que la definición de la frecuencia de resonancia se define como 
+
+\begin{equation}
+ \omega_{res} \simeq \frac{1}{\sqrt{LC}} \simeq \sqrt{\frac{8}{\epsilon_0\mu_0 a^2}},
+\end{equation}
+
+podemos escribir entonces 
+
+\begin{equation}
+ \boxed{\therefore \omega_{res} \simeq \frac{2\sqrt{2}c}{a}}.
+\end{equation}
+
+\hspace{10cm}\includegraphics[scale=0.25]{logoQED}
+
+Ahora $\frac{2\sqrt{2}c}{a} = 2.828 c/a$, y comparándola con $J_0 = 2.405$ vemos que 
+si la razón $c/a$ es tal que al multiplicarla por $2.828$ nos de $2.405$, entonces 
+la frecuencia de resonancia del sistema coincidiría con $J_0$.
 
 \newpage
 
