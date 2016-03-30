@@ -17,7 +17,7 @@ Debajo se encuentran las tareas semanales de la materia en PDF, y en cada una de
 
 Si desean una explicación detallada de alguno de los códigos que realicé, o tienen alguna mejora que proponer siempre es bienvenida. Pueden hacerlo a través de los Issues y los Pull Requests. Pueden clonar el repositorio y compilar los archivos TeX en su computadora, para esto por favor revisen si tienen instalados todos los paquetes que utilizo en cada una de las tareas. Lo he probado en Kile tanto en Windows 7 como en Ubuntu 14.04 y funciona bien. 
 
-En tal caso de alguna pregunta no relacionada directamente con el repositorio pueden escribir a mi dirección de correo electrónico: favio.vazquezp@gmail.com
+En tal caso de alguna pregunta no relacionada directamente con el repositorio pueden escribir a mi dirección de correo electrónico: favio.vazquez@correo.nucleares.unam.mx
 
 **Favio Vázquez.**
 
