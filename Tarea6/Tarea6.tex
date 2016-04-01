@@ -1,0 +1,185 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[affil-it]{authblk}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{tikz}
+\usepackage[labelfont=bf]{caption}
+\usepackage{subcaption} %Multiple images
+\usepackage{multicol} % Multiple columns
+\usepackage{float}
+\usepackage{cleveref}
+\usepackage{relsize} % bigger math symbols
+\usepackage[margin=1.1in]{geometry}
+\usepackage[titletoc,toc,title]{appendix}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\usepackage{mdframed} %frame theorems
+\usetikzlibrary{calc}
+\numberwithin{equation}{section}
+
+% Footnotes with symbols
+
+\makeatletter
+\def\@fnsymbol#1{\ensuremath{\ifcase#1\or \dagger\or \ddagger\or
+   \mathsection\or \mathparagraph\or \|\or **\or \dagger\dagger
+   \or \ddagger\ddagger \else\@ctrerr\fi}}
+\makeatother
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+% Cool letters 
+\input{Typocaps.fd}
+
+% Footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\fontsize{15pt}{15pt}\usefont{U}{Typocaps}{xl}{n} 
+gigantium humeris insidentes}
+
+% Big Pictures
+\usepackage[export]{adjustbox}
+
+% Enviroment for theorems
+\newmdtheoremenv[frametitle=Teorema]{theo}{Theorem}
+
+% Circled words
+\newcommand{\circled}[2][]{%
+  \tikz[baseline=(char.base)]{%
+    \node[shape = circle, draw, inner sep = 1pt]
+    (char) {\phantom{\ifblank{#1}{#2}{#1}}};%
+    \node at (char.center) {\makebox[0pt][c]{#2}};}}
+\robustify{\circled}
+
+%Appendices in spanish
+\renewcommand{\appendixname}{Ap\'endices}
+\renewcommand{\appendixtocname}{Ap\'endices}
+\renewcommand{\appendixpagename}{Ap\'endices}
+
+%Zero delimiter
+\newcommand{\zerodel}{.\kern-\nulldelimiterspace}
+
+%Columns separation
+\setlength{\columnsep}{1cm}
+
+%Indentation
+\setlength{\parindent}{0ex}
+
+%Multiple References
+
+\crefrangelabelformat{equation}{(#3#1#4--#5\crefstripprefix{#1}{#2}#6)}
+
+\usepackage{xparse}
+
+%Boxes
+
+\newcommand*{\boxcolor}{blue}
+\makeatletter
+\renewcommand{\boxed}[1]{\textcolor{\boxcolor}{%
+\tikz[baseline={([yshift=-1ex]current bounding box.center)}] \node [rectangle, minimum width=1ex,rounded corners,draw] {\normalcolor\m@th$\displaystyle#1$};}}
+ \makeatother
+
+%Constantes
+\newcommand{\euler}{\mathrm{e}}
+\newcommand{\im}{i}
+
+%Lemas, teoremas, definiciones y pruebas
+\newcommand{\definicion}{\textbf{Definición: }}
+\newcommand{\lema}{\textbf{Lema: }}
+\newcommand{\teorema}{\textbf{Teorema: }}
+\newcommand{\prueba}{\textbf{Prueba: }}
+\newcommand{\proposicion}{\textbf{Proposición: }}
+\newcommand{\corolario}{\textbf{Corolario: }}
+
+% Definición de las secciones y su numeración
+
+\makeatletter
+\def\@seccntformat#1{%
+  \expandafter\ifx\csname c@#1\endcsname\c@section\else
+  \csname the#1\endcsname\quad
+  \fi}
+\makeatother
+
+\begin{document}
+
+\begin{titlepage}
+\thispagestyle{fancy}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+ 
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+\textsc{\LARGE Universidad Nacional Autónoma de México}\\[0.3cm] % Name of your university/college
+
+%----------------------------------------------------------------------------------------
+%	LOGO SECTION
+%----------------------------------------------------------------------------------------
+
+\includegraphics[scale=0.17]{unam}
+
+%----------------------------------------------------------------------------------------
+%	SUBHEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+\textsc{\Large Electrodinámica Clásica}\\[0.3cm] % Major heading such as course name
+\textsc{\large Semestre 2016-II}\\[0.3cm] % Minor heading such as course title
+\textsc{\large 7 de abril de 2016}\\ % Minor heading such as course title
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.1cm]
+{ \huge \bfseries Tarea \# 6. \\ Ondas electromanéticas planas \\
+y propagación de ondas.}\\ % Title of your document
+\HRule \\[0.1cm]
+ 
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+\setcounter{footnote}{0}
+\center
+\large
+\emph{Autor:} \\ % Your name
+\Large Favio \textsc{Vázquez}\footnote[1]{\href{mailto:favio.vazquez@correo.nucleares.unam.mx}{favio.vazquez@correo.nucleares.unam.mx}}
+\\[0.7cm]
+%----------------------------------------------------------------------------------------
+%	COOL IMAGE SECTION
+%----------------------------------------------------------------------------------------
+
+\includegraphics[scale=1.2]{escherOndas}
+
+%----------------------------------------------------------------------------------------
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+% ---------------------------------------------------------------------------------------
+%         HEADER
+%----------------------------------------------------------------------------------------
+
+\fancyhead[L]{Favio Vázquez}
+\fancyhead[R]{\thepage}
+
+%----------------------------------------------------------------------------------------
+\setcounter{footnote}{0}
+\renewcommand*{\thefootnote}{\arabic{footnote}}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%%			BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+
+\end{document}
