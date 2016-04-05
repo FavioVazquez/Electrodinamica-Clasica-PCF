@@ -4,6 +4,7 @@
 \usepackage[affil-it]{authblk}
 \usepackage{enumerate}
 \usepackage{graphicx}
+\usepackage{listings}
 \usepackage{hyperref}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -33,6 +34,33 @@
 \makeatother
 
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+%Styling for code
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
 
 % Cool letters 
 \input{Typocaps.fd}
@@ -211,6 +239,305 @@ sobre la superficie para que no haya reflexión para ondas de frecuencia $\omega
 
 \underline{Solución:} \vspace{.3cm}
 
+\textbf{(a)} Hago notar de que no encuentro una manera simple de hacer este problema, y el mecanismo 
+que utilicé para solucionarlo fue inspirado en un texto que se llama ``A Companion 
+to J.D. Jackson's Classical Electrodynamics'', de R. Magyar \cite{magyar}. En la 
+discusión del capítulo 7 del texto de Jackson \cite{jackson}, argumenta algunas cosas interesantes que 
+pueden utilizarse para resolver este problema, y aunque su discusión es mucho más 
+extensa, la condensé para esta solución. Comencemos entonces.
+
+\vspace{.3cm}
+
+Como dice el enunciado, una onda electromagnética incide desde la izquierda y viaja 
+por las capas; debido a que tratamos con una onda electromagnética sabemos que 
+$\mathbf{k} \times \hat{\mathbf{n}} = 0$ y $\mathbf{B} \cdot \mathbf{E} = 0$, lo 
+cual nos dice que $\mathbf{E}$ y $\mathbf{B}$ son perpendiculares al movimiento 
+de la onda y son mutuamente perpendiculares entre ellas. Ya que los tres medios 
+son no-permeables tenemos que $\mu_1 = \mu_2 = \mu_3 = 1$ y por lo tanto el 
+índice de refracción para cara medio solo dependerá de las $\epsilon_i$. 
+
+\vspace{.3cm}
+
+Pensemos ahora en el recorrido de la onda por las capas. La primera capa puede reflejar 
+la onda y contribuir directamente al coeficiente de reflexión efectivo, o también 
+puede transmitir la onda. La segunda capa también puede reflejar la onda, si esto 
+ocurre viajará de vuelta a la primera capa y puede ser transmitida a la misma. O 
+la onda puede ser reflejada de vuelta. Y esto ocurre también si consideramos la 
+tercera capa, por lo que vemos que el coeficiente de reflexión consistirá en una 
+serie infinita de términos, donde cada término corresponde a una cierta cantidad 
+de rebotes entre las capas antes de que la onda es finalmente reflejada a la 
+izquierda. 
+
+\vspace{.3cm}
+
+Podemos escribir esto como 
+
+\begin{equation}
+r = r_{12} + t_{12}r_{23}t_{21} \euler^{2ik_2d} + t_{12}r_{23}r_{21}t_{21}
+\euler^{4ik_2d} + \dots
+\label{eq:reflex1}
+\end{equation}
+
+El primer término de esta ecuación corresponde a la reflexión en la interfaz 
+$n_1-n_2$, el segundo término representa una onda que para por la interfaz 
+$n_1-n_2$, se refleja en la interfaz $n_2-n_3$, y luego viaja de vuelta a la 
+interfaz $n_1-n_2$, y así sucesivamente podemos imaginarnos los términos 
+que corresponden a múltiples reflexiones internas. En esta ecuación vemos 
+el cambio de fase, relacionado con $k_2 = n_2 \omega /c$, que en el primer 
+término es el producto de los cambios ya que al llegar la onda va con $ikd$ y 
+al devolverse va con $i(-k)(-d)$, por lo tanto el cambio total de fase será 
+$2ikd$. Si escribimos la ecuación \eqref{eq:reflex1} como 
+
+\begin{equation}
+ r = r_{12} + [t_{12}r_{23}t_{21} \euler{2ik_2d}][1 + r_{23}r_{21}\euler{2ik_2d} 
+ + (r_{23}r_{21})^2 \euler{4ik_2d} + \dots],
+\end{equation}
+
+y viendo que el segundo término es una serie geométrica que puede escribirse como 
+
+\begin{equation}
+ \sum_0^\infty x^n = \frac{1}{1-x},
+\end{equation}
+
+nos queda que, con $x = r_{23}r_{21}\euler^{2ik_2d}$,
+
+\begin{equation}
+ r = r_{12} + [t_{12}r_{23}t_{21} \euler^{2ik_2d}]\left[\frac{1}{1 - 
+ r_{23}r_{21}\euler^{2ik_2d}} \right].
+\end{equation}
+
+De la ecuación (7.42) de Jackson \cite{jackson} vemos que 
+
+\begin{equation}
+ r_{ij} = \frac{n_i - n_j}{n_i + n_j},
+\end{equation}
+
+y 
+
+\begin{equation}
+ t_{ij} = \frac{2n_i}{n_i + n_j}.
+\end{equation}
+
+Con estas ecuaciones podemos mostrar que 
+
+\begin{equation}
+ r_{12} = \frac{n_1 - n_2}{n_1 + n_2} = - \frac{n_2 - n_1}{n_1 + n_2} = - r_{21},
+\end{equation}
+
+y que 
+
+\begin{equation}
+ t_{12}t_{21} = \left(\frac{2n_1}{n_1 + n_2} \right)\left(\frac{2n_1}{n_1 + n_2}\right) = 
+ \frac{4 n_1 n_2}{(n_1 + n_2)^2} = 1 - \frac{(n_1 - n_2)^2}{(n_1 + n_2)^2} = 1 + r_{12}r_{21}.
+\end{equation}
+
+Por lo tanto podemos escribir 
+
+\begin{equation}
+ r = r_{12} + \frac{(1 + r_{12}r_{21})\euler^{2ik_2d}}{1 + r_{12}r_{23}\euler^{2ik_2d}} = 
+ \frac{r_{12} + r_{23}\euler^{2ik_2d}}{1 + r_{12}r_{23}\euler^{2ik_2d}}.
+\end{equation}
+
+El coeficiente de reflexión se define como $R = |r|^2$, por lo tanto 
+
+\begin{equation}
+ \boxed{R = \frac{r_{12}^2 + r_{23}^2 + 2r_{12}r_{23}\cos{(2k_2d)}}{1 + 2r_{12}r_{23} 
+ \cos{(2k_2d)} + (r_{12}r_{23})^2}},
+\end{equation}
+
+y debido a que $R + T = 1$ el coeficiente de transmisión resulta en 
+
+\begin{equation}
+ \boxed{T = \frac{1 - r_{12}^2 - r_{23}^2 + (r_{12}r_{23})^2}{1 + 2r_{12}r_{23}\cos{(2k_2d)} 
+ + (r_{12}r_{21})^2}}.
+\end{equation}
+
+Necesitamos ahora hacer una serie de gráficos para el comportamiento de los índices 
+de reflexión y transmisión que encontramos para distintos índices de refracción. 
+
+\vspace{.3cm}
+
+Si $n_1 = 1$, $n_2 = 2$ y $n_3 = 3$, haciendo $d = 1c$ nos queda 
+
+\begin{equation}
+ R = \frac{1/4 + 1/25 + 1/5\cos{4\omega}}{1 + 1/100 + 1/5\cos{4\omega}},
+\end{equation}
+
+y 
+
+\begin{equation}
+ T = \frac{1 - 1/4 - 1/25 + (1/10)^2}{1 + 1/100 + 1/5\cos{4\omega}}
+\end{equation}
+
+cuyo gráfico es 
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.5]{problema1fig2}
+ \caption{Coeficientes de reflexión y transmisión para $n_1 = 1$, $n_2 = 2$ y $n_3 = 3$.}
+\end{figure}
+
+Si $n_1 = 3$, $n_2 =2$ y $n_3 = 1$ nos queda
+
+\begin{equation}
+ R = \frac{1/4 + 1/25 + 1/5\cos{4\omega}}{1 + 1/100 + 1/5\cos{4\omega}},
+\end{equation}
+
+y 
+
+\begin{equation}
+ T = \frac{1 - 1/4 - 1/25 + (1/10)^2}{1 + 1/100 + 1/5\cos{4\omega}}
+\end{equation}
+
+cuyo gráfico es el mismo que en el anterior caso 
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.5]{problema1fig2}
+ \caption{Coeficientes de reflexión y transmisión para $n_1 = 3$, $n_2 = 2$ y $n_3 = 1$.}
+\end{figure}
+
+Si $n_1 = 2$, $n_2 =4$ y $n_3 = 1$ nos queda
+
+\begin{equation}
+ R = \frac{1/9 + 9/25 - 2/5\cos{8\omega}}{1 + 1/25 - 2/5\cos{8\omega}},
+\end{equation}
+
+y 
+
+\begin{equation}
+ T = \frac{1 - 1/9 - 9/25 + 1/25}{1 + 1/25 - 2/5\cos{8\omega}}
+\end{equation}
+
+cuyo gráfico es 
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.5]{problema1fig3}
+ \caption{Coeficientes de reflexión y transmisión para $n_1 = 2$, $n_2 = 4$ y $n_3 = 1$.}
+\end{figure}
+
+El código para hacer estas imágenes se encuentra en un repositorio público el cual 
+administro, donde también están los PDF de todas las tareas, así como el código 
+\LaTeX \space con el que las hago. La página es: 
+\href{https://github.com/FavioVazquez/Electrodinamica-Clasica-PCF}{https://github.com/FavioVazquez/Electrodinamica-Clasica-PCF}.
+Los códigos están en NoteBooks de Python 3, los cuales GitHub renderiza de forma 
+automática y pueden verse en línea.
+
+\vspace{.3cm} 
+
+El código que hace las primeras dos imágenes es:
+
+\begin{lstlisting}[language=Python]
+from __future__ import print_function
+import numpy as np
+from numpy import arccos,sin, cos, pi, array, sqrt
+import matplotlib
+matplotlib.use('nbagg')
+import matplotlib.pyplot as plt
+from matplotlib import rc
+
+rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+## for Palatino and other serif fonts use:
+#rc('font',**{'family':'serif','serif':['Palatino']})
+rc('text', usetex=True)
+
+#LaTeX
+plt.rc('text', usetex=True)
+plt.rc('font', family='serif')
+
+# Case n_1 = 1, n_2 = 2, n_3 = 3 and n_1 = 3, n_2 = 2, n_3 = 3.
+
+# linespace for omega 
+omega = np.linspace(0,pi,360)
+
+# Def. of R and T
+R_1 = (1/4 + 1/25 + 1/5*cos(4*omega))/(1 + 1/100 + 1/5*cos(4*omega))
+T_1 = (1 - 1/4 - 1/25 + 1/100)/(1 + 1/100 + 1/5*cos(4*omega))
+
+# Style
+plt.ylabel(r'$R,T$', fontsize=30)
+plt.xlabel(r'$\omega$',fontsize=30)
+plt.xticks([])
+plt.yticks([])
+
+# Legend
+plt.text(0.4, 0.33, r"$R$", bbox=dict(facecolor='white', alpha=0.1),
+         fontsize=20)
+plt.text(0.4, 0.65, r"$T$", bbox=dict(facecolor='white', alpha=0.1),
+         fontsize=20)
+
+# Plot
+plt.plot(omega,R_1,"red",omega,T_1,"blue")
+plt.show()
+\end{lstlisting}
+
+\newpage
+
+El código que hace la segunda imagen es:
+
+\begin{lstlisting}[language=Python]
+from __future__ import print_function
+import numpy as np
+from numpy import arccos,sin, cos, pi, array, sqrt
+import matplotlib
+matplotlib.use('nbagg')
+import matplotlib.pyplot as plt
+from matplotlib import rc
+
+rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+## for Palatino and other serif fonts use:
+#rc('font',**{'family':'serif','serif':['Palatino']})
+rc('text', usetex=True)
+
+#LaTeX
+plt.rc('text', usetex=True)
+plt.rc('font', family='serif')
+
+# Case n_1 = 2, n_2 = 4, n_3 = 1
+
+# linespace for omega 
+omega = np.linspace(0,pi,360)
+
+# Def. of R and T
+R_2 = (1/9 + 9/25 - 2/5*cos(8*omega))/(1 + 1/25 - 2/5*cos(8*omega))
+T_2 = (1 - 1/9 - 9/25 + 1/25)/(1 + 1/25 - 2/5*cos(8*omega))
+
+# Style
+plt.ylabel(r'$R,T$', fontsize=30)
+plt.xlabel(r'$\omega$',fontsize=30)
+plt.xticks([])
+plt.yticks([])
+
+# Legend
+plt.text(0.25, 0.3, r"$R$", bbox=dict(facecolor='white', alpha=0.1),fontsize=20)
+plt.text(0.25, 0.65, r"$T$", bbox=dict(facecolor='white', alpha=0.1),fontsize=20)
+
+# Plot
+plt.plot(omega,R_2,"red",omega,T_2,"blue")
+plt.show()
+\end{lstlisting}
+
+\textbf{(b)} Si $n_3 = 1$ el índice de reflexión se reduce a 
+
+\begin{equation}
+ R = 1 - \frac{8n_1 n_2^2}{n_1^2 + [1 + n_1(4 + n_1)]n_2^2 + n_2^4 + 
+ (n_1 - n_2)(n_1 + n_2)(n_2^2 - 1)\cos{(2 d n_2 \omega_0)}}
+\end{equation}
+
+donde hemos cambiado $\omega$ por $\omega_0$ como lo especifica el inciso. Ahora 
+si podemos hacer que $\cos{(2 d n_2 \omega_0)} = -1$ el requerimiento de que $R = 0$ 
+se reduce a 
+
+\begin{equation}
+ n_1^2 + [1 + n_1(4 + n_1)]n_2^2 + n_2^4 + 
+ (n_1 - n_2)(n_1 + n_2)(n_2^2 - 1) - 8n_1 n_2^2 = 0,
+\end{equation}
+
+lo que implica que $n_2 = \sqrt{n_1}$. Por lo tanto para que se cumpla que $R=0$, debemos 
+escoger $n_2 = \sqrt{n_1}$ y para que se cumpla la condición que impusimos en el 
+coseno, debe tenerse que $d = (m - 1/2)\frac{\pi}{\sqrt{n\omega_0}}$.
+
 \newpage
 
 \section{Problema 2. Problema 7.3 de Classical Electromagnetic Radiation
@@ -349,6 +676,9 @@ pueden escribirse como funciones de $z$ por $\euler^{i(kx - \omega t)}$.
 \bibitem{jackson}
 J. Jackson, \emph{Classical Electrodynamics}, 3ra edición. John Wiley and Sons, Inc. 
 1999.
+\bibitem{magyar}
+R. Magyar, \emph{A Companion to Classical Electrodynamics 3rd Edition by J.D. 
+Jackson}, 2001.
 \bibitem{griffiths}
 D. Griffiths, \emph{Indtroduction to Electrodynamics}, 4ta edición. Pearson, 2013.
 \end{thebibliography}
