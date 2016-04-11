@@ -546,13 +546,13 @@ de Jackson \cite{jackson}.}
 Dos losas planas semi-infinitas con el mismo dieléctrico sin pérdidas, uniformidad,
 isotropía, no-permeabilidad con índice de refracción $n$ son paralelas, y están 
 separadas por una brecha de aire ($n = 1$) de ancho $d$. Una onda electromagnética 
-de frecuencua $\omega$ incide en la brecha desde una de las losas con un ángulo 
+de frecuencia $\omega$ incide en la brecha desde una de las losas con un ángulo 
 de incidencia $i$. Para una polarización lineal tanto paralela como perpendicular 
 al plano de incidencia,
 
 \begin{enumerate}[label=\textbf{(\alph*)}]
  \item calcule la tasa de potencia transmitida a la segunda losa con respecto 
- al poder incidente y la tasa de poder reflejado con respecto al incidente;
+ a la potencia incidente y la tasa de potencia reflejado con respecto a la incidente;
  \item para un $i$ mayor que el ángulo crítico para reflexión interna total, 
  esboce la tasa de potencia transmitida con respecto a la potencia incidente 
  como una función de $d$ medido en unidades de longitud de onda en la brecha.
@@ -561,6 +561,285 @@ al plano de incidencia,
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+\textbf{(a)} Asumiremos que la onda incidente puede escribirse como $\mathbf{E}_i 
+\euler^{i\mathbf{k}\cdot \mathbf{x}}$, y del lado de la primear losa se refleja 
+una onda de la forma  $\mathbf{E}_r \euler^{i\mathbf{k'}\cdot \mathbf{x}}$, luego 
+en la brecha de aire tenemos las ondas  $\mathbf{E}_+
+\euler^{i\mathbf{k}_0\cdot \mathbf{x}}$ y  $\mathbf{E}_- 
+\euler^{i\mathbf{k}_0\cdot \mathbf{x}}$, y por último en la segunda losa tendremos 
+una onda transmitida de la forma  $\mathbf{E}_t 
+\euler^{i\mathbf{k}\cdot (\mathbf{x} - \mathbf{d})}$.
+
+\vspace{.3cm}
+
+Si $i$ es el ángulo de incidencia, entonces el ángulo $r$ medido desde la normal 
+en la brecha de aire  está dado por la ley de Snell, $n \sen{i} = \sen{r}$, y
+debido a que las losas  tienen el mismo índice de refracción, el ángulo de
+transmisión también será $i$. Tenemos que, por lo anterior
+
+\begin{equation}
+ \cos{r} = \sqrt{q - \sen^2{r}} = \sqrt{1 - n^2\sen^{i}},
+\end{equation}
+
+lo que nos dice que $\cos{r}$ es puramente imaginario cuando $i$ es más grande 
+que el ángulo crítico. El problema nos pide que calculemos $E_t/E_i$ y $E_r/E_i$, 
+y para hacer esto tomaremos dos casos posibles, y utilizando las condiciones 
+de frontera para las componentes paralelas de $\mathbf{E}$ y $\mathbf{H}$ podremos hacer
+esto\footnote{Ver página 304 de Jackson \cite{jackson}}. El primer caso es 
+cuando $\mathbf{E}$ es perpendicular al plano de incidencia, entonces en la
+primera interfaz tenemos 
+
+\begin{align}
+  \begin{split}
+  E^{\parallel} &: E_i + E_r = E_+ + E_-, \\
+  H^{\parallel} &: n(E_i - E_r)\cos{i} = (E_+ - E_-)\cos{r},
+  \end{split}
+\end{align}
+
+y en la segunda interfaz 
+
+\begin{align}
+  \begin{split}
+  E^{\parallel} &: E_+\euler^{i\phi} + E_-\euler^{-i\phi} = E_t, \\
+  H^{\parallel} &: (E_+\euler^{i\phi} - E_-\euler^{-i\phi})\cos{r} =
+  nE_t \cos{i},
+  \end{split}
+\end{align}
+
+donde hemos definido la fase 
+
+\begin{equation}
+ \phi = \mathbf{k}_0 \cdot \mathbf{d} = k_0 d \cos{r} = \frac{\omega d \cos{r}}{c}.
+\end{equation}
+
+Ahora las ecuaciones para la primera interfaz podemos escribirlas como 
+
+\begin{align}
+ \begin{split}
+  E_+ = \frac{1}{2}E_i(1 + \xi) + \frac{1}{2}E_r(1 - \alpha), \\
+  E_- \frac{1}{2}E_i(1 - \xi) + \frac{1}{2}E_r(1 + \alpha),
+ \end{split}
+\end{align}
+
+donde hemos definido 
+
+\begin{equation}
+ \xi \equiv \frac{n \cos{i}}{\cos{r}} = \frac{n\cos{i}}{\sqrt{1 - n^2\sen^2{i}}}.
+\end{equation}
+
+De igual forma las ecuaciones para la segunda interfaz podemos escribirlas como 
+
+\begin{align}
+ \begin{split}
+  E_+ = \frac{1}{2}\euler^{-i\phi}E_t(1 + \xi), \\
+  E_- = \frac{1}{2}\euler^{-i\phi}E_t(1 + \xi).
+ \end{split}
+\end{align}
+
+Con estos dos pares de ecuaciones podemos resolver para las tasas solicitadas 
+por el texto,
+
+\begin{equation}
+ \boxed{\frac{E_t}{E_i} = \frac{2\xi}{2\xi\cos{\phi} - i(1 + \xi^2)\sen{\phi}}},
+\end{equation}
+
+\begin{equation}
+ \boxed{\frac{E_r}{E_i} = \frac{i(1 - \xi^2)\sen{\phi}}{2\xi\cos{\phi} - i(1 + \xi^2)
+ \sen{\phi}}}.
+\end{equation}
+
+Como no me queda muy claro si el texto pide estas tasas solamente o también los 
+coeficientes de reflexión y transmisión, debajo se encuentran éstos\footnote{Para 
+los casos en que $i$ es menor que el ángulo crítico, y tanto $\xi$ como $\phi$ son 
+reales.}
+
+\begin{equation}
+ \boxed{T = \left|\frac{E_t}{E_i} \right|^2 = \frac{4\xi^2}{4\xi^2 + 
+ (1 - \xi)^2\sen^2{\phi}}},
+\end{equation}
+
+\begin{equation}
+ \boxed{R = \left|\frac{E_r}{E_i} \right|^2 = \frac{(1 - \xi)^2\sen^2{\phi}}{4\xi^2 + 
+ (1 - \xi)^2\sen^2{\phi}}}.
+\end{equation}
+
+Ahora para $\mathbf{E}$ paralelo al plano de incidencia, tenemos para la primera 
+interfaz 
+
+\begin{align}
+ \begin{split}
+  E^{\parallel} : (E_i - E_r)\cos{i} = (E_+ - E_-)\cos{r}, \\
+  H^{\parallel} : n(E_i + E_r) = E_+ + E_-,
+ \end{split}
+\end{align}
+
+y en la segunda interfaz 
+
+\begin{align}
+ \begin{split}
+  (E_+ \euler^{i\phi} - E_-\euler^{-i\phi})\cos{r} = E_t \cos{i}, \\
+  E_+ \euler^{i\phi} - E_-\euler^{-i\phi} = n E_t.
+ \end{split}
+\end{align}
+
+De nuevo estas ecuaciones podemos escribirlas como 
+
+\begin{align}
+ \begin{split}
+  n^{-1} E_+ = \frac{1}{2}E_i(1 + \zeta) + \frac{1}{2}E_r(1 - \zeta), \\
+  n^{-1} E_- = \frac{1}{2}E_i(1 - \zeta) + \frac{1}{2}E_r(1 + \zeta), \\
+ \end{split}
+\end{align}
+
+y 
+
+\begin{align}
+ \begin{split}
+  n^{-1} E_+ = \frac{1}{2}\euler^{-i\phi}E_t(1 + \xi), \\
+  n^{-1} E_- = \frac{1}{2}\euler^{-i\phi}E_t(1 + \xi).
+ \end{split}
+\end{align}
+
+donde hemos definido 
+
+\begin{equation}
+ \zeta \equiv \frac{\cos{i}}{n\cos{r}} = \frac{\cos{i}}{n\sqrt{1 - n^2 \sen^{i}}}.
+\end{equation}
+
+Vemos que son ecuaciones muy similares a las que obtuvimos anteriormente solo con 
+la diferencia de que en vez de $E_{\pm}$ tenemos $n^{-1}E_{\pm}$ y en vez de $\xi$ 
+tenemos $\zeta$, y obtendremos las siguientes relaciones 
+
+\begin{equation}
+ \boxed{\frac{E_t}{E_i} = \frac{2\zeta}{2\zeta\cos{\phi} - i(1 + \zeta^2)\sen{\phi}}},
+\end{equation}
+
+\begin{equation}
+ \boxed{\frac{E_r}{E_i} = \frac{i(1 - \zeta^2)\sen{\phi}}{2\zeta\cos{\phi} - i(1 + \zeta^2)
+ \sen{\phi}}}.
+\end{equation}
+
+Y los coeficientes de reflexión y transmisión serán 
+
+\begin{equation}
+ \boxed{T = \left|\frac{E_t}{E_i} \right|^2 = \frac{4\zeta^2}{4\zeta^2 + 
+ (1 - \zeta)^2\sen^2{\phi}}},
+\end{equation}
+
+\begin{equation}
+ \boxed{R = \left|\frac{E_r}{E_i} \right|^2 = \frac{(1 - \zeta)^2\sen^2{\phi}}{4\zeta^2 + 
+ (1 - \zeta)^2\sen^2{\phi}}}.
+\end{equation}
+
+\textbf{(b)} Como no se especifica, solo consideraremos el caso en que $\mathbf{E}$ es
+perpendicular al plano de incidencia. Como $i$ es mayor que el ángulo crítico, tanto 
+$\xi$ como $\phi$ son puramente imaginarios. Por simplicidad podemos escribir éstos 
+como $\xi = i\gamma$, $\phi = i\beta$, entonces 
+
+\begin{equation}
+ \boxed{\frac{E_t}{E_i} = \frac{2i\gamma}{2i\gamma\cosh{\beta} - (1 - \gamma^2)\senh{\beta}}},
+\end{equation}
+
+\begin{equation}
+ \boxed{\frac{E_r}{E_i} = \frac{-(1 + \gamma^2)\senh{\beta}}{2i\gamma\cosh{\beta} + (1 + \gamma^2)
+ \sen{\beta}}}.
+\end{equation}
+
+Y los coeficientes de reflexión y transmisión quedan como
+
+\begin{equation}
+ \boxed{T = \left|\frac{E_t}{E_i} \right|^2 = \frac{4\gamma^2}{4\gamma^2 + 
+ (1 - \gamma)^2\senh^2{\beta}}},
+\end{equation}
+
+\begin{equation}
+ \boxed{R = \left|\frac{E_r}{E_i} \right|^2 = \frac{(1 - \gamma)^2\senh^2{\beta}}{4\gamma^2 + 
+ (1 - \gamma)^2\senh^2{\beta}}}.
+\end{equation}
+
+Donde, 
+
+\begin{equation}
+ \gamma = - \frac{n\cos{i}}{\sqrt{n^2\sen^2{i} -1}},
+\end{equation}
+
+y
+
+\begin{equation}
+ \beta = \frac{\omega d \sqrt{n^2 \sen^2{i} -1}}{c}.
+\end{equation}
+
+Para tomar un ejemplo, podemos usar que en el aire, con índice de refracción 
+$n \approx 1.5$ el ángulo crítico para la reflexión total interna es de $i_0 = 42^\circ$. 
+Y el gráfico de $T$ en función de $d$ medido en unidades de longitud de onda en la 
+brecha será 
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.5]{problema2fig1}
+ \caption{Coeficiente de transmisión para $n \approx 1.5$ en función de $d$.}
+\end{figure}
+
+El código que esta imagen es:
+
+\begin{lstlisting}[language=Python]
+from __future__ import print_function
+import numpy as np
+from numpy import arccos,sin, cos, pi, array, sqrt
+import matplotlib
+matplotlib.use('nbagg')
+import matplotlib.pyplot as plt
+from matplotlib import rc
+
+rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+## for Palatino and other serif fonts use:
+#rc('font',**{'family':'serif','serif':['Palatino']})
+rc('text', usetex=True)
+
+#LaTeX
+plt.rc('text', usetex=True)
+plt.rc('font', family='serif')
+
+# Linespace for d
+d = np.linspace(0,10,500)
+
+# Variable definitions
+
+def gamma(angle):
+    return - (1.5 * cos(angle)) / sqrt((1.5**2)*(sin(angle))**2-1)
+
+def beta(angle):
+    return d*sqrt((1.5**2)*(sin(angle)**2) - 1)
+
+T1 = (5*gamma(62)**2) / ((4 * gamma(62)**2) + (1+gamma(62)**2) * 
+                         sinh(beta(62))**2)
+
+T2 = (5*gamma(65)**2) / ((4 * gamma(65)**2) + (1+gamma(65)**2) * 
+                         sinh(beta(65))**2)
+
+T3 = (5*gamma(70)**2) / ((4 * gamma(70)**2) + (1+gamma(70)**2) * 
+                         sinh(beta(70))**2)
+
+T4 = (5*gamma(80)**2) / ((4 * gamma(80)**2) + (1+gamma(80)**2) * 
+                         sinh(beta(80))**2)
+
+# Style
+plt.ylabel(r'$T$', fontsize=30)
+plt.xlabel(r'$d$',fontsize=30)
+plt.xticks([])
+plt.yticks([])
+
+# Legend
+plt.legend(handles=[T1plot,T2plot,T3plot,T4plot], loc=1)
+
+# Plot
+T1plot, = plt.plot(d,T1,"k:", label = "$i = 62$")
+T2plot, = plt.plot(d,T2,"r--", label = "$i = 65$")
+T3plot, = plt.plot(d,T3,"b", label = "$i = 70$")
+T4plot, = plt.plot(d,T4,".", label = "$i = 80$")
+plt.show()
+\end{lstlisting}
 
 \newpage
 
