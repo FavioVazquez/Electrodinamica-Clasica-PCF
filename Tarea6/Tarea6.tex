@@ -885,8 +885,8 @@ Asumiendo que en el espacio y en la lámina conductora $\mu/\mu_0 = \epsilon/\ep
  transmisión es 
  
  $$
- T = \frac{8(\text{Re} \gamma)^2 \euler^{-2D/\gamma}}{1 - 2\euler^{-2D/\gamma} 
- \cos{2D/\delta) + \euler^{-4/\gamma}}}
+ T = \frac{8(\text{Re} \gamma)^2 \euler^{-2D/\delta}}{1 - 2\euler^{-2D/\delta} 
+ (\cos{2D/\delta) + \euler^{-4D/\delta}}}
  $$
 \end{enumerate}
 
@@ -896,6 +896,214 @@ Defina ``grosor muy pequeño''.
 \vspace{.3cm}
 
 \underline{Solución:} \vspace{.3cm}
+
+\textbf{(a)} Mientras consideremos que la lámina conductora como un medio con 
+constante dieléctrica compleja 
+
+\begin{equation}
+ \epsilon/\epsilon_0 = 1 + i\frac{\sigma}{\omega \epsilon_0},
+\end{equation}
+
+podemos trabajar como si todo fuera un dieléctrico. Vemos entonces que este problema 
+es muy similar al anterior y procedemos de la misma manera. Introduciremos los 
+campos vectoriales de la forma $\mathbf{E}_i \euler^{i\mathbf{k} \cdot \mathbf{x}}$ 
+y $\mathbf{E}_r \euler^{- i\mathbf{k} \cdot \mathbf{x}}$ en la zona de incidencia, 
+$\mathbf{E}_+ \euler^{i\mathbf{k}_1 \cdot \mathbf{x}}$ y 
+$\mathbf{E}_- \euler^{-i\mathbf{k}_1 \cdot \mathbf{x}}$ en la lámina conductora y 
+$\mathbf{E}_t \euler^{i\mathbf{k} \cdot (\mathbf{x} - \mathbf{D})}$ en el lado 
+de transmisión. Utilizamos ahora las condiciones de acople para la parte perpendicular 
+de $\mathbf{E}$ al plano de incidencia. Tenemos entonces, para la primera interfaz 
+
+\begin{align}
+ E^\parallel &: E_i + E_r = E_+ + E_-, \\
+ H^\parallel &: (E_i - E_r) = n(E_+ - E_-).
+\end{align}
+
+Y para la segunda interfaz, 
+
+\begin{align}
+ E_+ \euler^{i\phi} + E_- \euler^{-i\phi} &= E_t, \\
+ n (E_+ \euler^{i\phi} - E_- \euler^{-i\phi}) &= E_t,
+\end{align}
+
+donde $n$ es el índice de refracción complejo 
+
+\begin{equation}
+ n = \sqrt{\frac{\epsilon}{\epsilon_0}} = \sqrt{1 + i \frac{\sigma}{\omega\epsilon_0}},
+\end{equation}
+
+y $\phi$ es la fase  de cambio al atravesar el dieléctrico 
+
+\begin{equation}
+ \phi = k_1 D = \frac{\omega n}{c} D = \frac{\omega D}{c}\sqrt{1 + i 
+ \frac{\sigma}{\omega\epsilon_0}}.
+\end{equation}
+
+Resolviendo ahora para $E_t$ y $E_r$ en términos de $E_i$ obtenemos 
+
+\begin{equation}
+ \frac{E_t}{E_i} = \frac{4/n \euler^{i\phi}}{(1 + 1/n^2)(1 - \euler^{2i\phi}) 
+ + 2/n (1 + \euler^{2i\phi})},
+\end{equation}
+
+\begin{equation}
+  \frac{E_r}{E_i} = \frac{-(1 - 1/n^2)(1- \euler^{2i\phi})}{(1 + 1/n^2)(1 - \euler^{2i\phi}) 
+ + 2/n (1 + \euler^{2i\phi})}.
+\end{equation}
+
+Tomando ahora el límite utilizando lo que dice el enunciado de que la lámina es 
+un conductor excelente, $\sigma/\omega \epsilon_0 \gg 1$. En este caso el índice 
+de refracción y la fase de cambio se aproximan por 
+
+\begin{equation}
+ n \approx (1 + i) \sqrt{\frac{\sigma}{2\epsilon_0 \omega}} = \frac{2}{\gamma},
+\end{equation}
+
+\begin{equation}
+ \phi \approx (1 + i) D \sqrt{\frac{\mu_0 \sigma \omega}{2}} = i \lambda,
+\end{equation}
+
+donde hemos utilizado la definición de $\gamma$ y $\lambda$ que da el enunciado del 
+problema. Para $|\gamma| \ll 1$ y despreciando términos del orden $\mathcal{O}(1/n^2)$ 
+comparado a $1$ y sustituyendo arriba obtenemos 
+
+\begin{equation}
+ \boxed{\frac{E_r}{E_i} = \frac{-(1 - \euler^{-2\lambda})}{(1 - \euler^{-2\lambda}) 
+ + \gamma(1 + \euler^{-2\lambda})}},
+\end{equation}
+
+\begin{equation}
+  \boxed{\frac{E_t}{E_i} = \frac{2\gamma \euler^{-\lambda}}{(1 - \euler^{-2\lambda}) 
+ + \gamma(1 + \euler^{-2\lambda})}}.
+\end{equation}
+
+\hspace{10cm}\includegraphics[scale=0.25]{logoQED}
+
+\textbf{(b)} El grosor igual a cero corresponde a $\lambda \rightarrow 0$. En este 
+caso, viendo las ecuaciones para $E_t/E_i$ y $E_r/E_i$ que obtuvimos en 
+el inciso anterior, tenemos que 
+
+\begin{equation}
+ \frac{E_t}{E_i} \rightarrow 1,
+\end{equation}
+
+\begin{equation}
+ \frac{E_r}{E_i} \rightarrow 0.
+\end{equation}
+
+Y en el caso de grosor infinito, es decir, $\lambda \rightarrow \infty$, tenemos que 
+
+\begin{equation}
+ \frac{E_t}{E_i} \rightarrow 0,
+\end{equation}
+
+\begin{equation}
+ \frac{E_r}{E_i} \rightarrow - \frac{1}{1 + \gamma}.
+\end{equation}
+
+\hspace{10cm}\includegraphics[scale=0.25]{logoQED}
+
+La reflexión no se va a 1 en este casi ya que la lámina no es un un conductor perfecto 
+y existe disipación de potencia (aunque muy poca). 
+
+\vspace{.3cm}
+
+\textbf{(c)} Para calcular el coeficiente de transmisión desde la expresión que 
+obtuvimos para $E_t/E_i$ que obtuvimos en el inciso (b), debido a que $\gamma$ y 
+$\lambda$ son complejos, y mientras no estemos en el límite para grosor muy 
+pequeño, que definiremos pronto, los términos $\mathbf{O}(\gamma)$ pueden ser 
+ignorados en el denominador. Entonces 
+
+\begin{equation}
+ \frac{E_t}{E_i} \approx \frac{2 \gamma \euler^{-\lambda}}{(1 - \euler^{-2\lambda})},
+\end{equation}
+
+de manera que 
+
+\begin{equation}
+ T = \left|\frac{E_t}{E_i} \right|^2 = \frac{4|\gamma|^2 \euler^{-2\text{Re}\lambda}}{
+ 1 - 2 \text{Re}(\euler^{-2\lambda} + \euler^{-4\text{Re} \lambda}},
+\end{equation}
+
+tomando ahora $|\gamma|^2 = 2(\text{Re} \gamma)^2$ y $\euler^{-2\lambda} 
+= \euler^{2i D / \delta}\euler^{-2D/\delta}$ tenemos entonces 
+
+\begin{equation}
+ \boxed{T = \frac{8(\text{Re} \gamma)^2 \euler^{-2D/\delta}}{1 - 2\euler^{-2D/\delta} 
+ (\cos{2D/\delta) + \euler^{-4D/\delta}}}}.
+\end{equation}
+
+\hspace{10cm}\includegraphics[scale=0.25]{logoQED}
+
+El límite para grosor muy pequeño ocurre cuando los términos $\mathcal{O}(\gamma)$ 
+se hacen importantes. Esto ocurre cuando 
+
+\begin{equation}
+ |1 - \euler^{-2\lambda}| \approx |\gamma(1 + \euler^{-2\lambda}|.
+\end{equation}
+
+Expandiendo para $\lambda$ pequeño 
+
+\begin{equation}
+ |2 \lambda| \approx |2 \gamma| \Rightarrow \frac{D}{\delta} \approx
+ \frac{\omega \delta}{c}.
+\end{equation}
+
+Por lo tanto de lo anterior vemos que el límite para grosor muy pequeño, en este 
+caso puede definirse como 
+
+\begin{equation}
+ \boxed{D < \frac{\omega \delta^2}{c}}.
+\end{equation}
+
+Debajo se encuentra el gráfico de log $T$ como una función de $(D/\delta)$, 
+asumiendo que Re $\gamma = 10^{-2}$. 
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.5]{problema3fig1}
+ \caption{Gráfico de log $T$ como una función de $(D/\delta)$, 
+asumiendo que Re $\gamma = 10^{-2}$.}
+\end{figure}
+
+Debajo se encuentra el código que hace la figura:
+
+\begin{lstlisting}[language=Python]
+from __future__ import print_function
+import numpy as np
+from numpy import arccos,sin, cos, pi, array, sqrt
+import matplotlib
+matplotlib.use('nbagg')
+import matplotlib.pyplot as plt
+from matplotlib import rc
+
+rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+## for Palatino and other serif fonts use:
+#rc('font',**{'family':'serif','serif':['Palatino']})
+rc('text', usetex=True)
+
+#LaTeX
+plt.rc('text', usetex=True)
+plt.rc('font', family='serif')
+
+# Linespace for Ddelta
+Ddelta = np.linspace(1,10,500)
+
+# Variable definitions
+
+T = (8 * (10E-2)**2 * exp(-2*Ddelta)) / (1 - 
+    (2 * exp(-2*Ddelta) * cos(2*Ddelta)) + exp(-4*Ddelta))
+
+# Style
+plt.ylabel(r'log $ T$', fontsize=30)
+plt.xlabel(r'$D/\delta$',fontsize=30)
+
+# Plot
+T1plot, = plt.semilogy(Ddelta,T,"b")
+plt.grid(True)
+plt.show()
+
+\end{lstlisting}
 
 \newpage
 
