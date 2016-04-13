@@ -1127,21 +1127,21 @@ pueden escribirse como funciones de $z$ por $\euler^{i(kx - \omega t)}$.
  donde 
  
  $$
- q^2(z) = \omega^2 \mu_0 \epsilon(z) - k^2
+ q^2(z) = \frac{\omega^2}{c^2}  - k^2
  $$
  
  y $F = E_y$ para la polarización \emph{horizontal}, y 
  
  $$
- q^2(z) = \omega^2 \mu_0 \epsilon(z) + \frac{1}{2\epsilon}\frac{d^2 \epsilon}{dz^2} 
+ q^2(z) =\frac{\omega^2}{c^2} \epsilon(z) + \frac{1}{2\epsilon}\frac{d^2 \epsilon}{dz^2} 
  - \frac{3}{4\epsilon^2}\left(\frac{d \epsilon}{d z} \right)^2 - k^2
  $$
  
- con $F = \sqrt{\epsilon/\epsilon_0}E_z$ para la polarización \emph{vertical}.
+ con $F = \sqrt{\epsilon}E_z$ para la polarización \emph{vertical}.
  
  \item Use la aproximación WKB para tratar la propagación de ondas dirigidas 
  verticalmente hacia la ionosfera ($k = 0$), asumiendo que la constante dieléctrica 
- está dad por (7.59) con una frecuencia de plasma $\omega_p(z)$ gobernada por una 
+ está dada por (7.59) con una frecuencia de plasma $\omega_p(z)$ gobernada por una 
  densidad electrónica como se muestra en la figura 7.11. Verifique que los argumentos 
  cualitativos de la sección 7.6 se mantienen, con discrepancias en detalle solo 
  para $\omega ~ \omega_{p,\text{max}}$.
@@ -1157,6 +1157,272 @@ pueden escribirse como funciones de $z$ por $\euler^{i(kx - \omega t)}$.
 
 \underline{Solución:} \vspace{.3cm}
 
+\textbf{(a}) Comenzamos escribiendo las ecuaciones de Maxwell sin fuentes ($\rho = 
+\mathbf{J} = 0$, con $\mu = 1$, 
+
+\begin{align}
+ \begin{split}
+  \pmb{\nabla} \cdot (\epsilon \mathbf{E}) &= 0, \\
+  \pmb{\nabla} \cdot \mathbf{B} &= 0, \\
+  \pmb{\nabla} \times \mathbf{E} &= - \frac{1}{c} \frac{\partial \mathbf{B}}
+  {\partial t}, \\
+  \pmb{\nabla} \times \mathbf{B} &= - \frac{\epsilon}{c} \frac{\partial \mathbf{E}}
+  {\partial t}.
+ \end{split}
+\end{align}
+
+Para un medio no homogéneo tenemos 
+
+\begin{equation}
+ \pmb{\nabla} \epsilon \cdot \mathbf{E} + \epsilon \pmb{\nabla} \cdot \mathbf{E} = 
+ 0,
+\end{equation}
+
+que podemos escribir como 
+
+\begin{equation}
+ \frac{d \epsilon}{d z} E_z + \epsilon \pmb{\nabla} \cdot \mathbf{E} = 0.
+\end{equation}
+
+Ahora por propiedades del rotacional 
+
+\begin{equation}
+ \pmb{\nabla} \times ( \pmb{\nabla} \times \mathbf{E}) = 
+ \pmb{\nabla} (\pmb{\nabla} \cdot \mathbf{E}) - \nabla^2 \mathbf{E} = 
+ - \frac{1}{c} \frac{\partial}{\partial t} \left(\frac{\epsilon}{c} 
+ \frac{\partial \mathbf{E}}{\partial t}\right),
+\end{equation}
+
+y entonces resultando lo obtenido arriba
+
+\begin{equation}
+ \nabla^2 \mathbf{E} - \frac{\epsilon}{c^2} \frac{\partial^2}{\partial t^2} \mathbf{E} = 
+ \nabla \left(- \frac{1}{\epsilon} \frac{d\epsilon}{dz} E_z \right) = 
+ - \frac{d}{dz} \ln{\epsilon} \nabla E_z - \hat{z} E_z \frac{d^2}{dz^2} \ln{\epsilon} ,
+\end{equation}
+
+\begin{equation}
+ \therefore \mathbf{E} = \mathbf{E}(z) \euler^{i(kx - \omega t)}.
+\end{equation}
+
+Hemos probado entonces que lo que dice el enunciado para este tipo de ondas es cierto. 
+Ahora, 
+
+\begin{equation}
+ \frac{d^2}{dz} \mathbf{E} + \left(\frac{\epsilon \omega}{c^2} - k^2 \right)\mathbf{E} = 
+ - \frac{d}{dz} \ln{\epsilon} \frac{d}{dz} E_z \hat{z} - E_z \frac{d^2}{dz^2}
+ \ln{\epsilon} \hat{z} = - \frac{d}{dz}\left(E_z \frac{d}{dz} \ln{\epsilon} \right) 
+ \hat{z}.
+\end{equation}
+
+Para polarización horizontal tenemos que $E_y \ne 0$, entonces 
+
+\begin{equation}
+ \left[ \frac{d^2}{dz}  + \left(\frac{\epsilon \omega}{c^2} - k^2 \right)\right] E_y 
+ = 0,
+\end{equation}
+
+o 
+
+\begin{equation}
+ \boxed{\left(\frac{d^2}{dz} + q^2(z) \right) E_y = 0},
+\end{equation}
+
+con 
+
+\begin{equation}
+ \boxed{q^2(z) = \frac{\epsilon \omega}{c^2} - k^2}.
+\end{equation}
+
+\hspace{10cm}\includegraphics[scale=0.25]{logoQED}
+
+Y para la polarización vertical tenemos que $E_z \ne 0$, entonces 
+
+\begin{equation}
+  \left[ \frac{d^2}{dz}  + \left(\frac{\epsilon \omega}{c^2} - k^2 \right)\right] E_z 
+ = - \frac{d}{dz}\left(E_z \frac{d}{dz} \ln{\epsilon} \right),
+\end{equation}
+
+Si hacemos $E_z = F/\sqrt{\epsilon}$ obtenemos 
+
+\begin{equation}
+ \frac{d}{dz} E_z = \frac{1}{\sqrt{\epsilon}} \frac{d F}{dz} 
+ - \frac{1}{2 \epsilon^{3/2}} F \frac{d\epsilon}{dz},
+\end{equation}
+
+y derivando de nuevo 
+
+\begin{equation}
+ \frac{d^2}{dz^2} E_z = \frac{1}{\sqrt{\epsilon}} \frac{d^2 F}{dz^2} - 
+ \frac{1}{\epsilon^{3/2}}\frac{dF}{dz}\frac{d\epsilon}{dz} + 
+ \frac{3}{4} \frac{F}{\euler^{3/2}} \left(\frac{d\epsilon}{dz} \right)^2 
+ - \frac{F}{2\epsilon^{3/2}} \frac{d^2 \epsilon}{dz^2}.
+\end{equation}
+
+Con un poco de trabajo algebraico llegamos a 
+
+\begin{equation}
+ \frac{d^2}{dz^2} F + F \left\{\left(\frac{d\epsilon}{dz} \right)^2 
+ \left(- \frac{3}{4\epsilon^2}\right) + \frac{d^2 \epsilon}{dz^2} 
+ \frac{1}{2\epsilon} + \left[\frac{\epsilon\omega^2}{c^2} - k^2\right]\right\} = 0,
+\end{equation}
+
+o 
+
+\begin{equation}
+ \boxed{\frac{d^2 F}{dz^2} + q^2(z) F = 0},
+\end{equation}
+
+con
+
+\begin{equation}
+  \boxed{q^2(z) =\frac{\omega^2}{c^2} \epsilon(z) + \frac{1}{2\epsilon}\frac{d^2 \epsilon}{dz^2} 
+ - \frac{3}{4\epsilon^2}\left(\frac{d \epsilon}{d z} \right)^2 - k^2}.
+\end{equation}
+
+\hspace{10cm}\includegraphics[scale=0.25]{logoQED}
+
+\textbf{(b)} En Física, la aproximación WKB (Wentzel–Kramers–Brillouin)es el 
+ejemplo más familiar de un cálculo semi-clásico en el cual la función de onda es 
+redactada como una función exponencial, y entonces o la amplitud o la fase es
+tomada para estar cambiando lentamente. Entonces tomando que 
+
+\begin{equation}
+ F = A \euler^{i\phi},
+\end{equation}
+
+\begin{equation}
+ F' = i \phi' F,
+\end{equation}
+
+\begin{equation}
+ F'' = i \phi'' F - \phi' F,
+\end{equation}
+
+y con la ecuación del anterior inciso, 
+
+\begin{equation}
+ F'' + q^2 F = 0 \Rightarrow (i\phi'' + \phi'^2 + q^2) F = 0,
+\end{equation}
+
+y en la aproximación WKB $\phi'' \approx 0$, por lo que 
+
+\begin{equation}
+ \phi' = q \Rightarrow \phi = \int dz q.
+\end{equation}
+
+Para una propagación vertical $k=0$, nos queda, utilizando los resultados del 
+inciso anterior
+
+\begin{equation}
+ F = \sqrt{e} E_z \approx A \exp{\left[dz \sqrt{\frac{\epsilon \omega^2}{c^2}} 
+ + \frac{1}{2\epsilon} \frac{d^2}{dz^2} - \frac{3}{4\epsilon^2} 
+ \left(\frac{d\epsilon}{dz}\right)^2 \right]},
+\end{equation}
+
+\begin{equation}
+ \therefore E_y \approx B \exp{[\int dz \frac{\omega}{c}\sqrt{\epsilon}]},
+\end{equation}
+
+Vemos entonces que 
+
+\begin{equation}
+ \epsilon \approx 1 - \frac{\omega_p^2}{\omega^2},
+\end{equation}
+
+donde, como en la ecuación (7.60) de Jackson \cite{jackson}
+
+\begin{equation}
+\omega_p^2 = 4\pi N Z \euler^2 /m,
+\end{equation}
+
+donde $NZ$ es el número total de electrones por unidad de volumen, y $e$ y $m$ 
+son la carga y la masa del electrón, respectivamente. Vemos que a una frecuencia 
+$\omega$ dada encontramos que $\epsilon > 0$ para $y$ pequeño y $\epsilon < 0$ 
+para $y$ grande, siguiendo los argumentos de la sección 7.6 de Jackson \cite{jackson}. 
+
+\vspace{.3cm}
+
+\textbf{(c)} En este caso definimos el pulso por 
+
+\begin{equation}
+ E_+ = \int d\omega A(\omega) \frac{1}{\sqrt{q(\omega)}} \euler^{i\theta}, 
+\end{equation}
+
+donde la fase está dada por 
+
+\begin{equation}
+ \theta = \int dz q - \omega t,
+\end{equation}
+
+y la velocidad de fase a una frecuencia $\omega$ por 
+
+\begin{equation}
+ \frac{d\theta}{d\omega} = 0 = \frac{d}{d\omega} \int dz q - t = 
+ \int dz \frac{dq}{d\omega} - t = \int dz \frac{1}{v_g} - t,
+\end{equation}
+
+donde hemos generalizado hacia la velocidad de grupo $v_g$, que se escribe como 
+
+\begin{equation}
+ \therefore v_g = \left(\frac{dq}{d\omega}\right)^{-1}.
+\end{equation}
+
+Por lo tanto el tiempo necesario para llegar a $z$ será 
+
+\begin{equation}
+ r = \int dz \frac{dq}{d\omega},
+\end{equation}
+
+pero 
+
+\begin{equation}
+ q = \frac{\omega}{c}\sqrt{\epsilon},
+\end{equation}
+
+y
+
+\begin{equation}
+ \frac{dq}{d\omega} = \frac{1}{v_g} = \frac{\sqrt{\epsilon}}{c} + \frac{\omega}{c} 
+ \frac{1}{2\sqrt{\epsilon}} \frac{d\epsilon}{d\omega},
+\end{equation}
+
+y entonces el tiempo medio $T/2$ para un pulso de frecuencia dominante $\omega$ que
+viaja hacia arriba y se refleja será 
+
+\begin{equation}
+ \frac{T}{2} = \int_0^{z'} dz \frac{1}{v_g},
+\end{equation}
+
+con la ecuación para la altura efectiva que da el texto encontramos que 
+
+\begin{equation}
+ h = \int_0^{z'} dz \left[\sqrt{\epsilon} + \frac{\omega}{2\sqrt{\epsilon}} 
+ \frac{d\epsilon}{d\omega}\right].
+\end{equation}
+
+Ahora usando el resultado para $\epsilon$ del inciso anterior 
+
+\begin{equation}
+ \epsilon \approx = 1 - \frac{\omega_p^2}{\omega} = 1 - \xi^2,
+\end{equation}
+
+donde hemos definido $\xi \equiv \frac{\omega_p^2}{\omega}$. Por lo tanto 
+
+\begin{equation}
+ h = \int_0^{z'} dz \left[\sqrt{1 - \xi^2} + \xi^2 \frac{1}{\sqrt{1 - \xi^2}} \right],
+\end{equation}
+
+que podemos escribir como
+
+\begin{equation}
+ h = \int_0^{z'} dz \frac{1}{\sqrt{1 - \xi^2}},
+\end{equation}
+
+\begin{equation}
+ \boxed{\therefore h = \int_0^{z'} dz \frac{\omega^2}{\sqrt{\omega^2 - \omega_p^2}}}.
+\end{equation}
+
 \newpage
 
 \begin{thebibliography}{10}
@@ -1166,8 +1432,6 @@ J. Jackson, \emph{Classical Electrodynamics}, 3ra edición. John Wiley and Sons,
 \bibitem{magyar}
 R. Magyar, \emph{A Companion to Classical Electrodynamics 3rd Edition by J.D. 
 Jackson}, 2001.
-\bibitem{griffiths}
-D. Griffiths, \emph{Indtroduction to Electrodynamics}, 4ta edición. Pearson, 2013.
 \end{thebibliography}
 
 \end{document}
