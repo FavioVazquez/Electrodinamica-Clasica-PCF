@@ -352,7 +352,7 @@ y debido a que $R + T = 1$ el coeficiente de transmisión resulta en
  + (r_{12}r_{21})^2}}.
 \end{equation}
 
-Necesitamos ahora hacer una serie de gráficos para el comportamiento de los índices 
+Necesitamos ahora hacer una serie de gráficos para el comportamiento de los coeficientes 
 de reflexión y transmisión que encontramos para distintos índices de refracción. 
 
 \vspace{.3cm}
@@ -518,7 +518,7 @@ plt.plot(omega,R_2,"red",omega,T_2,"blue")
 plt.show()
 \end{lstlisting}
 
-\textbf{(b)} Si $n_3 = 1$ el índice de reflexión se reduce a 
+\textbf{(b)} Si $n_3 = 1$ el coeficiente de reflexión se reduce a 
 
 \begin{equation}
  R = 1 - \frac{8n_1 n_2^2}{n_1^2 + [1 + n_1(4 + n_1)]n_2^2 + n_2^4 + 
@@ -563,7 +563,7 @@ al plano de incidencia,
 \underline{Solución:} \vspace{.3cm}
 
 \textbf{(a)} Asumiremos que la onda incidente puede escribirse como $\mathbf{E}_i 
-\euler^{i\mathbf{k}\cdot \mathbf{x}}$, y del lado de la primear losa se refleja 
+\euler^{i\mathbf{k}\cdot \mathbf{x}}$, y del lado de la primera losa se refleja 
 una onda de la forma  $\mathbf{E}_r \euler^{i\mathbf{k'}\cdot \mathbf{x}}$, luego 
 en la brecha de aire tenemos las ondas  $\mathbf{E}_+
 \euler^{i\mathbf{k}_0\cdot \mathbf{x}}$ y  $\mathbf{E}_- 
@@ -579,7 +579,7 @@ debido a que las losas  tienen el mismo índice de refracción, el ángulo de
 transmisión también será $i$. Tenemos que, por lo anterior
 
 \begin{equation}
- \cos{r} = \sqrt{q - \sen^2{r}} = \sqrt{1 - n^2\sen^{i}},
+ \cos{r} = \sqrt{q - \sen^2{r}} = \sqrt{1 - n^2\sen^2{i}},
 \end{equation}
 
 lo que nos dice que $\cos{r}$ es puramente imaginario cuando $i$ es más grande 
@@ -854,7 +854,7 @@ Asumiendo que en el espacio y en la lámina conductora $\mu/\mu_0 = \epsilon/\ep
 
 \begin{enumerate}[label=\textbf{(\alph*)}]
  \item Muestre que las amplitudes de las onda reflejada y transmitida, correctas 
- a primer orden en $(\epsilon_0 \omega /\sigma)^1/2)$, son 
+ a primer orden en $(\epsilon_0 \omega /\sigma)^{1/2}$, son 
  
  $$
  \frac{E_r}{E_i} = \frac{-(1 - \euler^{-2\lambda})}{(1 - \euler^{-2\lambda}) 
