@@ -225,6 +225,120 @@ Explica en que consisten las siguientes técnicas para medir el índice de refra
 
 \underline{Solución:} \vspace{.3cm}
 
+\textbf{Elipsometría}: La elipsometría es una técnica que mide el cambio en los 
+estados de polarización de la luz reflejada en la superficie de una muestra. Los 
+valores medidos son expresados como $\Psi$ y $\Delta$. Estos valores están relacionados 
+con la tasa de los coeficientes de reflexión de Fresnel, $R_P$ y $R_S$ para la 
+luz polarizada de tipo $P$ y $S$ respectivamente, y esta relación se expresa 
+en la siguiente ecuación 
+
+\begin{equation}
+ \tan{\Psi} \euler^{i\Delta} = \frac{R_P}{R_S}.
+\end{equation}
+
+Debido a que la elipsometría mide la tasa de los dos valores, puede ser altamente 
+precisa y muy reproducible. De la ecuación anterior vemos que la tasa es un 
+número complejo, por lo que contiene la información de la fase contenida en $\Delta$, 
+que hace que la medición sea muy sensible. 
+
+\vspace{.3cm}
+
+\textbf{Reflectancia, absorbancia y transmitancia}: La reflectancia $\rho$ está definida 
+por la tasa de potencia radiante reflejada a la potencia radiante incidente. Para 
+un cierto elemento de área $dA$ de la superficie reflectante, la potencia 
+radiante incidente diferencial está dada por la irradiancia de la superficie 
+$E_e$ multiplicada por la el tamaño del elemento de superficie, entonces 
+
+\begin{equation}
+ dF_{e,\text{incidente}} = E_e dA,
+\end{equation}
+
+y la potencia radiante reflectada diferencial está dada por la exitancia $M_e$, 
+multiplicada por el tamaño del elemento de superficie, 
+
+\begin{equation}
+ dF_{e,\text{reflejada}} = M_e dA,
+\end{equation}
+
+por lo tanto 
+
+\begin{equation}
+ \rho = \frac{dF_{e,\text{reflejada}}}{dF_{e,\text{incidente}}} = 
+ \frac{M_e \cancel{dA}}{E_e \cancel{dA}} = \frac{M_3}{E_e}.
+\end{equation}
+
+La reflectancia total es luego subdividida en reflectancia regular $\rho_r$ y 
+reflectancia difusa $\rho_d$, que están dadas por las tasa de potencia radiante 
+reflejada regular y la tasa de potencia radiante reflejada difusa a la potencia 
+radiante incidente. De es esta definición debe ser obvio que 
+
+\begin{equation}
+ \rho =  \rho_r + \rho_d.
+\end{equation}
+
+La transmitancia de un medio está definida por la tasa de potencia radiante transmitida 
+por la potencia radiante incidente. La transmitancia es luego subdividida en 
+transmitancia regular $\tau_r$ y transmitancia difusa $\tau_d$. que están dadas por 
+las tasa de potencia radiante transmitida regular y la tasa de potencia
+radiante transmitida difusa a la potencia radiante incidente. De nuevo 
+
+\begin{equation}
+ \tau =  \tau_r + \tau_d.
+\end{equation}
+
+La absorbancia de un medio es definida por el radio de potencia radiante absorbida 
+por la potencia radiante incidente. 
+
+\vspace{.3cm}
+
+Al estar definidas como tasas de los valores de potencia radiante, la reflectancia, 
+transmitancia y absorbancia son adimensionales. Estas cantidades son usadas 
+para describir propiedades ópticas de los materiales, como el índice de refracción. 
+Comúnmente estas cantidades se aplican a radiación compleja, pero también pueden 
+utilizarse para radiación monocromática. 
+
+\vspace{.3cm}
+
+\textbf{Técnica de Corbino}: Esta técnica fue desarrollada para proveer la 
+respuesta dependiente de las frecuencias  para el rango espectral de microondas. Ha 
+sido usada para dar información importante sobre superconductores de alta 
+temperatura, fermiones persados, gafas de electrones y películas superconductoras 
+delgadas. En esta técnica uno mide los coeficientes de reflexión complejos desde 
+una muestra de película fina que termina una línea de transmisión coaxial. 
+Típicamente, el contacto eléctrico es hecho presionando un adaptador de microondas 
+modificado contra la muestra con almohadillas de oro en forma de dona, que 
+empareja las dimensiones radiales de la línea coaxial. 
+
+\vspace{.3cm}
+
+\textbf{EELS (electron energy loss spectroscopy)}: EELS es una técnica analítica que 
+mide los cambios en la energía cinética de los electrones luego de que han interactuado 
+con un espécimen. Cuando se hace en un microscopio electrónico de transmisión 
+moderno, EELS es capaz de dar información estructural y química de un sólido, con 
+una resolución espacial a nivel atómico en casos favorables. La resolución energética 
+es típicamente 1 eV pero puede acercase a 0.1 eV si se usa un haz de electrones 
+monocromático. 
+
+\vspace{.3cm}
+
+Algunos de los electrones se someterán a dispersión inlástica, que significa que 
+perderán energía y sus caminos serán pequeñamente deflectados aleatoriamente. La 
+cantidad de energía perdida puede ser medida mediante un espectrómetro electrónico 
+e interpretada en términos de qué causó la pérdida de energía. Entre estas interacciones 
+inelásticas están las ionizaciones de capas internas, que son particularmente 
+útiles para detectar los componentes elementales de los materiales. Para estudiar 
+superficies, EELS es usualmente usada con bajas energía de incidencia. 
+
+\vspace{.3cm}
+
+\textbf{REELS (reflection electron energy loss spectroscopy)}: REELS es una combinación 
+de EELS con microscopía electrónica de reflexión (REM), en la que un haz de electrones 
+de alta energía es incidente a un ángulo de brillo sobre la superdicie. Se utiliza 
+para estudiar la pérdida de energía de estructuras ``near-edge'' y pérdida de energía 
+extendida en estructuras finas de superficies de cristales. También es 
+utilizada para detectar cambios relativos en los cambio de estado de densidades 
+en superficies.
+
 \section{Problema 2}
 
 Utilizando la transformada de Fourier,encontrar la dependencia en la frecuencia de las siguientes suceptibilidades:
