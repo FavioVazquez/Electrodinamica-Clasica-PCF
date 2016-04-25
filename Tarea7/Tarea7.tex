@@ -353,6 +353,37 @@ Utilizando la transformada de Fourier,encontrar la dependencia en la frecuencia 
 
 \underline{Solución:} \vspace{.3cm}
 
+De la definición de la transformada de Fourier tenemos, para $\chi(t) = \chi_0 \delta(t)$ 
+
+\begin{align}
+\begin{split}
+ F[\chi(t)] &= \frac{\chi_0}{\sqrt{2\pi}} \int_{-\infty}^\infty \delta(t) \euler^{-i 
+ \omega t} dt \\
+ &= \frac{\chi_0}{\sqrt{2\pi}}\euler^0 \\ 
+ &= \frac{\chi_0}{\sqrt{2\pi}}.
+\end{split}
+\end{align}
+
+Para $\chi(t) = \chi_0\theta(t)$
+
+\begin{align}
+ \begin{split}
+  F[\chi(t)] &= \chi_0 F[\theta(t)] \\
+  &= \chi_0\left[- \frac{i}{2\pi\omega} + \sqrt{\frac{\pi}{2}}\delta(\omega) \right].
+ \end{split}
+\end{align}
+
+Y para $\chi(t) = \chi_0\delta(t)\sen(\omega_0 t)$
+
+\begin{align}
+\begin{split}
+ F[\chi(t)] &= \frac{\chi_0}{\sqrt{2\pi}} \int_{-\infty}^\infty \delta(t) \sen{\omega_0t}
+ dt \\
+ &= \frac{\chi_0}{\sqrt{2\pi}}\sen{(0)} \\ 
+ &= 0.
+\end{split}
+\end{align}
+
 \section{Problema 3}
 
 Utilizando el modelo de Lorentz para la función dieléctrica muestra que 
