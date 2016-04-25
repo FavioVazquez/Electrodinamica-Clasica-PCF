@@ -398,6 +398,40 @@ En CGS.
 
 \underline{Solución:} \vspace{.3cm}
 
+La parte imaginaria de la función dieléctrica en el modelo de Lorentz es igual a 
+
+\begin{equation}
+ \text{Im}(\epsilon(\omega)) = \frac{\omega \omega_p^2 \Gamma}{(\omega_0^2 - \omega^2)^2 
+ + \omega^2 \Gamma^2},
+\end{equation}
+
+entonces 
+
+\begin{align}
+\begin{split}
+ \int_0^\infty d\omega \omega \text{Im}(\epsilon(\omega)) &=  
+ \int_0^\infty d\omega \frac{\omega^2 \omega_p^2 \Gamma}{(\omega_0^2 - \omega^2)^2 
+ + \omega^2 \Gamma^2}
+\end{split}
+\end{align}
+
+Esta integral al introducirla en \texttt{Wolfram Alpha} a partir de una interfaz 
+con \texttt{Mathematica} produjo el siguiente resultado (luego lo cotejé 
+con una tabla de integración, y unas notas de un profesor disponibles en 
+\href{http://www.phys.ufl.edu/~tanner/notes.pdf}{http://www.phys.ufl.edu/~tanner/notes.pdf}) 
+
+\begin{equation}
+ \int_0^\infty d\omega \omega \text{Im}(\epsilon(\omega)) = \frac{\omega_p^2}{4\pi} 
+ \left[\frac{\pi}{2}\right], 
+\end{equation}
+
+siendo $\pi/2$ el resultado de la integral luego de un cambio de variable y usando 
+propiedades trigonométricas. Al simplificar obtenemos el resultado deseado 
+
+\begin{equation}
+ \boxed{\int_0^\infty d\omega \omega \text{Im}(\epsilon(\omega)) = \frac{\omega_p^2}{8}}.
+\end{equation}
+
 \section{Problema 4}
 
 Plasmones-polaritones de superficie. Supongan que para $z > 0$ hay un metal descrito por el modelo de plasma. Es decir 
