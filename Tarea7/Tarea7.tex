@@ -386,4 +386,127 @@ Para $z < 0$ hay vacío. Es decir la superficie que divide el metal del vacío e
 
 \underline{Solución:} \vspace{.3cm}
 
+Un plasmón polaritón de superficie (PPS) son ondas electromagnéticas de frecuencia
+infrarroja o visible, que viajan a lo largo de una interfaz metal-dieléctrico o 
+metal-aire. El término PSS explica que la onda involucra movimiento de cargas en 
+el metal (``plasmón de superficie'') y ondas electromagnéticas en el aire 
+o dieléctrico (``polariton''). 
+
+\vspace{.3cm}
+
+Para demostrar la condición para su existencia haremos una deducción para un 
+sistema semi-infinito y un acercamiento clásico. Consideremos entonces un modelo 
+clásico que consiste en dos medios no-magnéticos semi-infinitos con funciones 
+dieléctricas (dependientes del tiempo) locales $\epsilon_1$ y $\epsilon_2$ 
+separados por una interfaz plana en $z = 0$. Las ecuaciones de Maxwell en la 
+ausencia de fuentes externas pueden ser expresadas como 
+
+\begin{equation}
+ \pmb{\nabla} \times \mathbf{H}_i = \epsilon_i \frac{1}{c} \frac{\partial}{\partial t} 
+ \mathbf{E}_i,
+\end{equation}
+
+\begin{equation}
+ \pmb{\nabla} \times \mathbf{E}_i = - \frac{1}{c} \frac{\partial}{\partial t} 
+ \mathbf{H}_i,
+\end{equation}
+
+\begin{equation}
+ \pmb{\nabla} \cdot (\epsilon_i \mathbf{E}_i) = 0,
+\end{equation}
+
+\begin{equation}
+ \pmb{\nabla} \cdot \mathbf{H} = 0.
+\end{equation}
+
+Donde el índice $i$ describe el medio: $i = 1$ en $z < 0$ y $i = 2$ en $z > 0$. Si 
+escogemos el eje $x$ como la dirección de propagación, tenemos que 
+
+\begin{equation}
+ \mathbf{E}_i = (E_{i_x},0,E_{i_z}) \euler^{-\kappa_i|z|} \euler^{i(q_i x - \omega t)},
+\end{equation}
+
+y 
+
+\begin{equation}
+ \mathbf{H}_i = (0,E_{i_y},0) \euler^{-\kappa_i|z|} \euler^{i(q_i x - \omega t)},
+\end{equation}
+
+donde $q_i$ representa la magnitud de un vector de onda que es paralelo a la 
+superficie. Introduciendo estas ecuaciones en las ecuaciones de Maxwell, obtenemos 
+
+\begin{equation}
+ i \kappa_1 H_{1_y} = \frac{\omega}{c} \epsilon_1 E_{1_x}, 
+\end{equation}
+
+\begin{equation}
+ i \kappa_2 H_{2_y} = - \frac{\omega}{c} \epsilon_2 E_{2_x},
+\end{equation}
+
+y 
+
+\begin{equation}
+ \kappa_i = \sqrt{q_i^2 - \epsilon_i \frac{\omega^2}{c^2}}.
+\end{equation}
+
+Las condiciones de frontera implican que las componentes de los campos magnéticos 
+y eléctricos paralelos a la superficie deben ser continuos. Entonces tenemos 
+
+\begin{equation}
+ \frac{\kappa_1}{\epsilon_1} H_{1_y} + \frac{\kappa_2}{\epsilon_2} H_{2_y} = 0,
+\end{equation}
+
+y 
+
+\begin{equation}
+ H_{1_y} - H_{2_y} = 0,
+\end{equation}
+
+que tiene soluciones solo si el determinante es cero, i.e. 
+
+\begin{equation}
+ \frac{\epsilon_1}{\kappa_1} + \frac{\epsilon_2}{\kappa_2} = 0.
+\end{equation}
+
+Esta es la condición de plasmón de superficie. Esta expresión puede escribirse como 
+
+\begin{equation}
+ q(\omega) = \frac{\omega}{c} \sqrt{\frac{\epsilon_1\epsilon_2}{\epsilon_1 + 
+ \epsilon_2}},
+\end{equation}
+
+donde $\omega/c$ representa la magnitud del vector de onda de luz. En el caso 
+de un metal semi-infinito de Drude en el vacío tenemos que $\epsilon_2 = 1$ y 
+tenemos que 
+
+\begin{equation}
+ \epsilon_1 = 1 - \frac{\omega_p^2}{\omega(\omega + i\eta)},
+\end{equation}
+
+$\eta$ una infinitesimal positiva. Entonces, en este caso tenemos 
+
+\begin{equation}
+ \boxed{q(\omega) = \frac{\omega}{c}\sqrt{\frac{\omega^2 - \omega_p^2}{2\omega^2 - 
+ \omega_p^2}}}.
+\end{equation}
+
+Esta es la ecuación de dispersión para el plasmón superficie, y la expresión 
+final para el plasmón polaritón de superficie viene dada por 
+
+\begin{equation}
+ \boxed{\omega^2(q) = \omega_p^2/2 + c^2q^2 - \sqrt{\omega_p^4/4 + c^4q^4}}.
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}
