@@ -162,7 +162,7 @@ gigantium humeris insidentes}
 
 \textsc{\Large Electrodinámica Clásica}\\[0.3cm] % Major heading such as course name
 \textsc{\large Semestre 2016-II}\\[0.3cm] % Minor heading such as course title
-\textsc{\large 7 de abril de 2016}\\ % Minor heading such as course title
+\textsc{\large 5 de mayo de 2016}\\ % Date
 
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
@@ -210,7 +210,7 @@ aceleración a partir de los potenciales de Lienard-Wiechert.}\\ % Title of your
 %%			BEGIN DOCUMENT
 %----------------------------------------------------------------------------------------
 
-\section{Diferenciación de los potenciales de Lienard-Wiechert}
+\section{Diferenciación de los potenciales de Lienard-Wiechert.}
 
 Esta deducción se hizo siguiendo los resultados de las secciones 6.2 y 6.3 del 
 libro de Schwartz \cite{schwartz}. Los potenciales de Lienard-Wiechert podemos 
@@ -258,12 +258,202 @@ La dificultad de estas derivaciones yace en la compleja dependencia implícita
 de los términos primados en $\mathbf{r}$ y $t$. Definiendo el tiempo retardado 
 como 
 
+\begin{equation}
+ t' = t - \frac{|\mathbf{r} - \mathbf{r}'|}{c},
+\end{equation}
 
+entonces 
 
+\begin{equation}
+ \frac{\partial t'}{\partial t} = 1 - \frac{1}{c}\left(\frac{\partial}{\partial t'}
+ |\mathbf{r} - \mathbf{r}'|\right)\frac{\partial t'}{\partial t},
+\end{equation}
 
+y
 
+\begin{equation}
+ \frac{\partial |\mathbf{r} - \mathbf{r}'|}{\partial t'} = - \mathbf{v}' \cdot 
+ \hat{\mathbf{\epsilon}}',
+\end{equation}
 
+por lo tanto
 
+\begin{equation}
+ \frac{\partial t'}{\partial t} = \frac{1}{1 - \frac{\mathbf{v}' \cdot \mathbf{\epsilon}'}{c}}.
+\end{equation}
+
+Similarmente, 
+
+\begin{equation}
+ \nabla t' = \frac{1}{c}\hat{\mathbf{\epsilon}}' - 
+ \frac{1}{c}\left(\frac{\partial}{\partial t'}|\mathbf{r} - \mathbf{r}'|\right)
+ \nabla t',
+\end{equation}
+
+y entonces 
+
+\begin{equation}
+ \nabla t' = \frac{- \hat{\mathbf{\epsilon}}'}{c\left(1 - \frac{\mathbf{v}' 
+ \cdot \hat{\mathbf{\epsilon}}}{c} \right)}.
+\end{equation}
+
+También será útil el siguiente resultado:
+
+\begin{equation}
+ \frac{\partial \hat{\mathbf{\epsilon}}'}{\partial t'} = 
+ \frac{\partial}{\partial t'}\left(\frac{\mathbf{r} - \mathbf{r}'}{|\mathbf{r} - \mathbf{r}'|}\right) = 
+ \frac{(\mathbf{v}' \cdot \hat{\mathbf{\epsilon}}'(\mathbf{r} - \mathbf{r}')}{|\mathbf{r} - \mathbf{r}'|^2} 
+ - \frac{\mathbf{v}'}{|\mathbf{r} - \mathbf{r}'|}.
+\end{equation}
+
+o 
+
+\begin{equation}
+ \frac{\partial \hat{\mathbf{\epsilon}}'}{\partial t'} = \frac{\hat{\mathbf{\epsilon}}' 
+ \times (\hat{\mathbf{\epsilon}}' \times \mathbf{v}')}{|\mathbf{r} - \mathbf{r}'|}.
+\end{equation}
+
+Podemos evaluar 
+
+\begin{equation*}
+ \frac{\partial}{\partial t'}\left[|\mathbf{r} - \mathbf{r}'| \left(1 - 
+ \frac{\mathbf{v}| \cdot  \hat{\mathbf{\epsilon}}'}{c}\right) \right] = 
+ - \mathbf{v}| \cdot  \hat{\mathbf{\epsilon}}' \left(1 - 
+ \frac{\mathbf{v}' \cdot  \hat{\mathbf{\epsilon}}'}{c}\right) - 
+ |\mathbf{r} - \mathbf{r}'|\frac{\mathbf{a}'}{c}\cdot \hat{\mathbf{\epsilon}}' 
+ - \frac{\mathbf{v}'}{c}\cdot \left[\hat{\mathbf{\epsilon}}' \times
+ (\hat{\mathbf{\epsilon}}' \times \mathbf{v}')\right]
+\end{equation*}
+
+o
+
+\begin{equation}
+  \frac{\partial}{\partial t'}\left[|\mathbf{r} - \mathbf{r}'| \left(1 - 
+ \frac{\mathbf{v}| \cdot  \hat{\mathbf{\epsilon}}'}{c}\right) \right] = 
+ \frac{-|\mathbf{r} - \mathbf{r}'|\mathbf{a}' \cdot \hat{\mathbf{\epsilon}}'}{c} 
+ - \mathbf{v}' \cdot \hat{\mathbf{\epsilon}}' + \frac{v'^2}{c},
+\end{equation}
+
+que nos da 
+
+\begin{equation}
+  \frac{\partial}{\partial t'}\left[|\mathbf{r} - \mathbf{r}'| \left(1 - 
+ \frac{\mathbf{v}| \cdot  \hat{\mathbf{\epsilon}}'}{c}\right) \right] = 
+ \frac{-|\mathbf{r} - \mathbf{r}'|\mathbf{a}' \cdot \hat{\mathbf{\epsilon}}'}{c} 
+ - \mathbf{v}| \cdot \left(\hat{\mathbf{\epsilon}}' - \frac{\mathbf{v}'}{c} \right),
+\end{equation}
+
+donde 
+
+\begin{equation}
+ \mathbf{a}' = \frac{d\mathbf{v}'}{dt'}.
+\end{equation}
+
+Estamos listos ahora para encontrar el gradiente de $\phi$, 
+
+\begin{equation}
+ - \nabla \phi = - (\nabla \phi)_{t'const} - \frac{\partial \phi}{\partial t'}
+ \nabla t',
+\end{equation}
+
+al hacer estos cálculos encontramos 
+
+\begin{equation}
+ - \nabla \phi = \frac{q\left[\hat{\mathbf{\epsilon}}' \left(1 - 
+ \frac{v'^2}{c^2}\right) - \frac{\mathbf{v}'}{c}\left(1 - \frac{v}{c}\cdot 
+ \hat{\mathbf{\epsilon}}'\right) \right]}{|\mathbf{r} - \mathbf{r}'| 
+ \left(1 - \frac{\mathbf{v}' \cdot \hat{\mathbf{\epsilon}}'}{c}\right)^3} 
+ + \frac{q\hat{\mathbf{\epsilon}}'(\mathbf{a}' \cdot \hat{\mathbf{\epsilon}}')}{ 
+ c^2|\mathbf{r} - \mathbf{r}'|\left(1 - \frac{\mathbf{v}' \cdot 
+ \hat{\mathbf{\epsilon}}'}{c} \right)^3}.
+\end{equation}
+
+Ahora calculamos 
+
+\begin{equation}
+ - \frac{1}{c}\frac{\partial\mathbf{A}}{\partial t} = - \frac{1}{c} 
+ \frac{\partial \mathbf{A}}{\partial t'}\frac{\partial t'}{\partial t},
+\end{equation}
+
+\begin{equation}
+ - \frac{1}{c}\frac{\partial\mathbf{A}}{\partial t} = - \frac{\partial}{\partial t'} 
+ \frac{q\mathbf{v}'}{c^2|\mathbf{r} - \mathbf{r}'|\left(1 - \frac{\mathbf{v}' 
+ \cdot \hat{\mathbf{\epsilon}}'}{c} \right)},
+\end{equation}
+
+y al hacer la derivada obtenemos (y con un poco de álgebra)
+
+\begin{equation}
+ - \frac{1}{c}\frac{\partial\mathbf{A}}{\partial t} = \frac{-q \frac{\mathbf{v}'}{c} 
+ \left[\frac{\mathbf{v}'}{c} \cdot \left(\hat{\mathbf{\epsilon}}' - 
+ \frac{\mathbf{v}'}{c}\right)\right]}{|\mathbf{r} - \mathbf{r}'|^2 
+ \left(1 - \frac{\mathbf{v}'\cdot \hat{\mathbf{\epsilon}}'}{c} \right)^3} + 
+ \frac{-q\mathbf{a}' + q\hat{\mathbf{\epsilon}}' \times \left(\mathbf{a}' 
+ \times \frac{\mathbf{v}'}{c}\right)}{c^2|\mathbf{r} - \mathbf{r}'|
+  \left(1 - \frac{\mathbf{v}'\cdot \hat{\mathbf{\epsilon}}'}{c} \right)^3}
+\end{equation}
+
+Combinando $- \nabla \phi$ y $- \frac{1}{c}\frac{\partial A}{\partial t}$, podemos 
+calcular el campo eléctrico que queda como 
+
+\begin{equation}
+ \boxed{\mathbf{E}(\mathbf{r},t) = \frac{-q[\mathbf{a}' - (\mathbf{a}' \cdot 
+ \hat{\mathbf{\epsilon}}')\hat{\mathbf{\epsilon}}' + q\hat{\mathbf{\epsilon}}' 
+ \times \left(\mathbf{a}' \times \frac{\mathbf{v}'}{c} \right)]}{c^2 
+ |\mathbf{r} - \mathbf{r}'|\left(1 - \frac{\mathbf{v}'\cdot 
+ \hat{\mathbf{\epsilon}}'}{c} \right)^3} + 
+ \frac{q \left(\hat{\mathbf{\epsilon}}' - \frac{\mathbf{v}'}{c} \right)\left( 
+ 1 - \frac{v'^2}{c^2}\right)}{|\mathbf{r} - \mathbf{r}'|^2 
+  \left(1 - \frac{\mathbf{v}'\cdot \hat{\mathbf{\epsilon}}'}{c} \right)^3}}.
+\end{equation}
+
+Ahora, calculamos el campo magnético con $\mathbf{B} = \pmb{\nabla} \times \mathbf{A}$, 
+
+\begin{equation}
+ \pmb{\nabla} \times \mathbf{A} = ( \pmb{\nabla} \times \mathbf{A})_{t'const} - 
+ \left(\frac{\mathbf{A}}{\partial t'} \right) \nabla t'.
+\end{equation}
+
+Entonces, 
+
+\begin{equation}
+  ( \pmb{\nabla} \times \mathbf{A})_{t'const} = \frac{-q\left(\hat{\mathbf{\epsilon}}' 
+  - \frac{\mathbf{v}'}{c}\right) \times \frac{\mathbf{v}'}{c}}{|\mathbf{r} - \mathbf{r}'|^2 
+  \left(1 - \frac{\mathbf{v}'\cdot \hat{\mathbf{\epsilon}}'}{c} \right)^2},
+\end{equation}
+
+y 
+
+\begin{equation}
+ - \frac{\partial \mathbf{A}}{\partial t'} \times \nabla t' = 
+ \frac{q\mathbf{a}' \times  \hat{\mathbf{\epsilon}}' + 
+ q \hat{\mathbf{\epsilon}}' \times \left[ \hat{\mathbf{\epsilon}}' \times 
+ \left(\mathbf{a}' \times \frac{\mathbf{v}'}{c} \right)\right]}{c^2 
+ |\mathbf{r} - \mathbf{r}'|\left(1 - \frac{\mathbf{v}'\cdot 
+ \hat{\mathbf{\epsilon}}'}{c} \right)^3} + 
+ \frac{q\left(\frac{\mathbf{v}'}{c} \times \hat{\mathbf{\epsilon}}' \right)
+ \left[\frac{\mathbf{v}'}{c} \cdot \left(\hat{\mathbf{\epsilon}}' - 
+ \frac{\mathbf{v}'}{c}\right) \right]}{|\mathbf{r} - \mathbf{r}'|^2\left(1 - \frac{\mathbf{v}'\cdot 
+ \hat{\mathbf{\epsilon}}'}{c} \right)^3},
+\end{equation}
+
+y finalmente tenemos 
+
+\begin{equation}
+ \boxed{\mathbf{B} = \frac{q\left(\frac{\mathbf{v}'}{c} \times \hat{\mathbf{\epsilon}}'\right) 
+ \left(1 - \frac{v'^2}{c^2}\right)}{|\mathbf{r} - \mathbf{r}'|^2\left(1 - \frac{\mathbf{v}'\cdot 
+ \hat{\mathbf{\epsilon}}'}{c} \right)^3} + \hat{\mathbf{\epsilon}}' \times 
+ \frac{-q\mathbf{a}' + q\left[\hat{\mathbf{\epsilon}}' \times 
+ \left(\mathbf{a}' \times \frac{\mathbf{v}'}{c} \right) \right]}{c^2|\mathbf{r} - \mathbf{r}'|
+ \left(1 - \frac{\mathbf{v}'\cdot  \hat{\mathbf{\epsilon}}'}{c} \right)^3}}.
+\end{equation}
+
+Si examinamos las expresiones que obtuvimos para $\mathbf{E}$ y $\mathbf{B}$, notamos 
+que cada una de ellas se divide naturalmente en dos partes, una que es independiente de 
+la aceleración y decrece con $1/|\mathbf{r} - \mathbf{r}'|^2$ (campo de velocidad) 
+y otra que es proporcional a la aceleración de la carga que decrece con 
+$1/|\mathbf{r} - \mathbf{r}'|$ (campo de aceleración). Los términos proporcionales a 
+$\mathbf{a}$ son los que nos interesan, y son los llamados campos de radiación. 
 
 \begin{thebibliography}{10}
 \bibitem{schwartz}
