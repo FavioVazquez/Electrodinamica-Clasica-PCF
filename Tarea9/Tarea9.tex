@@ -238,6 +238,83 @@ Explicar la radiación de bremsstrahlung.
 
 \vspace{.3cm} \underline{Solución:} \vspace{.3cm}
 
+Los cálculos para esta sección se harán en S.I. ya que se tomaron en gran parte
+de la sección 23.3 de Zangwill \cite{zangwill}. Lo que trabajaremos será con 
+la teoría clásica de bremsstrahlung, y veremos que solo es un nombre a que se 
+le da a un tipo de radiación en electrodinámica.
+
+\vspace{.3cm}
+
+La energía radiada al infinito por una partícula cargada está determinada por 
+los campos de aceleración $\mathbf{E}_a(\mathbf{r},t)$ y $\mathbf{B}_a(\mathbf{r},t)$ 
+fueron obtenidos en la tarea anterior, acá los escribimos en S.I. para trabajar con 
+ellos 
+
+\begin{equation}
+ \mathbf{E}_a(\mathbf{r},t) = \frac{q}{4\pi\epsilon_0}\left[\frac{\hat{n} 
+ \times \{(\hat{n} - \pmb{\beta}) \times \dot{\pmb{\beta}} \}}{cg^3R} \right]_{ret},
+\end{equation}
+
+\begin{equation}
+ \mathbf{B}_a(\mathbf{r},t) = \frac{\mu_0q}{4\pi}\left[\frac{(\pmb{\beta} \times 
+ \hat{n})(\dot{\pmb{\beta}} \cdot \hat{n}) + g\dot{\pmb{\beta}} 
+ \times \hat{n}}{g^3R} \right]_{ret},
+\end{equation}
+
+donde $\pmb{\beta} = \mathbf{v}/c$, $g(t') = \frac{d}{dt}[r' - r + R(t')/c]$ y 
+$\hat{n}$ es un vector unitario definido por $\mathbf{R}(t) = R(t)\hat{n}(t)$ y 
+el $ret$ se refiere a que las mediciones se hacen el tiempo retardado. 
+
+\vspace{.3cm}
+
+Éstos son campos de radiación porque decrecen con $1/R$ y forman una triada 
+ortogonal con el vector unitario retardado de la línea de visión, $\hat{n}_{ret}$. 
+El vector de Poynting asociado, 
+
+\begin{equation}
+ \mathbf{S}(t) = \frac{1}{\mu_0}\mathbf{E}_a \times \mathbf{B}_a = 
+ \epsilon_0cE_{a}^2 \hat{n}_{ret} = \epsilon_0c\left(\frac{q}{4\pi\epsilon_0}\right)^2 
+ \left|\frac{\hat{n} \times [(\hat{n} - 
+ \pmb{\beta} \times \dot{\pmb{\beta}})]}{cg^3R}\right|_{ret} \hat{n}_{ret}, 
+\end{equation}
+
+determina la tasa en la cual la energía fluye a través de un ángulo sólido $d\Omega$ 
+de una esfera envolvente distante de radio $R$:
+
+\begin{equation}
+ \frac{dP(t)}{d\Omega} = \frac{dU}{dtd\Omega} = R^2 \mathbf{S}(t) \cdot \hat{n}_{ret}.
+\end{equation}
+
+La tasa de emisión se convierte en una cantidad más fundamental cuando 
+la multiplicamos por $g_{ret}$ y nos enfocamos en la distribución angular del 
+poder emitido, 
+
+\begin{equation}
+ \frac{dP(t)}{d\Omega} = \frac{dU}{dt_{ret}d\Omega} = g_{ret} R^2 \mathbf{S}(t) 
+ \cdot \hat{n}_{ret} = \frac{1}{c}\left(\frac{q}{4\pi\epsilon_0}\right)^2 
+ \left|\frac{\hat{n} \times [(\hat{n} - 
+ \pmb{\beta} \times \dot{\pmb{\beta}})]}{(1 - \hat{n}\cdot \pmb{\beta})^5}\right|_{ret}.
+\end{equation}
+
+Esta ecuación se simplifica considerablemente cuando la aceleración $\mathbf{a}$ es 
+paralela a la velocidad $\mathbf{v}$. El patrón de radiación tiene simetría 
+azimutal al rededor su dirección común y entonces depende solamente del 
+ángulo $\theta$ definido por $\hat{n} \cdot \pmb{\beta} = (v/c)\cos{\theta}$. 
+Recordando que todas las cantidades se refieren al tiempo retardado de 
+emisión, la distribución angular de la radiación emitida es 
+
+\begin{equation}
+ \left\zerodel \frac{dP}{d\Omega}\right|_{\parallel} = \frac{\mu_0q^2}{16\pi^2c} 
+ \frac{a^2\sen^{\theta}}{(1 - \beta\cos{\theta})^5}.
+\end{equation}
+
+Ahora la dependencia de esta ecuación en $a^2$ nos dice que el patrón de radiación 
+ocurre cuando la carga se acelera o se desacelera. La palabra alemana bremsstrahlung 
+que significa ``radiación de frenado'' es usada comúnmente para el caso de desaceleración. 
+Un ejemplo de la teoría clásica de bremsstrahlung es cuando un electrón de rápida 
+velocidad choca con un blanco metálico, y se desacelera rápidamente, dando lugar a 
+este tipo de radiación, bremsstrahlung \cite{griffiths}.
+
 \section{Problema 3}
 
 Para una partícula no relativista acelerada dibujar el patrón de radiación.
@@ -250,5 +327,14 @@ Para una partícula no relativista acelerada dibujar el patrón de radiación.
 y n=1.
 
 \vspace{.3cm} \underline{Solución:} \vspace{.3cm}
+
+\begin{thebibliography}{10}
+ \bibitem{zangwill}
+ A. Zangwill, \emph{Modern Electrodynamics}, Cambridge University Press, 2012.
+ \bibitem{griffiths}
+ D. Griffits, \emph{Introduction to Electrodynamics}, 4ta edición, Pearson Education, 
+ 2013.
+\end{thebibliography}
+
 
 \end{document}
