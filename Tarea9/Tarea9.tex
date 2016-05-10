@@ -321,6 +321,209 @@ Para una partícula no relativista acelerada dibujar el patrón de radiación.
 
 \vspace{.3cm} \underline{Solución:} \vspace{.3cm}
 
+Para solucionar este problema recrearemos la figura 9.5 de Jackson \cite{jackson} que 
+a nuestro parecer representa varios aspectos de los patrones de radiación. En la 
+sección 9.9 del texto, el autor describe como se llegan a las ecuaciones para 
+poder encontrar los patrones de radiación tanto dipolares como cuadrupolares, 
+y dispone una tabla donde se encuentran distribuciones angulares para la forma 
+normalizada del vector de armónicos esféricos $\mathbf{X}_{lm}(\theta,\phi)$, que 
+se define como (ec. 9.119 de Jackson \cite{jackson})
+
+\begin{equation}
+ \mathbf{X}_{lm}(\theta,\phi) = \frac{1}{\sqrt{l(l+1)}}\mathbf{L}Y_{lm}(\theta,\phi),
+\end{equation}
+
+donde $\mathbf{L} = \frac{1}{i}(r \times \pmb{\nabla})$. La tabla en cuestión 
+es la siguiente (tabla 9.1 de Jackson \cite{jackson})
+
+\begin{figure}[H]
+ \center 
+ \includegraphics[scale=0.5]{problema3fig1}
+\end{figure}
+
+Debajo las distribuciones dipolares se ven como aquellas en las que un dipolo 
+oscila paralelo al eje $z$ ($m=0$) y las que dos dipolos, uno a lo largo del eje 
+$x$ y otro a lo largo del eje $y$, $90^\circ$ fuera de fase ($m = \pm 1)$. Las 
+distribuciones angulares dipolares y cuadrupolares están graficadas 
+debajo como diagramos de intensidad dipolar. Representan distribuciones angulares 
+para $l=1$ y $l=2$. La ecuación de donde salen las porciones de ecuaciones que 
+se encuentran en la tabla de arriba es la (9.152) de Jackson \cite{jackson}. Cada 
+una tiene su respectiva leyenda que la relaciona a la tabla de arriba, y la última 
+figura es un compendio de todos los patrones de radiación.
+
+\begin{figure}[H]
+ \center
+ \includegraphics[scale=0.6]{problema3fig2}
+\end{figure}
+
+\begin{figure}[H]
+ \center
+ \includegraphics[scale=0.6]{problema3fig3}
+\end{figure}
+
+\begin{figure}[H]
+ \center
+ \includegraphics[scale=0.6]{problema3fig4}
+\end{figure}
+
+\begin{figure}[H]
+ \center
+ \includegraphics[scale=0.6]{problema3fig5}
+\end{figure}
+
+\begin{figure}[H]
+ \center
+ \includegraphics[scale=0.6]{problema3fig6}
+\end{figure}
+
+El código que hace estas imágenes de arriba es (\href{google.com}{Link al 
+notebook de Python en mi GitHub})
+
+\begin{lstlisting}[language=Python]
+from __future__ import print_function
+import numpy as np
+from numpy import arccos,sin, cos, pi, array, sqrt, log, exp
+import matplotlib
+matplotlib.use('nbagg')
+import matplotlib.pyplot as plt
+from matplotlib import rc
+
+rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+## for Palatino and other serif fonts use:
+#rc('font',**{'family':'serif','serif':['Palatino']})
+rc('text', usetex=True)
+
+#LaTeX
+plt.rc('text', usetex=True)
+plt.rc('font', family='serif')
+
+# Linespace for theta
+
+theta = np.linspace(-pi,pi,360)
+
+# Variable definitions
+x1 = 3/(8*pi)*(sin(theta))**2 #l=1,m=0
+x2 = 3/(16*pi)*(1 + (cos(theta))**2)#l=1,m=+-1
+x3 = 15/8*pi * (sin(theta))**2*(cos(theta))**2 #l=2,m=0
+x4 = (5/8*pi) * (1 - 3*(cos(theta))**2 + 
+             4*(cos(theta))**4) #l=2, m=+-1
+x5= 5/16*pi * (1 - (cos(theta))**4)
+
+#Plots and Style
+
+# l=1, m=0
+ax = plt.subplot(111, polar=True)
+ax.set_theta_offset(pi/2)
+ax.plot(theta,x1,label=r'$l=1,m=0$')
+ax.legend(loc=1,fontsize=12)
+plt.show()
+
+# l=1, m=+-1 
+ax = plt.subplot(111, polar=True)
+ax.set_theta_offset(pi/2)
+ax.plot(theta,x2,label=r'$l=1,m=\pm 1$')
+ax.legend(loc=1,fontsize=12)
+plt.show()
+
+# l=2, m=0
+ax = plt.subplot(111, polar=True)
+ax.set_theta_offset(pi/2)
+ax.plot(theta,x3, label=r'$l=2,m=0$')
+ax.legend(loc=1,fontsize=12)
+plt.show()
+
+# l=2, m=+-1
+ax = plt.subplot(111, polar=True)
+ax.set_theta_offset(pi/2)
+ax.plot(theta,x4, label=r'$l=2,m=\pm 1$')
+ax.legend(loc=1,fontsize=12)
+plt.show()
+
+# l=2, m=+-2
+ax = plt.subplot(111, polar=True)
+ax.set_theta_offset(pi/2)
+ax.plot(theta,x5, label=r'$l=2,m=\pm 2$')
+ax.legend(loc=1,fontsize=12)
+plt.show()
+\end{lstlisting}
+
+Compendio de patrones de radiación
+
+\begin{figure}[H]
+ \center
+ \includegraphics[scale=0.62]{problema3fig7}
+\end{figure}
+
+El código que hace esta figura es 
+
+\begin{lstlisting}[language=Python]
+ from __future__ import print_function
+import numpy as np
+from numpy import arccos,sin, cos, pi, array, sqrt, log, exp
+import matplotlib
+matplotlib.use('nbagg')
+import matplotlib.pyplot as plt
+from matplotlib import rc
+
+rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+## for Palatino and other serif fonts use:
+#rc('font',**{'family':'serif','serif':['Palatino']})
+rc('text', usetex=True)
+
+#LaTeX
+plt.rc('text', usetex=True)
+plt.rc('font', family='serif')
+
+# Linespace for theta
+
+theta = np.linspace(-pi,pi,360)
+
+# Variable definitions
+x1 = 3/(8*pi)*(sin(theta))**2 #l=1,m=0
+x2 = 3/(16*pi)*(1 + (cos(theta))**2)#l=1,m=+-1
+x3 = 15/8*pi * (sin(theta))**2*(cos(theta))**2 #l=2,m=0
+x4 = (5/8*pi) * (1 - 3*(cos(theta))**2 + 
+             4*(cos(theta))**4) #l=2, m=+-1
+x5= 5/16*pi * (1 - (cos(theta))**4)
+
+fig = plt.figure()
+
+#Plots
+ax1 = fig.add_subplot(231,projection='polar')
+ax1.plot(theta,x1,label=r'$l=1,m=0$')
+ax2 = fig.add_subplot(232,projection='polar')
+ax2.plot(theta,x2,label=r'$l=1,m=\pm 1$')
+ax3 = fig.add_subplot(233,projection='polar')
+ax3.plot(theta,x3, label=r'$l=2,m=0$')
+ax4 = fig.add_subplot(234,projection='polar')
+ax4.plot(theta,x4, label=r'$l=2,m=\pm 1$')
+ax5 = fig.add_subplot(235,projection='polar')
+ax5.plot(theta,x5, label=r'$l=2,m=\pm 2$')
+
+#Offsets
+ax1.set_theta_offset(pi/2)
+ax2.set_theta_offset(pi/2)
+ax3.set_theta_offset(pi/2)
+ax4.set_theta_offset(pi/2)
+ax5.set_theta_offset(pi/2)
+
+#Legends
+ax1.legend(loc=4,fontsize=8)
+ax2.legend(loc=4,fontsize=8)
+ax3.legend(loc=4,fontsize=8)
+ax4.legend(loc=4,fontsize=8)
+ax5.legend(loc=4,fontsize=8)
+
+#Axis style
+ax1.axis('off')
+ax2.axis('off')
+ax3.axis('off')
+ax4.axis('off')
+ax5.axis('off')
+
+plt.show()
+\end{lstlisting}
+
 \section{Problema 4}
 
 ¿Cuánto tiempo tarda en caer un electrón al núcleo? Considere el átomo de hidrógeno 
@@ -394,6 +597,9 @@ vida de un átomo de hidrógeno excitado con $n=1$.
  \bibitem{griffiths}
  D. Griffits, \emph{Introduction to Electrodynamics}, 4ta edición, Pearson Education, 
  2013.
+ \bibitem{jackson}
+J. Jackson, \emph{Classical Electrodynamics}, 3ra edición. John Wiley and Sons, Inc. 
+1999.
 \end{thebibliography}
 
 
