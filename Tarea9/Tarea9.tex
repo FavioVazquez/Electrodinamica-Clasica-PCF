@@ -323,10 +323,70 @@ Para una partícula no relativista acelerada dibujar el patrón de radiación.
 
 \section{Problema 4}
 
-¿Cuánto tiempo tarda en caer un electrón al núcleo? Considere el átomo de hidrógenos 
+¿Cuánto tiempo tarda en caer un electrón al núcleo? Considere el átomo de hidrógeno 
 y n=1.
 
 \vspace{.3cm} \underline{Solución:} \vspace{.3cm}
+
+La pérdida de energía dominante en este caso está dada por la radiación dipolar, 
+que utilizando la ecuación de Larmor podemos escribir como 
+
+\begin{equation}
+ \frac{dU}{dt} = - \langle P \rangle = - \frac{2a^2e^2\omega^4}{3c^3}.
+ \label{eq:161}
+\end{equation}
+
+Para un electrón de carga $-e$ y masa $m_e$ en una órbita de radio $a$ acerca 
+de un núcleo fijo de carga $+e$ (átomo de hidrógeno), la segunda ley de Newton, 
+$F=ma$ nos dice que 
+
+\begin{equation}
+ \frac{e^2}{a^2} = m \frac{v^2}{a} = m\omega^2a,
+\end{equation}
+
+de manera que 
+
+\begin{equation}
+ \omega^2 = \frac{e^2}{ma^3},
+ \label{eq:163}
+\end{equation}
+
+y también la energía total será 
+
+\begin{equation}
+ U = - \frac{e^2}{a} + \frac{1}{2}mv^2 = - \frac{e^2}{2a}.
+ \label{eq:164}
+\end{equation}
+
+Usando las ecuaciones \eqref{eq:163} y \eqref{eq:164} en la ecuación \eqref{eq:161}, 
+tenemos 
+
+\begin{equation}
+ \frac{dU}{dt} = \frac{e^2}{2a^2} \dot{a} = - \frac{2e^6}{3a^4m^2c^3},
+\end{equation}
+
+o 
+
+\begin{equation}
+ a^2\dot{a} = \frac{1}{3} \frac{da^3}{dt} = - \frac{4e^4}{3m^2c^3} = - \frac{4}{3}r_0^2c,
+\end{equation}
+
+donde $r_0 = e^2/mc^2$ es el radio clásico del electrón. Entonces 
+
+\begin{equation}
+ a^3 = a_0^3 - 4r_0^2ct.
+\end{equation}
+
+El tiempo de caída del electrón será entonces ($a \rightarrow 0$) 
+
+\begin{equation}
+ t_{\text{caída}} = \frac{a_0^3}{4r_0^2c}.
+\end{equation}
+
+Sustituyendo los valores conocidos para $r_0 = 2.8 \times 10^{-13}$ cm y 
+$a_0 = 5.3 \times 10^{-9}$, el tiempo de caída del electrón al núcleo será 
+$\boxed{t_{\text{caída}} = 1.6 \times 10^{-11} s}$. Este es el orden de magnitud para el tiempo de 
+vida de un átomo de hidrógeno excitado con $n=1$.
 
 \begin{thebibliography}{10}
  \bibitem{zangwill}
