@@ -41,6 +41,12 @@ En tal caso de alguna pregunta no relacionada directamente con el repositorio pu
 
 ### Tarea 5 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazquez/Electrodinamica-Clasica-PCF/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/FavioVazquez/Electrodinamica-Clasica-PCF/builds/2e49a56a3b03708b227bfabd9a9477e8072803cf/raw/output.pdf)
 
+### Tarea 6 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazquez/Electrodinamica-Clasica-PCF/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/FavioVazquez/Electrodinamica-Clasica-PCF/builds/ebdbdd91b9cea68919fccee301e58bd2dbd1d601/raw/output.pdf)
+
+### Tarea 7 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazquez/Electrodinamica-Clasica-PCF/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/FavioVazquez/Electrodinamica-Clasica-PCF/builds/34497e2db34408b2443b3cba3475ba14229aff80/raw/output.pdf)
+
+### Tarea 8 &#8594; [![PDF Status](https://www.sharelatex.com/github/repos/FavioVazquez/Electrodinamica-Clasica-PCF/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/FavioVazquez/Electrodinamica-Clasica-PCF/builds/e5af0feea03dda444430f87d8a4944809cbc595d/raw/output.pdf)
+
 ---------
 
 ## **Acceso a los PDFs de las tareas en GitHub**
@@ -52,3 +58,6 @@ Se pueden también ver las tareas directamente en GitHub. Se renderizarán en l�
 ### [Tarea 3](https://github.com/FavioVazquez/Electrodinamica-Clasica-PCF/blob/master/Tarea3/Tarea3.pdf)
 ### [Tarea 4](https://github.com/FavioVazquez/Electrodinamica-Clasica-PCF/blob/master/Tarea4/Tarea4.pdf)
 ### [Tarea 5](https://github.com/FavioVazquez/Electrodinamica-Clasica-PCF/blob/master/Tarea5/Tarea5.pdf)
+### [Tarea 6](https://github.com/FavioVazquez/Electrodinamica-Clasica-PCF/blob/master/Tarea6/Tarea6.pdf)
+### [Tarea 7](https://github.com/FavioVazquez/Electrodinamica-Clasica-PCF/blob/master/Tarea7/Tarea7.pdf)
+### [Tarea 8](https://github.com/FavioVazquez/Electrodinamica-Clasica-PCF/blob/master/Tarea8/Tarea8.pdf)
