@@ -1,4 +1,3 @@
-
 \documentclass[a4paper,11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
@@ -403,10 +402,106 @@ total radiada desde la esfera.
 
 \underline{Solución:} \vspace{.3cm}
 
+En este problema podemos asumir que el término dipolar es el dominante ya que 
+las dos mitades de las esferas cargadas opuestamente en el régimen de longitud 
+grande se asemejan mucho a el comportamiento de un dipolo. Entonces necesitamos 
+encontrar el momento dipolar de esta configuración y luego de ahí utilizar las 
+ecuaciones que se encuentran en Jackson \cite{jackson} (que fueron usadas en el 
+problema anterior) para hallar lo solicitado por el autor en el problema. 
+
+\vspace{.3cm}
+
+Consideremos la esfera en un tiempo cuando los voltajes están en su pico. En la 
+sección 2.7 de Jackson \cite{jackson} y en el 4 problema de la segunda tarea, 
+encontramos que a primer orden, el potencial externo de una esfera cortada 
+en hemisferios, en términos de los polinomios de Legendre puede escribirse como 
+
+\begin{equation}
+ \Phi = V \frac{3}{2}\frac{R^2}{r^2}\cos{\theta},
+\end{equation}
+
+y de Marion y Heald (ec. 2.5) \cite{marion} sabemos que el potencial debido a 
+un dipolo eléctrico en la dirección $z$ luce como 
+
+\begin{equation}
+ \Phi = \frac{1}{4\pi\epsilon_0}\frac{p}{r^2}\cos{\theta}.
+\end{equation}
+
+Si ahora igualamos estas dos expresiones, y despejamos $p$, tenemos que en 
+cantidades vectoriales 
+
+\begin{equation}
+ \mathbf{p} = 6\pi \epsilon_0 V R^2 \hat{z}.
+\end{equation}
+
+Ahora los potenciales en la esfera varían con $\cos{\omega t}$, que es la parte 
+real de la dependencia armónica exponencial. Ahora del capítulo 7 de Marion y 
+Heald \cite{marion} podemos obtener expresiones para los campos debidos 
+a un dipolo eléctrico que varía armónicamente en el tiempo, tenemos entonces 
+
+\begin{equation}
+ \mathbf{E} = - \frac{k^2p}{4\pi\epsilon_0} \hat{k} \times (\hat{k} \times \hat{p}) 
+ \frac{\euler^{i(kr - wt)}}{r},
+\end{equation}
+
+y sustituyendo la expresión para el momento dipolar q encontramos tenemos 
+
+\begin{equation}
+ \boxed{E = - \frac{3}{2} V k^2 R^2  \frac{\euler^{i(kr - wt)}}{r} \sen{\theta}
+ \hat{\theta}}.
+\end{equation}
+
+Y el campo magnético será 
+
+\begin{equation}
+ \mathbf{B} = \frac{\mu_0 c k^2 p}{4\pi} (\hat{k} \times \hat{p}) 
+ \frac{\euler^{i(kr - wt)}}{r},
+\end{equation}
+
+\begin{equation}
+ \boxed{\mathbf{B} = - \frac{3}{2} \frac{V k^2 R^2}{c} \frac{\euler^{i(kr - wt)}}{r}
+ \sen{\theta} \hat{\theta}}.
+\end{equation}
+
+La distribución angular de potencia radiada la calculamos con la ecuación 
+(9.21) de Jackson \cite{jackson},
+
+\begin{equation}
+ \frac{dP}{d\Omega} = \frac{1}{2}\text{Re}[r^2\mathbf{n} \cdot \mathbf{E} \times 
+ \mathbf{H}], 
+\end{equation}
+
+tenemos entonces 
+
+\begin{equation}
+ \frac{dP}{d\Omega} = \frac{1}{2} \text{Re}\left\{\left[- \frac{3}{2}Vk^2R^2 
+ \frac{\euler^{i(kr - wt)}}{r}\sen{\theta} \hat{\theta}\right] \times 
+ \left[- \frac{1}{\mu_0} \frac{3}{2} \frac{V k^2 R^2}{c} \frac{\euler^-{i(kr - wt)}}{r}
+ \sen{\theta} \hat{\theta}\right]\right\},
+\end{equation}
+
+\begin{equation}
+ \boxed{\therefore \frac{dP}{d\Omega} = \frac{9}{8}\frac{V^2k^2R^4}{\mu_0c}
+ \sen^2{\theta}}.
+\end{equation}
+
+Por último, la potencia total radiada es 
+
+\begin{equation}
+ P = \int  \frac{9}{8}\frac{V^2k^2R^4}{\mu_0c} \sen^2{\theta} d\Omega,
+\end{equation}
+
+\begin{equation}
+ \boxed{\therefore P = \frac{3\pi V^2 k^4 R^4}{\mu_0 c}}.
+\end{equation}
+
 \begin{thebibliography}{10}
   \bibitem{jackson}
 J. Jackson, \emph{Classical Electrodynamics}, 3ra edición. John Wiley and Sons, Inc. 
 1999.
+\bibitem{marion}
+J. Marion, M. Heald, \emph{Classical Electromagnetic Radiation}, 2da edición, Academic 
+Press, 1965.
 \end{thebibliography}
 
 \end{document}
