@@ -8,11 +8,11 @@
 *.bcf
 *.dvi
 *.xml
-*.bbl
+*.bblads
 *.blg
 *.txt
 
-# Notebooks checkpoints
+# Notebooks checkpoints asdsad sdf ds
 Tarea1/.ipynb_checkpoints
 Tarea3/.ipynb_checkpoints
 Tarea6/.ipynb_checkpoints
